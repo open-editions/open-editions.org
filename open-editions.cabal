@@ -6,6 +6,8 @@ cabal-version:      >= 1.10
 executable site
   main-is:          site.hs
   build-depends:    base == 4.*
+                  , blaze-html
+                  , clay
                   , hakyll == 4.12.*
   ghc-options:      -threaded
   default-language: Haskell2010
