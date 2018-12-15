@@ -12,8 +12,8 @@ main = hakyll $ do
         compile copyFileCompiler
 
     match "css/*" $ do
-        route   idRoute
-        compile compressCssCompiler
+        route   $ setExtension "css"
+        compile $ getResourceString >>= withItemBody (unixFilter "runghc" [])
 
     match (fromList ["about.rst", "contact.markdown"]) $ do
         route   $ setExtension "html"
