@@ -18,6 +18,7 @@ import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Json.Decode
+import Bulma.CDN
 
 
 type alias Post =
@@ -110,6 +111,7 @@ htmlTemplate title contentNodes =
             , script "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.1/languages/elm.min.js"
             , inlineScript "hljs.initHighlightingOnLoad();"
             , stylesheet "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.1/styles/default.min.css"
+            , Bulma.CDN.stylesheet
             , stylesheet "//fonts.googleapis.com/css?family=Open+Sans|Proza+Libre|Inconsolata"
             ]
         , node "body" [] contentNodes

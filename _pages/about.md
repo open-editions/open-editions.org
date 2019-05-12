@@ -1,5 +1,6 @@
 ---
-title: "About the author"
+title: "About Open Editions"
 ---
 
-You can write something about *yourself* here using `Markdown`.
+The Open Editions project publishes richly annotated open source literary texts. We aim to aggregate the literary knowledge that surrounds a text, and integrate that knowledge with the text itself.
+

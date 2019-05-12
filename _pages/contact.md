@@ -2,4 +2,4 @@
 title: "Contact"
 ---
 
-Drop me a line at [me@example.com](mailto:me@example.com).
+Contact Jonathan Reeve at [jonathan.reeve@columbia.edu](mailto:jonathan.reeve@columbia.edu).

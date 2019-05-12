@@ -784,11 +784,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.a3.au === region.bm.au)
+	if (region.bs.ax === region.bR.ax)
 	{
-		return 'on line ' + region.a3.au;
+		return 'on line ' + region.bs.ax;
 	}
-	return 'on lines ' + region.a3.au + ' through ' + region.bm.au;
+	return 'on lines ' + region.bs.ax + ' through ' + region.bR.ax;
 }
 
 
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.b8,
-		impl.cq,
-		impl.cn,
+		impl.cI,
+		impl.c$,
+		impl.cY,
 		function() { return function() {} }
 	);
 });
@@ -2660,8 +2660,8 @@ var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
 		B: func(record.B),
-		a4: record.a4,
-		a2: record.a2
+		bu: record.bu,
+		bp: record.bp
 	}
 });
 
@@ -2930,10 +2930,10 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 
 		var value = result.a;
 		var message = !tag ? value : tag < 3 ? value.a : value.B;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.a4;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.bu;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.a2) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.bp) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3883,11 +3883,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.b8,
-		impl.cq,
-		impl.cn,
+		impl.cI,
+		impl.c$,
+		impl.cY,
 		function(sendToApp, initialModel) {
-			var view = impl.ct;
+			var view = impl.c2;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3919,12 +3919,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.b8,
-		impl.cq,
-		impl.cn,
+		impl.cI,
+		impl.c$,
+		impl.cY,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.ay && impl.ay(sendToApp)
-			var view = impl.ct;
+			var divertHrefToApp = impl.aB && impl.aB(sendToApp)
+			var view = impl.c2;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3932,12 +3932,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.bf);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.bK);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.aA) && (_VirtualDom_doc.title = title = doc.aA);
+				(title !== doc.aD) && (_VirtualDom_doc.title = title = doc.aD);
 			});
 		}
 	);
@@ -3993,12 +3993,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.cd;
-	var onUrlRequest = impl.ce;
+	var onUrlChange = impl.cN;
+	var onUrlRequest = impl.cO;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		ay: function(sendToApp)
+		aB: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4014,9 +4014,9 @@ function _Browser_application(impl)
 					var next = elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.bF === next.bF
-							&& curr.bq === next.bq
-							&& curr.bC.a === next.bC.a
+							&& curr.ca === next.ca
+							&& curr.bV === next.bV
+							&& curr.b7.a === next.b7.a
 						)
 							? elm$browser$Browser$Internal(next)
 							: elm$browser$Browser$External(href)
@@ -4024,13 +4024,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		b8: function(flags)
+		cI: function(flags)
 		{
-			return A3(impl.b8, flags, _Browser_getUrl(), key);
+			return A3(impl.cI, flags, _Browser_getUrl(), key);
 		},
-		ct: impl.ct,
-		cq: impl.cq,
-		cn: impl.cn
+		c2: impl.c2,
+		c$: impl.c$,
+		cY: impl.cY
 	});
 }
 
@@ -4096,17 +4096,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { b5: 'hidden', bY: 'visibilitychange' }
+		? { cF: 'hidden', ct: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { b5: 'mozHidden', bY: 'mozvisibilitychange' }
+		? { cF: 'mozHidden', ct: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { b5: 'msHidden', bY: 'msvisibilitychange' }
+		? { cF: 'msHidden', ct: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { b5: 'webkitHidden', bY: 'webkitvisibilitychange' }
-		: { b5: 'hidden', bY: 'visibilitychange' };
+		? { cF: 'webkitHidden', ct: 'webkitvisibilitychange' }
+		: { cF: 'hidden', ct: 'visibilitychange' };
 }
 
 
@@ -4187,12 +4187,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		bK: _Browser_getScene(),
-		bS: {
-			aU: _Browser_window.pageXOffset,
-			aV: _Browser_window.pageYOffset,
-			am: _Browser_doc.documentElement.clientWidth,
-			Z: _Browser_doc.documentElement.clientHeight
+		cf: _Browser_getScene(),
+		cn: {
+			a_: _Browser_window.pageXOffset,
+			a$: _Browser_window.pageYOffset,
+			ap: _Browser_doc.documentElement.clientWidth,
+			_: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4202,8 +4202,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		am: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		Z: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		ap: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		_: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4226,15 +4226,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			bK: {
-				am: node.scrollWidth,
-				Z: node.scrollHeight
+			cf: {
+				ap: node.scrollWidth,
+				_: node.scrollHeight
 			},
-			bS: {
-				aU: node.scrollLeft,
-				aV: node.scrollTop,
-				am: node.clientWidth,
-				Z: node.clientHeight
+			cn: {
+				a_: node.scrollLeft,
+				a$: node.scrollTop,
+				ap: node.clientWidth,
+				_: node.clientHeight
 			}
 		};
 	});
@@ -4264,18 +4264,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			bK: _Browser_getScene(),
-			bS: {
-				aU: x,
-				aV: y,
-				am: _Browser_doc.documentElement.clientWidth,
-				Z: _Browser_doc.documentElement.clientHeight
+			cf: _Browser_getScene(),
+			cn: {
+				a_: x,
+				a$: y,
+				ap: _Browser_doc.documentElement.clientWidth,
+				_: _Browser_doc.documentElement.clientHeight
 			},
-			b1: {
-				aU: x + rect.left,
-				aV: y + rect.top,
-				am: rect.width,
-				Z: rect.height
+			cz: {
+				a_: x + rect.left,
+				a$: y + rect.top,
+				ap: rect.width,
+				_: rect.height
 			}
 		};
 	});
@@ -4422,9 +4422,9 @@ function _Markdown_formatOptions(options)
 {
 	function toHighlight(code, lang)
 	{
-		if (!lang && elm$core$Maybe$isJust(options.b0))
+		if (!lang && elm$core$Maybe$isJust(options.cy))
 		{
-			lang = options.b0.a;
+			lang = options.cy.a;
 		}
 
 		if (typeof hljs !== 'undefined' && lang && hljs.listLanguages().indexOf(lang) >= 0)
@@ -4435,24 +4435,24 @@ function _Markdown_formatOptions(options)
 		return code;
 	}
 
-	var gfm = options.b4.a;
+	var gfm = options.cD.a;
 
 	return {
 		highlight: toHighlight,
 		gfm: gfm,
-		tables: gfm && gfm.co,
-		breaks: gfm && gfm.bX,
-		sanitize: options.cj,
-		smartypants: options.cm
+		tables: gfm && gfm.cZ,
+		breaks: gfm && gfm.cs,
+		sanitize: options.cT,
+		smartypants: options.cX
 	};
 }
 var author$project$Elmstatic$PostList = F4(
 	function (posts, section, siteTitle, title) {
-		return {ch: posts, bL: section, aR: siteTitle, aA: title};
+		return {cR: posts, cg: section, aV: siteTitle, aD: title};
 	});
 var author$project$Elmstatic$Post = F7(
 	function (date, link, markdown, section, siteTitle, tags, title) {
-		return {bZ: date, ca: link, bw: markdown, bL: section, aR: siteTitle, cp: tags, aA: title};
+		return {cv: date, cK: link, b0: markdown, cg: section, aV: siteTitle, c_: tags, aD: title};
 	});
 var elm$core$Basics$apL = F2(
 	function (f, x) {
@@ -5022,6 +5022,30 @@ var author$project$Elmstatic$stylesheet = function (href) {
 			]),
 		_List_Nil);
 };
+var elm$json$Json$Encode$string = _Json_wrap;
+var elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			elm$json$Json$Encode$string(string));
+	});
+var elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
+var elm$html$Html$Attributes$rel = _VirtualDom_attribute('rel');
+var surprisetalk$elm_bulma$Bulma$CDN$stylesheet = A3(
+	elm$html$Html$node,
+	'link',
+	_List_fromArray(
+		[
+			elm$html$Html$Attributes$rel('stylesheet'),
+			elm$html$Html$Attributes$href('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css')
+		]),
+	_List_Nil);
 var author$project$Elmstatic$htmlTemplate = F2(
 	function (title, contentNodes) {
 		return A3(
@@ -5056,6 +5080,7 @@ var author$project$Elmstatic$htmlTemplate = F2(
 							author$project$Elmstatic$script('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.1/languages/elm.min.js'),
 							author$project$Elmstatic$inlineScript('hljs.initHighlightingOnLoad();'),
 							author$project$Elmstatic$stylesheet('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.1/styles/default.min.css'),
+							surprisetalk$elm_bulma$Bulma$CDN$stylesheet,
 							author$project$Elmstatic$stylesheet('//fonts.googleapis.com/css?family=Open+Sans|Proza+Libre|Inconsolata')
 						])),
 					A3(elm$html$Html$node, 'body', _List_Nil, contentNodes)
@@ -5246,7 +5271,7 @@ var elm$core$String$contains = _String_contains;
 var elm$core$String$toInt = _String_toInt;
 var elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {bp: fragment, bq: host, bA: path, bC: port_, bF: protocol, bG: query};
+		return {bU: fragment, bV: host, b5: path, b7: port_, ca: protocol, cb: query};
 	});
 var elm$url$Url$chompBeforePath = F5(
 	function (protocol, path, params, frag, str) {
@@ -5360,22 +5385,22 @@ var author$project$Elmstatic$layout = F2(
 	function (decoder, view) {
 		return elm$browser$Browser$document(
 			{
-				b8: function (contentJson) {
+				cI: function (contentJson) {
 					return _Utils_Tuple2(contentJson, elm$core$Platform$Cmd$none);
 				},
-				cn: function (_n0) {
+				cY: function (_n0) {
 					return elm$core$Platform$Sub$none;
 				},
-				cq: F2(
+				c$: F2(
 					function (msg, contentJson) {
 						return _Utils_Tuple2(contentJson, elm$core$Platform$Cmd$none);
 					}),
-				ct: function (contentJson) {
+				c2: function (contentJson) {
 					var _n1 = A2(elm$json$Json$Decode$decodeValue, decoder, contentJson);
 					if (_n1.$ === 1) {
 						var error = _n1.a;
 						return {
-							bf: _List_fromArray(
+							bK: _List_fromArray(
 								[
 									A2(
 									author$project$Elmstatic$htmlTemplate,
@@ -5386,24 +5411,208 @@ var author$project$Elmstatic$layout = F2(
 											elm$json$Json$Decode$errorToString(error))
 										]))
 								]),
-							aA: ''
+							aD: ''
 						};
 					} else {
 						var content = _n1.a;
 						return {
-							bf: _List_fromArray(
+							bK: _List_fromArray(
 								[
 									A2(
 									author$project$Elmstatic$htmlTemplate,
-									content.aR,
+									content.aV,
 									view(content))
 								]),
-							aA: ''
+							aD: ''
 						};
 					}
 				}
 			});
 	});
+var surprisetalk$elm_bulma$Bulma$Elements$H1 = 0;
+var surprisetalk$elm_bulma$Bulma$Elements$H2 = 1;
+var elm$html$Html$Attributes$class = elm$html$Html$Attributes$stringProperty('className');
+var surprisetalk$elm_bulma$Bulma$Classes$is1 = elm$html$Html$Attributes$class('is-1');
+var surprisetalk$elm_bulma$Bulma$Classes$is2 = elm$html$Html$Attributes$class('is-2');
+var surprisetalk$elm_bulma$Bulma$Classes$is3 = elm$html$Html$Attributes$class('is-3');
+var surprisetalk$elm_bulma$Bulma$Classes$is4 = elm$html$Html$Attributes$class('is-4');
+var surprisetalk$elm_bulma$Bulma$Classes$is5 = elm$html$Html$Attributes$class('is-5');
+var surprisetalk$elm_bulma$Bulma$Classes$is6 = elm$html$Html$Attributes$class('is-6');
+var surprisetalk$elm_bulma$Bulma$Classes$title = elm$html$Html$Attributes$class('title');
+var surprisetalk$elm_bulma$Helpers$node = F3(
+	function (tag, attrs_, attrs) {
+		return A2(
+			elm$html$Html$node,
+			tag,
+			_Utils_ap(attrs, attrs_));
+	});
+var surprisetalk$elm_bulma$Bulma$Elements$title = function (size) {
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		function () {
+			switch (size) {
+				case 0:
+					return 'h1';
+				case 1:
+					return 'h2';
+				case 2:
+					return 'h3';
+				case 3:
+					return 'h4';
+				case 4:
+					return 'h5';
+				default:
+					return 'h6';
+			}
+		}(),
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$title,
+				function () {
+				switch (size) {
+					case 0:
+						return surprisetalk$elm_bulma$Bulma$Classes$is1;
+					case 1:
+						return surprisetalk$elm_bulma$Bulma$Classes$is2;
+					case 2:
+						return surprisetalk$elm_bulma$Bulma$Classes$is3;
+					case 3:
+						return surprisetalk$elm_bulma$Bulma$Classes$is4;
+					case 4:
+						return surprisetalk$elm_bulma$Bulma$Classes$is5;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$is6;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$container = elm$html$Html$Attributes$class('container');
+var surprisetalk$elm_bulma$Bulma$Layout$container = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$container]));
+var surprisetalk$elm_bulma$Bulma$Classes$hero = elm$html$Html$Attributes$class('hero');
+var surprisetalk$elm_bulma$Bulma$Classes$isBlack = elm$html$Html$Attributes$class('is-black');
+var surprisetalk$elm_bulma$Bulma$Classes$isBold = elm$html$Html$Attributes$class('is-bold');
+var surprisetalk$elm_bulma$Bulma$Classes$isDanger = elm$html$Html$Attributes$class('is-danger');
+var surprisetalk$elm_bulma$Bulma$Classes$isDark = elm$html$Html$Attributes$class('is-dark');
+var surprisetalk$elm_bulma$Bulma$Classes$isFullHeight = elm$html$Html$Attributes$class('is-fullheight');
+var surprisetalk$elm_bulma$Bulma$Classes$isInfo = elm$html$Html$Attributes$class('is-info');
+var surprisetalk$elm_bulma$Bulma$Classes$isLarge = elm$html$Html$Attributes$class('is-large');
+var surprisetalk$elm_bulma$Bulma$Classes$isLight = elm$html$Html$Attributes$class('is-light');
+var surprisetalk$elm_bulma$Bulma$Classes$isLink = elm$html$Html$Attributes$class('is-link');
+var surprisetalk$elm_bulma$Bulma$Classes$isMedium = elm$html$Html$Attributes$class('is-medium');
+var surprisetalk$elm_bulma$Bulma$Classes$isPrimary = elm$html$Html$Attributes$class('is-primary');
+var surprisetalk$elm_bulma$Bulma$Classes$isSuccess = elm$html$Html$Attributes$class('is-success');
+var surprisetalk$elm_bulma$Bulma$Classes$isWarning = elm$html$Html$Attributes$class('is-warning');
+var surprisetalk$elm_bulma$Bulma$Classes$isWhite = elm$html$Html$Attributes$class('is-white');
+var surprisetalk$elm_bulma$Bulma$Classes$none = elm$html$Html$Attributes$class('');
+var surprisetalk$elm_bulma$Bulma$Layout$hero = function (_n0) {
+	var bold = _n0.a1;
+	var size = _n0.cW;
+	var color = _n0.cu;
+	return A2(
+		surprisetalk$elm_bulma$Helpers$node,
+		'section',
+		_List_fromArray(
+			[
+				surprisetalk$elm_bulma$Bulma$Classes$hero,
+				function () {
+				if (bold) {
+					return surprisetalk$elm_bulma$Bulma$Classes$isBold;
+				} else {
+					return surprisetalk$elm_bulma$Bulma$Classes$none;
+				}
+			}(),
+				function () {
+				switch (size) {
+					case 0:
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 1:
+						return surprisetalk$elm_bulma$Bulma$Classes$isMedium;
+					case 2:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLarge;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isFullHeight;
+				}
+			}(),
+				function () {
+				switch (color) {
+					case 0:
+						return surprisetalk$elm_bulma$Bulma$Classes$none;
+					case 1:
+						return surprisetalk$elm_bulma$Bulma$Classes$isWhite;
+					case 4:
+						return surprisetalk$elm_bulma$Bulma$Classes$isBlack;
+					case 2:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLight;
+					case 3:
+						return surprisetalk$elm_bulma$Bulma$Classes$isDark;
+					case 5:
+						return surprisetalk$elm_bulma$Bulma$Classes$isPrimary;
+					case 7:
+						return surprisetalk$elm_bulma$Bulma$Classes$isInfo;
+					case 8:
+						return surprisetalk$elm_bulma$Bulma$Classes$isSuccess;
+					case 9:
+						return surprisetalk$elm_bulma$Bulma$Classes$isWarning;
+					case 10:
+						return surprisetalk$elm_bulma$Bulma$Classes$isDanger;
+					default:
+						return surprisetalk$elm_bulma$Bulma$Classes$isLink;
+				}
+			}()
+			]));
+};
+var surprisetalk$elm_bulma$Bulma$Classes$heroBody = elm$html$Html$Attributes$class('hero-body');
+var surprisetalk$elm_bulma$Bulma$Layout$heroBody = A2(
+	surprisetalk$elm_bulma$Helpers$node,
+	'div',
+	_List_fromArray(
+		[surprisetalk$elm_bulma$Bulma$Classes$heroBody]));
+var surprisetalk$elm_bulma$Bulma$Modifiers$Default = 0;
+var surprisetalk$elm_bulma$Bulma$Modifiers$Small = 0;
+var surprisetalk$elm_bulma$Bulma$Layout$heroModifiers = {a1: false, cu: 0, cW: 0};
+var surprisetalk$elm_bulma$Bulma$Modifiers$Medium = 2;
+var surprisetalk$elm_bulma$Bulma$Modifiers$Primary = 5;
+var author$project$Page$exampleHero = A3(
+	surprisetalk$elm_bulma$Bulma$Layout$hero,
+	_Utils_update(
+		surprisetalk$elm_bulma$Bulma$Layout$heroModifiers,
+		{cu: 5, cW: 2}),
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			surprisetalk$elm_bulma$Bulma$Layout$heroBody,
+			_List_Nil,
+			_List_fromArray(
+				[
+					A2(
+					surprisetalk$elm_bulma$Bulma$Layout$container,
+					_List_Nil,
+					_List_fromArray(
+						[
+							A3(
+							surprisetalk$elm_bulma$Bulma$Elements$title,
+							0,
+							_List_Nil,
+							_List_fromArray(
+								[
+									elm$html$Html$text('Hero Title')
+								])),
+							A3(
+							surprisetalk$elm_bulma$Bulma$Elements$title,
+							1,
+							_List_Nil,
+							_List_fromArray(
+								[
+									elm$html$Html$text('Hero Subtitle')
+								]))
+						]))
+				]))
+		]));
 var author$project$Page$githubIcon = function () {
 	var pathNode = A3(
 		elm$html$Html$node,
@@ -5426,47 +5635,10 @@ var author$project$Page$githubIcon = function () {
 		_List_fromArray(
 			[pathNode]));
 }();
-var author$project$Page$twitterIcon = function () {
-	var pathNode = A3(
-		elm$html$Html$node,
-		'path',
-		_List_fromArray(
-			[
-				A2(elm$html$Html$Attributes$attribute, 'fill', '#fff'),
-				A2(elm$html$Html$Attributes$attribute, 'd', '\nM15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809 c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z\n            ')
-			]),
-		_List_Nil);
-	return A3(
-		elm$html$Html$node,
-		'svg',
-		_List_fromArray(
-			[
-				A2(elm$html$Html$Attributes$attribute, 'width', '16'),
-				A2(elm$html$Html$Attributes$attribute, 'height', '16'),
-				A2(elm$html$Html$Attributes$attribute, 'viewBox', '0 0 16 16')
-			]),
-		_List_fromArray(
-			[pathNode]));
-}();
 var elm$html$Html$a = _VirtualDom_node('a');
 var elm$html$Html$div = _VirtualDom_node('div');
 var elm$html$Html$img = _VirtualDom_node('img');
-var elm$json$Json$Encode$string = _Json_wrap;
-var elm$html$Html$Attributes$stringProperty = F2(
-	function (key, string) {
-		return A2(
-			_VirtualDom_property,
-			key,
-			elm$json$Json$Encode$string(string));
-	});
 var elm$html$Html$Attributes$alt = elm$html$Html$Attributes$stringProperty('alt');
-var elm$html$Html$Attributes$class = elm$html$Html$Attributes$stringProperty('className');
-var elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
-};
 var elm$html$Html$Attributes$src = function (url) {
 	return A2(
 		elm$html$Html$Attributes$stringProperty,
@@ -5504,31 +5676,11 @@ var author$project$Page$footer = A2(
 					elm$html$Html$a,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$href('https://github.com')
+							elm$html$Html$Attributes$href('https://github.com/open-editions/')
 						]),
 					_List_fromArray(
 						[
-							elm$html$Html$text('Author\'s GitHub')
-						]))
-				])),
-			A2(
-			elm$html$Html$div,
-			_List_fromArray(
-				[
-					elm$html$Html$Attributes$class('link')
-				]),
-			_List_fromArray(
-				[
-					author$project$Page$twitterIcon,
-					A2(
-					elm$html$Html$a,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$href('https://twitter.com')
-						]),
-					_List_fromArray(
-						[
-							elm$html$Html$text('Author\'s Twitter')
+							elm$html$Html$text('Source Code')
 						]))
 				])),
 			A2(
@@ -5599,7 +5751,7 @@ var author$project$Page$header = _List_fromArray(
 									]),
 								_List_fromArray(
 									[
-										elm$html$Html$text('Posts')
+										elm$html$Html$text('News')
 									]))
 							])),
 						A2(
@@ -5627,6 +5779,22 @@ var author$project$Page$header = _List_fromArray(
 								elm$html$Html$a,
 								_List_fromArray(
 									[
+										elm$html$Html$Attributes$href('/contribute')
+									]),
+								_List_fromArray(
+									[
+										elm$html$Html$text('Contribute')
+									]))
+							])),
+						A2(
+						elm$html$Html$li,
+						_List_Nil,
+						_List_fromArray(
+							[
+								A2(
+								elm$html$Html$a,
+								_List_fromArray(
+									[
 										elm$html$Html$Attributes$href('/contact')
 									]),
 								_List_fromArray(
@@ -5641,7 +5809,7 @@ var elm$core$Basics$negate = function (n) {
 	return -n;
 };
 var rtfeldman$elm_css$Css$Structure$Compatible = 0;
-var rtfeldman$elm_css$Css$auto = {bU: 0, a: 0, V: 0, aJ: 0, b9: 0, _: 0, A: 0, t: 0, ac: 0, q: 0, aS: 0, aj: 0, o: 0, a6: 'auto'};
+var rtfeldman$elm_css$Css$auto = {cp: 0, a: 0, W: 0, aN: 0, cJ: 0, aa: 0, A: 0, t: 0, ae: 0, r: 0, aW: 0, am: 0, p: 0, bA: 'auto'};
 var rtfeldman$elm_css$Css$Preprocess$AppendProperty = function (a) {
 	return {$: 0, a: a};
 };
@@ -5650,11 +5818,11 @@ var rtfeldman$elm_css$Css$property = F2(
 		return rtfeldman$elm_css$Css$Preprocess$AppendProperty(key + (':' + value));
 	});
 var rtfeldman$elm_css$Css$backgroundColor = function (c) {
-	return A2(rtfeldman$elm_css$Css$property, 'background-color', c.a6);
+	return A2(rtfeldman$elm_css$Css$property, 'background-color', c.bA);
 };
 var rtfeldman$elm_css$Css$prop1 = F2(
 	function (key, arg) {
-		return A2(rtfeldman$elm_css$Css$property, key, arg.a6);
+		return A2(rtfeldman$elm_css$Css$property, key, arg.bA);
 	});
 var rtfeldman$elm_css$Css$baseline = rtfeldman$elm_css$Css$prop1('baseline');
 var rtfeldman$elm_css$Css$prop3 = F4(
@@ -5666,7 +5834,7 @@ var rtfeldman$elm_css$Css$prop3 = F4(
 				elm$core$String$join,
 				' ',
 				_List_fromArray(
-					[argA.a6, argB.a6, argC.a6])));
+					[argA.bA, argB.bA, argC.bA])));
 	});
 var rtfeldman$elm_css$Css$border3 = rtfeldman$elm_css$Css$prop3('border');
 var rtfeldman$elm_css$Css$borderBottom3 = rtfeldman$elm_css$Css$prop3('border-bottom');
@@ -5674,7 +5842,7 @@ var rtfeldman$elm_css$Css$borderRadius = rtfeldman$elm_css$Css$prop1('border-rad
 var rtfeldman$elm_css$Css$borderTop3 = rtfeldman$elm_css$Css$prop3('border-top');
 var rtfeldman$elm_css$Css$center = rtfeldman$elm_css$Css$prop1('center');
 var rtfeldman$elm_css$Css$color = function (c) {
-	return A2(rtfeldman$elm_css$Css$property, 'color', c.a6);
+	return A2(rtfeldman$elm_css$Css$property, 'color', c.bA);
 };
 var rtfeldman$elm_css$Css$display = rtfeldman$elm_css$Css$prop1('display');
 var rtfeldman$elm_css$Css$EmUnits = 0;
@@ -5682,23 +5850,23 @@ var elm$core$String$fromFloat = _String_fromNumber;
 var rtfeldman$elm_css$Css$Internal$lengthConverter = F3(
 	function (units, unitLabel, numericValue) {
 		return {
-			a7: 0,
-			bh: 0,
-			V: 0,
+			bC: 0,
+			bM: 0,
+			W: 0,
 			k: 0,
-			at: 0,
-			_: 0,
-			A: 0,
+			aw: 0,
 			aa: 0,
+			A: 0,
 			ab: 0,
+			ac: 0,
 			I: 0,
 			J: 0,
 			t: 0,
 			D: numericValue,
-			ai: 0,
-			ak: unitLabel,
-			aD: units,
-			a6: _Utils_ap(
+			al: 0,
+			an: unitLabel,
+			aG: units,
+			bA: _Utils_ap(
 				elm$core$String$fromFloat(numericValue),
 				unitLabel)
 		};
@@ -5717,8 +5885,8 @@ var elm$core$List$isEmpty = function (xs) {
 	}
 };
 var rtfeldman$elm_css$Css$stringsToValue = function (list) {
-	return elm$core$List$isEmpty(list) ? {a6: 'none'} : {
-		a6: A2(
+	return elm$core$List$isEmpty(list) ? {bA: 'none'} : {
+		bA: A2(
 			elm$core$String$join,
 			', ',
 			A2(
@@ -5744,12 +5912,12 @@ var rtfeldman$elm_css$Css$withPrecedingHash = function (str) {
 };
 var rtfeldman$elm_css$Css$erroneousHex = function (str) {
 	return {
-		ao: 1,
-		aq: 0,
-		s: 0,
-		as: 0,
-		ax: 0,
-		a6: rtfeldman$elm_css$Css$withPrecedingHash(str)
+		ar: 1,
+		at: 0,
+		cu: 0,
+		av: 0,
+		aA: 0,
+		bA: rtfeldman$elm_css$Css$withPrecedingHash(str)
 	};
 };
 var elm$core$Basics$composeR = F3(
@@ -6023,12 +6191,12 @@ var rtfeldman$elm_css$Css$validHex = F5(
 			var blue = _n6.a.a;
 			var alpha = _n6.b.a;
 			return {
-				ao: alpha / 255,
-				aq: blue,
-				s: 0,
-				as: green,
-				ax: red,
-				a6: rtfeldman$elm_css$Css$withPrecedingHash(str)
+				ar: alpha / 255,
+				at: blue,
+				cu: 0,
+				av: green,
+				aA: red,
+				bA: rtfeldman$elm_css$Css$withPrecedingHash(str)
 			};
 		} else {
 			return rtfeldman$elm_css$Css$erroneousHex(str);
@@ -6217,7 +6385,7 @@ var rtfeldman$elm_css$Css$Preprocess$mapLastProperty = F2(
 		}
 	});
 var rtfeldman$elm_css$Css$important = rtfeldman$elm_css$Css$Preprocess$mapLastProperty(rtfeldman$elm_css$Css$makeImportant);
-var rtfeldman$elm_css$Css$inlineBlock = {f: 0, a6: 'inline-block'};
+var rtfeldman$elm_css$Css$inlineBlock = {f: 0, bA: 'inline-block'};
 var rtfeldman$elm_css$Css$left = rtfeldman$elm_css$Css$prop1('left');
 var rtfeldman$elm_css$Css$lineHeight = rtfeldman$elm_css$Css$prop1('line-height');
 var rtfeldman$elm_css$Css$margin = rtfeldman$elm_css$Css$prop1('margin');
@@ -6226,8 +6394,8 @@ var rtfeldman$elm_css$Css$marginBottom = rtfeldman$elm_css$Css$prop1('margin-bot
 var rtfeldman$elm_css$Css$marginRight = rtfeldman$elm_css$Css$prop1('margin-right');
 var rtfeldman$elm_css$Css$marginTop = rtfeldman$elm_css$Css$prop1('margin-top');
 var rtfeldman$elm_css$Css$maxWidth = rtfeldman$elm_css$Css$prop1('max-width');
-var rtfeldman$elm_css$Css$monospace = {G: 0, a6: 'monospace'};
-var rtfeldman$elm_css$Css$none = {Q: 0, be: 0, m: 0, a: 0, f: 0, b6: 0, bt: 0, aZ: 0, ab: 0, I: 0, t: 0, c: 0, b: 0, a$: 0, aN: 0, cg: 0, q: 0, aO: 0, ck: 0, ah: 0, O: 0, o: 0, e: 0, cr: 0, a6: 'none'};
+var rtfeldman$elm_css$Css$monospace = {G: 0, bA: 'monospace'};
+var rtfeldman$elm_css$Css$none = {R: 0, bJ: 0, m: 0, a: 0, f: 0, cG: 0, bZ: 0, bg: 0, ac: 0, I: 0, t: 0, c: 0, b: 0, bl: 0, aR: 0, cQ: 0, r: 0, aS: 0, cU: 0, ak: 0, O: 0, p: 0, e: 0, c0: 0, bA: 'none'};
 var rtfeldman$elm_css$Css$overflowX = rtfeldman$elm_css$Css$prop1('overflow-x');
 var rtfeldman$elm_css$Css$padding = rtfeldman$elm_css$Css$prop1('padding');
 var rtfeldman$elm_css$Css$paddingLeft = rtfeldman$elm_css$Css$prop1('padding-left');
@@ -6240,9 +6408,9 @@ var rtfeldman$elm_css$Css$px = A2(rtfeldman$elm_css$Css$Internal$lengthConverter
 var rtfeldman$elm_css$Css$RemUnits = 0;
 var rtfeldman$elm_css$Css$rem = A2(rtfeldman$elm_css$Css$Internal$lengthConverter, 0, 'rem');
 var rtfeldman$elm_css$Css$right = rtfeldman$elm_css$Css$prop1('right');
-var rtfeldman$elm_css$Css$sansSerif = {G: 0, a6: 'sans-serif'};
-var rtfeldman$elm_css$Css$scroll = {ap: 0, be: 0, bt: 0, ac: 0, cl: 0, a6: 'scroll'};
-var rtfeldman$elm_css$Css$solid = {m: 0, N: 0, a6: 'solid'};
+var rtfeldman$elm_css$Css$sansSerif = {G: 0, bA: 'sans-serif'};
+var rtfeldman$elm_css$Css$scroll = {as: 0, bJ: 0, bZ: 0, ae: 0, cV: 0, bA: 'scroll'};
+var rtfeldman$elm_css$Css$solid = {m: 0, N: 0, bA: 'solid'};
 var elm$core$List$head = function (list) {
 	if (list.b) {
 		var x = list.a;
@@ -6553,7 +6721,7 @@ var elm$core$List$singleton = function (value) {
 		[value]);
 };
 var rtfeldman$elm_css$Css$Preprocess$stylesheet = function (snippets) {
-	return {bj: elm$core$Maybe$Nothing, br: _List_Nil, by: _List_Nil, bM: snippets};
+	return {bO: elm$core$Maybe$Nothing, bX: _List_Nil, b2: _List_Nil, ch: snippets};
 };
 var elm$core$Basics$neq = _Utils_notEqual;
 var elm$core$List$takeReverse = F3(
@@ -7161,7 +7329,7 @@ var rtfeldman$elm_css$Css$Structure$styleBlockToMediaRule = F2(
 	});
 var Skinney$murmur3$Murmur3$HashData = F4(
 	function (shift, seed, hash, charsProcessed) {
-		return {S: charsProcessed, Y: hash, M: seed, af: shift};
+		return {T: charsProcessed, Z: hash, M: seed, ai: shift};
 	});
 var Skinney$murmur3$Murmur3$c1 = 3432918353;
 var Skinney$murmur3$Murmur3$c2 = 461845907;
@@ -7179,14 +7347,14 @@ var Skinney$murmur3$Murmur3$rotlBy = F2(
 	});
 var elm$core$Bitwise$xor = _Bitwise_xor;
 var Skinney$murmur3$Murmur3$finalize = function (data) {
-	var acc = data.Y ? (data.M ^ A2(
+	var acc = data.Z ? (data.M ^ A2(
 		Skinney$murmur3$Murmur3$multiplyBy,
 		Skinney$murmur3$Murmur3$c2,
 		A2(
 			Skinney$murmur3$Murmur3$rotlBy,
 			15,
-			A2(Skinney$murmur3$Murmur3$multiplyBy, Skinney$murmur3$Murmur3$c1, data.Y)))) : data.M;
-	var h0 = acc ^ data.S;
+			A2(Skinney$murmur3$Murmur3$multiplyBy, Skinney$murmur3$Murmur3$c1, data.Z)))) : data.M;
+	var h0 = acc ^ data.T;
 	var h1 = A2(Skinney$murmur3$Murmur3$multiplyBy, 2246822507, h0 ^ (h0 >>> 16));
 	var h2 = A2(Skinney$murmur3$Murmur3$multiplyBy, 3266489909, h1 ^ (h1 >>> 13));
 	return (h2 ^ (h2 >>> 16)) >>> 0;
@@ -7209,17 +7377,17 @@ var Skinney$murmur3$Murmur3$mix = F2(
 	});
 var Skinney$murmur3$Murmur3$hashFold = F2(
 	function (c, data) {
-		var res = data.Y | ((255 & elm$core$Char$toCode(c)) << data.af);
-		var _n0 = data.af;
+		var res = data.Z | ((255 & elm$core$Char$toCode(c)) << data.ai);
+		var _n0 = data.ai;
 		if (_n0 === 24) {
 			return {
-				S: data.S + 1,
-				Y: 0,
+				T: data.T + 1,
+				Z: 0,
 				M: A2(Skinney$murmur3$Murmur3$mix, data.M, res),
-				af: 0
+				ai: 0
 			};
 		} else {
-			return {S: data.S + 1, Y: res, M: data.M, af: data.af + 8};
+			return {T: data.T + 1, Z: res, M: data.M, ai: data.ai + 8};
 		}
 	});
 var elm$core$String$foldl = _String_foldl;
@@ -7535,7 +7703,7 @@ var rtfeldman$elm_css$Css$Preprocess$Resolve$applyStyles = F2(
 						_List_fromArray(
 							[
 								rtfeldman$elm_css$Css$Structure$Keyframes(
-								{b_: str, cc: name})
+								{cw: str, cM: name})
 							]));
 				case 4:
 					var _n12 = styles.a;
@@ -7670,13 +7838,13 @@ var rtfeldman$elm_css$Css$Preprocess$Resolve$toDeclarations = function (snippetD
 	}
 };
 var rtfeldman$elm_css$Css$Preprocess$Resolve$toStructure = function (_n0) {
-	var charset = _n0.bj;
-	var imports = _n0.br;
-	var namespaces = _n0.by;
-	var snippets = _n0.bM;
+	var charset = _n0.bO;
+	var imports = _n0.bX;
+	var namespaces = _n0.b2;
+	var snippets = _n0.ch;
 	var declarations = rtfeldman$elm_css$Css$Preprocess$Resolve$extract(
 		A2(elm$core$List$concatMap, rtfeldman$elm_css$Css$Preprocess$unwrapSnippet, snippets));
-	return {bj: charset, b$: declarations, br: imports, by: namespaces};
+	return {bO: charset, cx: declarations, bX: imports, b2: namespaces};
 };
 var elm$core$Dict$RBEmpty_elm_builtin = {$: -2};
 var elm$core$Dict$empty = elm$core$Dict$RBEmpty_elm_builtin;
@@ -7861,8 +8029,8 @@ var rtfeldman$elm_css$Css$Structure$compactHelp = F2(
 					A2(elm$core$List$cons, declaration, declarations));
 			case 6:
 				var record = declaration.a;
-				return elm$core$String$isEmpty(record.b_) ? _Utils_Tuple2(keyframesByName, declarations) : _Utils_Tuple2(
-					A3(elm$core$Dict$insert, record.cc, record.b_, keyframesByName),
+				return elm$core$String$isEmpty(record.cw) ? _Utils_Tuple2(keyframesByName, declarations) : _Utils_Tuple2(
+					A3(elm$core$Dict$insert, record.cM, record.cw, keyframesByName),
 					declarations);
 			case 7:
 				var properties = declaration.a;
@@ -7897,16 +8065,16 @@ var rtfeldman$elm_css$Css$Structure$withKeyframeDeclarations = F2(
 					var name = _n0.a;
 					var decl = _n0.b;
 					return rtfeldman$elm_css$Css$Structure$Keyframes(
-						{b_: decl, cc: name});
+						{cw: decl, cM: name});
 				},
 				elm$core$Dict$toList(keyframesByName)),
 			compactedDeclarations);
 	});
 var rtfeldman$elm_css$Css$Structure$compactStylesheet = function (_n0) {
-	var charset = _n0.bj;
-	var imports = _n0.br;
-	var namespaces = _n0.by;
-	var declarations = _n0.b$;
+	var charset = _n0.bO;
+	var imports = _n0.bX;
+	var namespaces = _n0.b2;
+	var declarations = _n0.cx;
 	var _n1 = A3(
 		elm$core$List$foldr,
 		rtfeldman$elm_css$Css$Structure$compactHelp,
@@ -7915,7 +8083,7 @@ var rtfeldman$elm_css$Css$Structure$compactStylesheet = function (_n0) {
 	var keyframesByName = _n1.a;
 	var compactedDeclarations = _n1.b;
 	var finalDeclarations = A2(rtfeldman$elm_css$Css$Structure$withKeyframeDeclarations, keyframesByName, compactedDeclarations);
-	return {bj: charset, b$: finalDeclarations, br: imports, by: namespaces};
+	return {bO: charset, cx: finalDeclarations, bX: imports, b2: namespaces};
 };
 var elm$core$List$filter = F2(
 	function (isGood, list) {
@@ -7940,13 +8108,13 @@ var rtfeldman$elm_css$Css$Structure$Output$charsetToString = function (charset) 
 			charset));
 };
 var rtfeldman$elm_css$Css$Structure$Output$mediaExpressionToString = function (expression) {
-	return '(' + (expression.bo + (A2(
+	return '(' + (expression.bT + (A2(
 		elm$core$Maybe$withDefault,
 		'',
 		A2(
 			elm$core$Maybe$map,
 			elm$core$Basics$append(': '),
-			expression.a6)) + ')'));
+			expression.bA)) + ')'));
 };
 var rtfeldman$elm_css$Css$Structure$Output$mediaTypeToString = function (mediaType) {
 	switch (mediaType) {
@@ -8188,8 +8356,8 @@ var rtfeldman$elm_css$Css$Structure$Output$prettyPrintDeclaration = function (de
 		case 5:
 			return 'TODO';
 		case 6:
-			var name = decl.a.cc;
-			var declaration = decl.a.b_;
+			var name = decl.a.cM;
+			var declaration = decl.a.cw;
 			return '@keyframes ' + (name + (' {\n' + (declaration + '\n}')));
 		case 7:
 			return 'TODO';
@@ -8200,10 +8368,10 @@ var rtfeldman$elm_css$Css$Structure$Output$prettyPrintDeclaration = function (de
 	}
 };
 var rtfeldman$elm_css$Css$Structure$Output$prettyPrint = function (_n0) {
-	var charset = _n0.bj;
-	var imports = _n0.br;
-	var namespaces = _n0.by;
-	var declarations = _n0.b$;
+	var charset = _n0.bO;
+	var imports = _n0.bX;
+	var namespaces = _n0.b2;
+	var declarations = _n0.cx;
 	return A2(
 		elm$core$String$join,
 		'\n\n',
@@ -8269,10 +8437,10 @@ var rtfeldman$elm_css$Css$Global$svg = rtfeldman$elm_css$Css$Global$typeSelector
 var rtfeldman$elm_css$Css$Global$ul = rtfeldman$elm_css$Css$Global$typeSelector('ul');
 var rtfeldman$elm_css$Css$Media$feature = F2(
 	function (key, _n0) {
-		var value = _n0.a6;
+		var value = _n0.bA;
 		return {
-			bo: key,
-			a6: elm$core$Maybe$Just(value)
+			bT: key,
+			bA: elm$core$Maybe$Just(value)
 		};
 	});
 var rtfeldman$elm_css$Css$Media$minWidth = function (value) {
@@ -8784,7 +8952,7 @@ var author$project$Styles$styles = function () {
 				[
 					'Inconsolata',
 					function ($) {
-					return $.a6;
+					return $.bA;
 				}(rtfeldman$elm_css$Css$monospace)
 				]))
 		]);
@@ -8809,7 +8977,7 @@ var author$project$Styles$styles = function () {
 									'Open Sans',
 									'Arial',
 									function ($) {
-									return $.a6;
+									return $.bA;
 								}(rtfeldman$elm_css$Css$sansSerif)
 								])),
 							rtfeldman$elm_css$Css$fontSize(
@@ -8851,7 +9019,7 @@ var author$project$Styles$styles = function () {
 									'Proza Libre',
 									'Helvetica',
 									function ($) {
-									return $.a6;
+									return $.bA;
 								}(rtfeldman$elm_css$Css$sansSerif)
 								])),
 							rtfeldman$elm_css$Css$lineHeight(
@@ -9101,6 +9269,11 @@ var author$project$Page$layout = F2(
 			_List_fromArray(
 				[
 					A2(
+					surprisetalk$elm_bulma$Bulma$Layout$container,
+					_List_Nil,
+					_List_fromArray(
+						[author$project$Page$exampleHero])),
+					A2(
 					elm$html$Html$div,
 					_List_fromArray(
 						[
@@ -9172,7 +9345,7 @@ var author$project$Post$metadataHtml = function (post) {
 					_List_Nil,
 					_List_fromArray(
 						[
-							elm$html$Html$text(post.bZ)
+							elm$html$Html$text(post.cv)
 						])),
 					A2(
 					elm$html$Html$span,
@@ -9182,7 +9355,7 @@ var author$project$Post$metadataHtml = function (post) {
 							elm$html$Html$text('•')
 						]))
 				]),
-			author$project$Post$tagsToHtml(post.cp)));
+			author$project$Post$tagsToHtml(post.c_)));
 };
 var elm$core$List$sortBy = _List_sortBy;
 var elm$html$Html$h2 = _VirtualDom_node('h2');
@@ -9193,7 +9366,7 @@ var author$project$Posts$main = function () {
 			A2(
 				elm$core$List$sortBy,
 				function ($) {
-					return $.bZ;
+					return $.cv;
 				},
 				posts));
 	};
@@ -9207,7 +9380,7 @@ var author$project$Posts$main = function () {
 					elm$html$Html$a,
 					_List_fromArray(
 						[
-							elm$html$Html$Attributes$href('/' + post.ca)
+							elm$html$Html$Attributes$href('/' + post.cK)
 						]),
 					_List_fromArray(
 						[
@@ -9216,7 +9389,7 @@ var author$project$Posts$main = function () {
 							_List_Nil,
 							_List_fromArray(
 								[
-									elm$html$Html$text(post.aA)
+									elm$html$Html$text(post.aD)
 								]))
 						])),
 					author$project$Post$metadataHtml(post)
@@ -9234,9 +9407,9 @@ var author$project$Posts$main = function () {
 		function (content) {
 			return A2(
 				author$project$Page$layout,
-				content.aA,
+				content.aD,
 				postListContent(
-					sortPosts(content.ch)));
+					sortPosts(content.cR)));
 		});
 }();
 var author$project$Tag$main = author$project$Posts$main;
@@ -9250,11 +9423,11 @@ var elm$core$Maybe$isJust = function (maybe) {
 var elm_explorations$markdown$Markdown$toHtmlWith = _Markdown_toHtml;
 var author$project$Page$markdown = function (s) {
 	var mdOptions = {
-		b0: elm$core$Maybe$Just('elm'),
-		b4: elm$core$Maybe$Just(
-			{bX: false, co: false}),
-		cj: false,
-		cm: true
+		cy: elm$core$Maybe$Just('elm'),
+		cD: elm$core$Maybe$Just(
+			{cs: false, cZ: false}),
+		cT: false,
+		cX: true
 	};
 	return A3(
 		elm_explorations$markdown$Markdown$toHtmlWith,
@@ -9271,16 +9444,16 @@ var author$project$Post$main = A2(
 	function (content) {
 		return A2(
 			author$project$Page$layout,
-			content.aA,
+			content.aD,
 			_List_fromArray(
 				[
 					author$project$Post$metadataHtml(content),
-					author$project$Page$markdown(content.bw)
+					author$project$Page$markdown(content.b0)
 				]));
 	});
 var author$project$Elmstatic$Page = F3(
 	function (markdown, siteTitle, title) {
-		return {bw: markdown, aR: siteTitle, aA: title};
+		return {b0: markdown, aV: siteTitle, aD: title};
 	});
 var elm$json$Json$Decode$map3 = _Json_map3;
 var author$project$Elmstatic$decodePage = A4(
@@ -9295,10 +9468,10 @@ var author$project$Page$main = A2(
 	function (content) {
 		return A2(
 			author$project$Page$layout,
-			content.aA,
+			content.aD,
 			_List_fromArray(
 				[
-					author$project$Page$markdown(content.bw)
+					author$project$Page$markdown(content.b0)
 				]));
 	});
 _Platform_export({'Page':{'init':author$project$Page$main(elm$json$Json$Decode$value)(0)},'Tag':{'init':author$project$Tag$main(elm$json$Json$Decode$value)(0)},'Posts':{'init':author$project$Posts$main(elm$json$Json$Decode$value)(0)},'Post':{'init':author$project$Post$main(elm$json$Json$Decode$value)(0)}});}(this));
