@@ -5,11 +5,6 @@ import Html exposing (..)
 import Html.Attributes as Attr exposing (alt, attribute, class, href, src)
 import Markdown
 import Styles
-import Bulma.Modifiers exposing (..)
-import Bulma.Elements exposing (..)
-import Bulma.Columns exposing (..)
-import Bulma.Layout exposing (..)
-
 
 githubIcon : Html Never
 githubIcon =
@@ -48,16 +43,16 @@ header =
     , div [ class "navigation" ]
         [ ul []
             [ li []
-                [ a [ href "/posts" ]
-                    [ text "News" ]
-                ]
-            , li []
                 [ a [ href "/about" ]
                     [ text "About" ]
                 ]
+             -- , li []
+             --    [ a [ href "/posts" ]
+             --        [ text "News" ]
+             --    ]
             , li []
-                [ a [ href "/contribute" ]
-                    [ text "Contribute" ]
+                [ a [ href "/contributing" ]
+                    [ text "Contributing" ]
                 ]
             , li []
                 [ a [ href "/contact" ]
@@ -89,22 +84,10 @@ footer =
             ]
         ]
 
-exampleHero : Html msg
-exampleHero
-  = hero { heroModifiers | size = Medium, color = Primary } []
-    [ heroBody []
-      [ container []
-          [ title H1 [] [ text "Hero Title" ]
-          , title H2 [] [ text "Hero Subtitle" ]
-          ]
-      ]
-    ]
-
 layout : String -> List (Html Never) -> List (Html Never)
 layout title contentItems =
     header
-        ++ [ container [] [exampleHero]
-           , div [ class "sidebar" ]
+        ++ [div [ class "sidebar" ]
                 []
            , div [ class "sidebar2" ]
                 []

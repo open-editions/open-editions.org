@@ -5,7 +5,6 @@ import Html exposing (..)
 import Html.Attributes as Attr exposing (alt, attribute, class, href, src)
 import Page
 
-
 tagsToHtml : List String -> List (Html Never)
 tagsToHtml tags =
     let

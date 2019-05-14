@@ -2,7 +2,7 @@
     "siteTitle": "Open Editions Online",
     "outputDir": "_site",
     "copy": {
-        "/posts": "/"
+        "/about": "/"
     },
     "feed": {
         "title": "Open Editions Online",
