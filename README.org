@@ -1,0 +1,21 @@
+* Open Editions
+
+This is the master repository for the Open Editions organization, and contains meta-todo lists, as well as the code for open-editions.org. 
+
+** Text Feature Status
+
+| Text                    | Ulysses    | A Portrait of the Artist as a Young Man | Dubliners | Finnegans Wake | Middlemarch |
+|-------------------------+------------+-----------------------------------------+-----------+----------------+-------------|
+| Author                  | Joyce      | Joyce                                   | Joyce     | Joyce          | Eliot       |
+| Line Nos.               | DONE       | DONE                                    | DONE      | DONE           | TODO        |
+| Dialogue Attribution    | DONE       | INPROGRESS                              | DONE      | TODO           | DONE        |
+| Place Names             | DONE       | DONE                                    | DONE      | TODO           | TODO        |
+| Geotagging              | TODO       | DONE                                    | DONE      | TODO           | TODO        |
+| Distinctive Words       | INPROGRESS | INPROGRESS                              | TODO      | TODO (!)       | TODO        |
+| Cross-References        | INPROGRESS | INPROGRESS                              | TODO      | TODO           | TODO        |
+| Languages               | DONE       | DONE                                    | TODO      | WONTFIX        | TODO        |
+| Free Indirect Discourse | TODO       | TODO                                    | TODO      | TODO           | DONE        |
+| Criticism Mapping       | TODO       | TODO                                    | TODO      | TODO           | TODO        |
+| Zenodo Archive          | DONE       | DONE                                    | TODO      | TODO           | TODO        |
+
+
