@@ -27,5 +27,4 @@ Open Editions website and infrastructure.
 
 *** Building
 
-This website is built with the [Elm](https://elm-lang.org/) language, and uses [Elmstatic](https://korban.net/elm/elmstatic/)
-as a static-site generator, to produce static assets that are then served via [Netlify](https://www.netlify.com/). 
+This website is built with the [[https://elm-lang.org/][Elm]] language, and uses [[https://korban.net/elm/elmstatic/][Elmstatic]] as a static-site generator, to produce static assets that are then served via [[https://www.netlify.com/][Netlify]]. 
