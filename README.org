@@ -19,3 +19,13 @@ This is the master repository for the Open Editions organization, and contains m
 | Zenodo Archive          | DONE       | DONE                                    | TODO      | TODO           | TODO        |
 
 
+** Website 
+
+open-editions.org
+
+Open Editions website and infrastructure.
+
+*** Building
+
+This website is built with the [Elm](https://elm-lang.org/) language, and uses [Elmstatic](https://korban.net/elm/elmstatic/)
+as a static-site generator, to produce static assets that are then served via [Netlify](https://www.netlify.com/). 
