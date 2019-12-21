@@ -1,0 +1,22 @@
+cabal-version: 2.4
+name: open-editions-org
+version: 0.1.0.0
+license: BSD-3-Clause
+maintainer: jon.reeve@gmail.com
+author: Jonathan Reeve
+category: Web
+
+executable open-editions-org
+    main-is: Main.hs
+    default-language: Haskell2010
+    build-depends:
+        base ^>=4.12.0.0,
+        aeson,
+        clay -any,
+        containers,
+        dependent-sum,
+        lucid -any,
+        path,
+        rib ^>=0.6,
+        shake -any,
+        text,
