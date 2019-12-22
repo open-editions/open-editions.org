@@ -1,0 +1,46 @@
+<html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>About Open Editions</title><style type="text/css">
+div#thesite
+{
+  margin : 4em 20pc 1em 20pc;
+}
+
+div#thesite li.links
+{
+  list-style-type : none;
+  margin-top      : 1em;
+}
+
+div#thesite li.links b
+{
+  font-size : 1.19999em;
+}
+
+div#thesite li.links p
+{
+  margin : 0px 0px 0px 0px;
+}
+
+
+/* Generated with Clay, http://fvisser.nl/clay */</style></head><body><div id="thesite"><a href="/">Back to Home</a><hr><article class="post"><h1>About Open Editions</h1><p>The Open Editions project publishes richly annotated open source literary texts. We aim to aggregate the literary knowledge that surrounds a text, codify that knowledge, and integrate it into the text.</p>
+<p><a href="https://github.com/open-editions/article-jjq/blob/master/open-editions-online.pdf">Read the draft article for <em>James Joyce Quarterly</em> where we discuss the project and its preliminary goals.</a></p>
+<h1 id="introduction">Introduction</h1>
+<p>Story here about a detail from Joyce.</p>
+<h1 id="guiding-principles">Guiding Principles</h1>
+<h2 id="1-openness">1. Openness.</h2>
+<p>Distributed version control.</p>
+<h2 id="2-meaningful-markup">2. Meaningful markup.</h2>
+<p>Traditional textual encodings, like HTML, describe the way a text <em>looks</em>, rather than what it <em>is</em>. Consider italicized words, for example. In early HTML, they would be written <code>&lt;i&gt;introibo&lt;/i&gt;</code> where <code>&lt;i&gt;</code> stands for “italics.” Later HTML makes this more semantic, using <code>&lt;emph&gt;</code> for emphasized. But a truly semantic markup tells us <em>why</em> a word is italicized. So we use <code>&lt;foreign xml:lang=&quot;la&quot;&gt;introibo&lt;/foreign&gt;</code>, which explains that the word is italicized because it is a foreign expression, and also that this is a Latin word (<code>la</code> is the two-letter language code for Latin). This kind of semantic markup allows us to be explicit about what we’re reading, and how computers should “understand” that meaning. When computers understand a text in this way, it allows humans to manipulate that data, and learn more about the text. This is not meant to replace traditional literary criticism, but take it into the 21st century.</p>
+<h2 id="3-depth-before-breadth">3. Depth before breadth.</h2>
+<p>Other projects are interested in gathering as many texts as possible. We are interested in going as deep as possible into each text, as a way of exploring the potential for this semantic approach.</p>
+<p>Thus, we are less interested in discussing ways to import thousands of new documents into our framework. Rather, we’re interested in the kinds of things scholars discuss in miscellanies.</p>
+<h2 id="4-standards-and-correctness">4. Standards and correctness.</h2>
+<p>It is more important to create a system that is robust and interoperable than to make something pretty. We would rather push clean, reusable data to GitHub than to publish a hastily-assembled website, to have something to show off.</p>
+<h1 id="technologies">Technologies</h1>
+<h2 id="tei-xml">TEI XML.</h2>
+<p>We use the textual markup specification from the <a href="https://en.wikipedia.org/wiki/Text_Encoding_Initiative">Text Encoding Initiative</a>, which has been thinking about ways to encode text since the 80s. While it is true that there are some limitations to XML, we try to mitigate these.</p>
+<p>A common critique of TEI is that there are too many ways to encode the same textual features. A number of projects have tried to correct this. <a href="https://tei-c.org/guidelines/customization/lite/">TEI Lite</a> and <a href="https://github.com/TEIC/TEI-Simple">TEI Simple</a> are subsets of TEI intended to disambiguate markup choices. We don’t use either of these, but prefer to maintain a list of conventions, documenting how we use certain types of markup.</p>
+<h2 id="git">Git</h2>
+<p>Distributed version control is crucial to our work, since it allows us to collaborate widely, using well-tested frameworks.</p>
+<h2 id="github">GitHub</h2>
+<p>GitHub provides a place for us to store our Git repositories, and to communicate with each other via issues. We plot</p>
+</article></div></body></html>
