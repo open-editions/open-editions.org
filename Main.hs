@@ -107,4 +107,3 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
         marginTop $ em 1
         "b" ? fontSize (em 1.2)
         "p" ? sym margin (px 0)
-
