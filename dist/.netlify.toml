@@ -1,4 +1,0 @@
-[build]
-  # Default build command.
-  command = "echo 'Serving files from dist/'"
-  publish = "dist/"

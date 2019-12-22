@@ -42,6 +42,15 @@ data DocMeta
       }
   deriving (Show, Eq, Generic, FromJSON)
 
+-- | Metadata for the site itself.
+data Site
+  = Site
+      { siteTitle :: Text,
+        authorName :: Text,
+        authorEmail :: Text
+      }
+  deriving (Show, Eq, Generic, FromJSON)
+
 -- | Main entry point to our generator.
 --
 -- `Rib.run` handles CLI arguments, and takes three parameters here.
@@ -79,21 +88,35 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
       head_ $ do
         meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
         title_ $ case page of
-          Page_Index _ -> "My website!"
+          Page_Index _ -> "Open Editions"
           Page_Doc doc -> toHtml $ title $ Rib.documentMeta doc
-        style_ [type_ "text/css"] $ Clay.render pageStyle
+        -- style_ [type_ "text/css"] $ Clay.render pageStyle
+        link_ [rel_ "stylesheet", href_ "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]
+        link_ [ href_ "https://fonts.googleapis.com/icon?family=Material+Icons", rel_ "stylesheet" ]
       body_
-        $ with div_ [id_ "thesite"]
+        $ div_ [class_ "container"]
         $ do
-          with a_ [href_ "/"] "Back to Home"
-          hr_ []
+          nav_ [ class_ "light-blue lighten-1", role_ "navigation" ] $ div_ [ class_ "nav-wrapper container" ] $ do
+            a_ [ id_ "logo-container", href_ "#", class_ "brand-logo" ] $ "Open Editions"
+            ul_ [ class_ "right hide-on-med-and-down" ] $ do
+              li_ $ a_ [ href_ "about/" ] "About"
+              li_ $ a_ [ href_ "contribute/" ] "Contribute"
+            ul_ [ id_ "nav-mobile", class_ "sidenav" ] $ do
+              li_ $ a_ [ href_ "#" ] "About"
+              li_ $ a_ [ href_ "#" ] "Contribute"
+            a_ [ href_ "#", Lucid.data_ "target" "nav-mobile", class_ "sidenav-trigger" ] $ i_ [ class_ "material-icons" ] $ "menu"
           case page of
-            Page_Index docs ->
+            Page_Index docs -> do
+              div_ [ class_ "section no-pad-bot", id_ "index-banner" ] $ div_ [ class_ "container" ] $ do
+                br_ []
+                h1_ [ class_ "header center orange-text" ] $ "Open Editions"
+                div_ [ class_ "row center" ] $ h5_ [ class_ "header col s12 light" ] $ "Open-Source Electronic Scholarly Editions of Public Domain Literature"
+                div_ [ class_ "row center" ] $ a_ [ href_ "about.html", id_ "download-button", class_ "btn-large waves-effect waves-light orange" ] $ "Learn More"
+                br_ []
               div_ $ forM_ docs $ \doc -> with li_ [class_ "links"] $ do
                 let meta = Rib.documentMeta doc
                 b_ $ with a_ [href_ (Rib.documentUrl doc)] $ toHtml $ title meta
-                maybe mempty Rib.renderMarkdown $
-                  description meta
+                maybe mempty Rib.renderMarkdown $ description meta
             Page_Doc doc ->
               with article_ [class_ "post"] $ do
                 h1_ $ toHtml $ title $ Rib.documentMeta doc
