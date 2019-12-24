@@ -1,0 +1,12 @@
+[submodule "texts/corpus-joyce-portrait-TEI"]
+	path = texts/corpus-joyce-portrait-TEI
+	url = https://github.com/open-editions/corpus-joyce-portrait-TEI
+[submodule "texts/corpus-eliot-middlemarch-tei"]
+	path = texts/corpus-eliot-middlemarch-tei
+	url = https://github.com/open-editions/corpus-eliot-middlemarch-tei
+[submodule "texts/corpus-joyce-dubliners-tei"]
+	path = texts/corpus-joyce-dubliners-tei
+	url = https://github.com/open-editions/corpus-joyce-dubliners-tei
+[submodule "texts/corpus-joyce-ulysses-tei"]
+	path = texts/corpus-joyce-ulysses-tei
+	url = https://github.com/open-editions/corpus-joyce-ulysses-tei
