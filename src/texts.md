@@ -1,5 +1,10 @@
 ---
 title: Texts
+texts: 
+ - title: Ulysses
+ - title: A Portrait of the Artist as a Young Man
+ - title: Dubliners
+ - title: Middlemarch
 ---
 
 # Text / Feature Matrix
