@@ -1,6 +1,6 @@
 {
 # Rib library source to use
-  rib ? builtins.fetchTarball "https://github.com/srid/rib/archive/c43b422.tar.gz"
+  rib ? builtins.fetchTarball "https://github.com/srid/rib/archive/54e0b66.tar.gz"
 # Cabal project root
 , root ? ./.
 # Cabal project name
