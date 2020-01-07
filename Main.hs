@@ -2,17 +2,19 @@
 {-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE Rank2Types #-}
 {-# LANGUAGE TypeApplications #-}
 
 module Main where
 
-import Clay hiding (title, type_)
+import Clay hiding (id, title, type_)
 import Control.Monad
 import Data.Aeson (FromJSON, fromJSON)
 import qualified Data.Aeson as Aeson
 import qualified Data.Map.Strict as Map
 import Data.Maybe
 import Data.Text (Text)
+import qualified Data.Text as T
 import Development.Shake
 import GHC.Generics
 import Lucid
@@ -100,14 +102,30 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
       -- Copy over the static files
       Rib.buildStaticFiles [[relfile|static/**|]]
       -- Build individual markup sources, generating .html for each.
-      docs <- Rib.buildHtmlMulti
+      docs <- buildHtmlMulti'
         MMark.parse
-        [[relfile|*/*.md|]]
+        [[relfile|**/*.md|]]
         (renderPage . Page_Doc)
 
       -- Build an index.html linking to the aforementioned files.
       Rib.writeHtml [relfile|index.html|] $ renderPage $ Page_Index docs
 
+    buildHtmlMulti' :: Rib.SourceReader repr -> [Path Rel File] -> (Source repr -> Html ()) -> Action [Source repr]
+    buildHtmlMulti' parser pats r = do
+      input <- Rib.ribInputDir
+      fs <- Rib.getDirectoryFiles' input pats
+      forP fs $ \k -> do
+        let outfile = htmlSlugFile k
+        Rib.buildHtml parser outfile k r
+
+    -- Convert foo/bar.md -> foo/bar/index.html
+    htmlSlugFile =
+      either (error . show) id
+      . parseRelFile
+      . T.unpack
+      . T.replace ".md" "/index.html"
+      . T.pack
+      . toFilePath
 
     -- Define your site HTML here
     renderPage :: Page -> Html ()
@@ -124,9 +142,9 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
       body_
         $ div_ [class_ "container"]
         $ do
-          navArea "Open Editions" [ ("about/", "About"),
-                                    ("contribute/", "Contribute"),
-                                    ("texts/", "Texts")
+          navArea "Open Editions" [ ("/about/", "About"),
+                                    ("/contribute/", "Contribute"),
+                                    ("/texts/", "Texts")
                                   ]
           case page of
             Page_Index docs -> do
@@ -137,7 +155,7 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
                   "Open-Source Electronic Scholarly Editions "
                   br_ []
                   "of Public Domain Literature"
-                div_ [ class_ "row center" ] $ a_ [ href_ "about.html", id_ "download-button", class_ "btn-large waves-effect waves-light orange" ] $ "Learn More"
+                div_ [ class_ "row center" ] $ a_ [ href_ "/about/", id_ "download-button", class_ "btn-large waves-effect waves-light orange" ] $ "Learn More"
                 br_ []
               div_ [ class_ "container" ] $ do
                 div_ [ class_ "section" ] $ do
