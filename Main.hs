@@ -8,17 +8,18 @@ module Main where
 
 import Clay hiding (title, type_)
 import Control.Monad
-import Data.Aeson (FromJSON)
+import Data.Aeson (FromJSON, fromJSON)
+import qualified Data.Aeson as Aeson
 import qualified Data.Map.Strict as Map
 import Data.Maybe
-import Data.Some (Some (..))
 import Data.Text (Text)
 import Development.Shake
 import GHC.Generics
 import Lucid
 import Path
-import Rib (Document)
+import Rib (Source, MMark)
 import qualified Rib
+import qualified Rib.Parser.MMark as MMark
 
 -- | Make the nav area.
 navArea ::
@@ -51,8 +52,8 @@ iconBlock (icon, blurb, description) =
 -- 1. The first type variable specifies the parser to use: MMark or Pandoc
 -- 2. The second type variable should be your metadata record
 data Page
-  = Page_Index [Document DocMeta]
-  | Page_Doc (Document DocMeta)
+  = Page_Index [Source MMark]
+  | Page_Doc (Source MMark)
 
 -- | Type representing the metadata in our Markdown documents
 --
@@ -73,6 +74,13 @@ data Site
       }
   deriving (Show, Eq, Generic, FromJSON)
 
+getMeta :: Source MMark -> DocMeta
+getMeta src = case MMark.projectYaml (Rib.sourceVal src) of
+  Nothing -> error "No YAML metadata"
+  Just val -> case fromJSON val of
+    Aeson.Error e -> error $ "JSON error: " <> e
+    Aeson.Success v -> v
+
 -- | Main entry point to our generator.
 --
 -- `Rib.run` handles CLI arguments, and takes three parameters here.
@@ -92,13 +100,13 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
       -- Copy over the static files
       Rib.buildStaticFiles [[relfile|static/**|]]
       -- Build individual markup sources, generating .html for each.
-      docs <- Rib.buildHtmlMulti patterns $ renderPage . Page_Doc
+      docs <- Rib.buildHtmlMulti
+        MMark.parse
+        [[relfile|*/*.md|]]
+        (renderPage . Page_Doc)
 
       -- Build an index.html linking to the aforementioned files.
-      Rib.buildHtml [relfile|index.html|] $ renderPage $ Page_Index docs
-
-    -- File patterns to build, using the associated markup parser
-    patterns = Map.fromList [ ([relfile|*/*.md|], Some Rib.Markup_MMark)]
+      Rib.writeHtml [relfile|index.html|] $ renderPage $ Page_Index docs
 
 
     -- Define your site HTML here
@@ -108,7 +116,7 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
         meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
         title_ $ case page of
           Page_Index _ -> "Open Editions"
-          Page_Doc doc -> toHtml $ title $ Rib.documentMeta doc
+          Page_Doc doc -> toHtml $ title $ getMeta doc
         -- style_ [type_ "text/css"] $ Clay.render pageStyle
         link_ [rel_ "stylesheet", href_ "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]
         link_ [rel_ "stylesheet", href_ "static/css/materialize.min.css"]
@@ -141,10 +149,11 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
               --   let meta = Rib.documentMeta doc
               --   b_ $ with a_ [href_ (Rib.documentUrl doc)] $ toHtml $ title meta
               --   maybe mempty Rib.renderMarkdown $ description meta
-            Page_Doc doc ->
+            Page_Doc doc -> do
+              let meta = getMeta doc
               article_ [class_ "post container"] $ do
-                h1_ $ toHtml $ title $ Rib.documentMeta doc
-                Rib.documentHtml doc
+                h1_ $ toHtml $ title meta
+                MMark.render $ Rib.sourceVal doc
 
           footer_ [ class_ "page-footer orange" ] $ do
             div_ [ class_ "container" ] $ div_ [ class_ "row" ] $ do

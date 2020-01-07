@@ -14,7 +14,6 @@ executable open-editions-org
         aeson,
         clay -any,
         containers,
-        dependent-sum,
         lucid -any,
         path,
         rib ^>=0.6,
