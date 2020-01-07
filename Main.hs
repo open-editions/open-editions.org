@@ -118,6 +118,7 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
         let outfile = htmlSlugFile k
         Rib.buildHtml parser outfile k r
 
+    -- Pretty URL slugs.
     -- Convert foo/bar.md -> foo/bar/index.html
     htmlSlugFile =
       either (error . show) id
@@ -139,69 +140,22 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
         link_ [rel_ "stylesheet", href_ "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]
         link_ [rel_ "stylesheet", href_ "static/css/materialize.min.css"]
         link_ [ href_ "https://fonts.googleapis.com/icon?family=Material+Icons", rel_ "stylesheet" ]
-      body_
-        $ div_ [class_ "container"]
-        $ do
-          navArea "Open Editions" [ ("/about/", "About"),
-                                    ("/contribute/", "Contribute"),
-                                    ("/texts/", "Texts")
-                                  ]
+      body_ $ do
+        navArea "Open Editions" [ ("/about/", "About")
+                                      , ("/contribute/", "Contribute")
+                                      , ("/texts/", "Texts")
+                                      ]
+        div_ [class_ "container"] $ do
           case page of
             Page_Index docs -> do
-              div_ [ class_ "section no-pad-bot", id_ "index-banner" ] $ div_ [ class_ "container" ] $ do
-                br_ []
-                h1_ [ class_ "header center orange-text" ] $ "Open Editions"
-                div_ [ class_ "row center" ] $ h5_ [ class_ "header col s12 light" ] $ do
-                  "Open-Source Electronic Scholarly Editions "
-                  br_ []
-                  "of Public Domain Literature"
-                div_ [ class_ "row center" ] $ a_ [ href_ "/about/", id_ "download-button", class_ "btn-large waves-effect waves-light orange" ] $ "Learn More"
-                br_ []
-              div_ [ class_ "container" ] $ do
-                div_ [ class_ "section" ] $ do
-                  div_ [ class_ "row" ] $ do
-                    iconBlock ("settings", "Open", "This is a community-run project, made by a large network of literary scholars, librarians, students, and programmers from around the world. Anyone can get involved. All of our code and data is publicly available and remixable.")
-                    iconBlock ("group", "Scholarly", "We don't just want to create flashy book interfaces. We want to digitally represent books in a way that does justice to the way we understand theem. This means close attention to the text, and the history of its readings.")
-                    iconBlock ("flash_on", "Standards-Focused", "Our technology stack is meant to be modular, repeatable, and future-proof. This is not just another Digital Humanities project. We want to make the digital editions framework for the future.")
-              -- div_ $ forM_ docs $ \doc -> with li_ [class_ "links"] $ do
-              --   let meta = Rib.documentMeta doc
-              --   b_ $ with a_ [href_ (Rib.documentUrl doc)] $ toHtml $ title meta
-              --   maybe mempty Rib.renderMarkdown $ description meta
+              indexTemplate
             Page_Doc doc -> do
               let meta = getMeta doc
               article_ [class_ "post container"] $ do
                 h1_ $ toHtml $ title meta
                 MMark.render $ Rib.sourceVal doc
 
-          footer_ [ class_ "page-footer orange" ] $ do
-            div_ [ class_ "container" ] $ div_ [ class_ "row" ] $ do
-              div_ [ class_ "col l6 s12" ] $ do
-                h5_ [ class_ "white-text" ] $ "Open Editions"
-                p_ [ class_ "grey-text text-lighten-4" ] $ do
-                  "We are a loose collective of volunteers from around the world, doing this in our spare time, just for the love of it."
-              div_ [ class_ "col l3 s12" ] $ do
-                h5_ [ class_ "white-text" ] $ "Texts"
-                ul_ $ do
-                  li_ $ a_ [ class_ "white-text", href_ "texts/Ulysses/" ] $ "Ulysses"
-                  li_ $ a_ [ class_ "white-text", href_ "texts/Portrait/" ] $ "Portrait"
-                  li_ $ a_ [ class_ "white-text", href_ "texts/Dubliners/" ] $ "Dubliners"
-                  li_ $ a_ [ class_ "white-text", href_ "texts/Middlemarch/" ] $ "Middlemarch"
-              div_ [ class_ "col l3 s12" ] $ do
-                h5_ [ class_ "white-text" ] $ "Contact"
-                ul_ $ do
-                  li_ $ a_ [ class_ "white-text", href_ "https://gitter.im/open-editions/Lobby" ] "Chat with us on Gitter"
-                  li_ $ a_ [ class_ "white-text", href_ "https://liberapay.com/JonathanReeve/donate" ] "Donate using Liberapay"
-                  li_ $ a_ [ class_ "white-text", href_ "https://github.com/open-editions" ] "Browse our code on GitHub"
-
-            div_ [ class_ "footer-copyright" ] $ div_ [ class_ "container" ] $ do
-              "Hand-crafted with love, using "
-              a_ [ class_ "orange-text text-lighten-3", href_ "http://materializecss.com" ] $ "Materialize, "
-              a_ [ class_ "orange-text text-lighten-3", href_ "https://github.com/srid/rib" ] $ "Rib, "
-              a_ [ class_ "orange-text text-lighten-3", href_ "http://haskell.org" ] $ "and Haskell."
-              br_ []
-              "Licensed under a "
-              a_ [ class_ "white-text", href_ "https://creativecommons.org/licenses/by-nc-sa/4.0/" ] "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license."
-
+        footerTemplate
           -- script_ [ src_ "https://code.jquery.com/jquery-2.1.1.min.js" ] ""
           -- script_ [ src_ "js/materialize.js" ] ""
           -- script_ [ src_ "js/init.js" ] ""
@@ -215,3 +169,55 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
         marginTop $ em 1
         "b" ? fontSize (em 1.2)
         "p" ? sym margin (px 0)
+
+indexTemplate :: Html ()
+indexTemplate =  do
+  div_ [ class_ "section no-pad-bot", id_ "index-banner" ] $ div_ [ class_ "container" ] $ do
+    br_ []
+    h1_ [ class_ "header center orange-text" ] $ "Open Editions"
+    div_ [ class_ "row center" ] $ h5_ [ class_ "header col s12 light" ] $ do
+      "Open-Source Electronic Scholarly Editions "
+      br_ []
+      "of Public Domain Literature"
+    div_ [ class_ "row center" ] $ a_ [ href_ "/about/", id_ "download-button", class_ "btn-large waves-effect waves-light orange" ] $ "Learn More"
+    br_ []
+  div_ [ class_ "container" ] $ do
+    div_ [ class_ "section" ] $ do
+      div_ [ class_ "row" ] $ do
+        iconBlock ("settings", "Open", "This is a community-run project, made by a large network of literary scholars, librarians, students, and programmers from around the world. Anyone can get involved. All of our code and data is publicly available and remixable.")
+        iconBlock ("group", "Scholarly", "We don't just want to create flashy book interfaces. We want to digitally represent books in a way that does justice to the way we understand theem. This means close attention to the text, and the history of its readings.")
+        iconBlock ("flash_on", "Standards-Focused", "Our technology stack is meant to be modular, repeatable, and future-proof. This is not just another Digital Humanities project. We want to make the digital editions framework for the future.")
+  -- div_ $ forM_ docs $ \doc -> with li_ [class_ "links"] $ do
+  --   let meta = Rib.documentMeta doc
+  --   b_ $ with a_ [href_ (Rib.documentUrl doc)] $ toHtml $ title meta
+  --   maybe mempty Rib.renderMarkdown $ description meta
+
+footerTemplate :: Html ()
+footerTemplate = footer_ [ class_ "page-footer orange" ] $ do
+            div_ [ class_ "container" ] $ div_ [ class_ "row" ] $ do
+              div_ [ class_ "col l6 s12" ] $ do
+                h5_ [ class_ "white-text" ] $ "Open Editions"
+                p_ [ class_ "grey-text text-lighten-4" ] $ do
+                  "We are a loose collective of volunteers from around the world, doing this in our spare time, just for the love of it."
+              div_ [ class_ "col l3 s12" ] $ do
+                h5_ [ class_ "white-text" ] $ "Texts"
+                ul_ $ do
+                  li_ $ a_ [ class_ "white-text", href_ "texts/Ulysses/" ] $ "Ulysses"
+                  li_ $ a_ [ class_ "white-text", href_ "texts/Portrait/" ] $ "Portrait"
+                  li_ $ a_ [ class_ "white-text", href_ "texts/Dubliners/" ] $ "Dubliners"
+                  li_ $ a_ [ class_ "white-text", href_ "texts/Middlemarch/" ] $ "Middlemarch"
+              div_ [ class_ "col l3 s12" ] $ do
+                h5_ [ class_ "white-text" ] $ "Etc"
+                ul_ $ do
+                  li_ $ a_ [ class_ "white-text", href_ "https://gitter.im/open-editions/Lobby" ] "Chat with us on Gitter"
+                  li_ $ a_ [ class_ "white-text", href_ "https://liberapay.com/JonathanReeve/donate" ] "Donate using Liberapay"
+                  li_ $ a_ [ class_ "white-text", href_ "https://github.com/open-editions" ] "Browse our code on GitHub"
+
+            div_ [ class_ "footer-copyright" ] $ div_ [ class_ "container" ] $ do
+              "Hand-crafted with love, using "
+              a_ [ class_ "orange-text text-lighten-3", href_ "http://materializecss.com" ] $ "Materialize, "
+              a_ [ class_ "orange-text text-lighten-3", href_ "https://github.com/srid/rib" ] $ "Rib, "
+              a_ [ class_ "orange-text text-lighten-3", href_ "http://haskell.org" ] $ "and Haskell."
+              br_ []
+              "Licensed under a "
+              a_ [ class_ "white-text", href_ "https://creativecommons.org/licenses/by-nc-sa/4.0/" ] "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license."
