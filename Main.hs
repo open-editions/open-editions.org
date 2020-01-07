@@ -98,7 +98,8 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
       Rib.buildHtml [relfile|index.html|] $ renderPage $ Page_Index docs
 
     -- File patterns to build, using the associated markup parser
-    patterns = Map.fromList [ ([relfile|*.md|], Some Rib.Markup_MMark)]
+    patterns = Map.fromList [ ([relfile|*/*.md|], Some Rib.Markup_MMark)]
+
 
     -- Define your site HTML here
     renderPage :: Page -> Html ()
@@ -133,13 +134,13 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
               div_ [ class_ "container" ] $ do
                 div_ [ class_ "section" ] $ do
                   div_ [ class_ "row" ] $ do
-                    iconBlock ("flash_on", "Standards-Focused", "We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.") 
-                    iconBlock ("group", "User Experience Focused", "By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.")
-                    iconBlock ("settings", "Easy to work with", "We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.") 
-              div_ $ forM_ docs $ \doc -> with li_ [class_ "links"] $ do
-                let meta = Rib.documentMeta doc
-                b_ $ with a_ [href_ (Rib.documentUrl doc)] $ toHtml $ title meta
-                maybe mempty Rib.renderMarkdown $ description meta
+                    iconBlock ("settings", "Open", "This is a community-run project, made by a large network of literary scholars, librarians, students, and programmers from around the world. Anyone can get involved. All of our code and data is publicly available and remixable.")
+                    iconBlock ("group", "Scholarly", "We don't just want to create flashy book interfaces. We want to digitally represent books in a way that does justice to the way we understand theem. This means close attention to the text, and the history of its readings.")
+                    iconBlock ("flash_on", "Standards-Focused", "Our technology stack is meant to be modular, repeatable, and future-proof. This is not just another Digital Humanities project. We want to make the digital editions framework for the future.")
+              -- div_ $ forM_ docs $ \doc -> with li_ [class_ "links"] $ do
+              --   let meta = Rib.documentMeta doc
+              --   b_ $ with a_ [href_ (Rib.documentUrl doc)] $ toHtml $ title meta
+              --   maybe mempty Rib.renderMarkdown $ description meta
             Page_Doc doc ->
               article_ [class_ "post container"] $ do
                 h1_ $ toHtml $ title $ Rib.documentMeta doc
@@ -149,19 +150,30 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
             div_ [ class_ "container" ] $ div_ [ class_ "row" ] $ do
               div_ [ class_ "col l6 s12" ] $ do
                 h5_ [ class_ "white-text" ] $ "Open Editions"
-                p_ [ class_ "grey-text text-lighten-4" ] $ "We are volunteers doing this in our spare time, just for the love of it. Any help would be much appreciated!" 
-              div_ [ class_ "col l4 s12" ] $ do
+                p_ [ class_ "grey-text text-lighten-4" ] $ do
+                  "We are a loose collective of volunteers from around the world, doing this in our spare time, just for the love of it."
+              div_ [ class_ "col l3 s12" ] $ do
                 h5_ [ class_ "white-text" ] $ "Texts"
                 ul_ $ do
                   li_ $ a_ [ class_ "white-text", href_ "texts/Ulysses/" ] $ "Ulysses"
                   li_ $ a_ [ class_ "white-text", href_ "texts/Portrait/" ] $ "Portrait"
                   li_ $ a_ [ class_ "white-text", href_ "texts/Dubliners/" ] $ "Dubliners"
                   li_ $ a_ [ class_ "white-text", href_ "texts/Middlemarch/" ] $ "Middlemarch"
+              div_ [ class_ "col l3 s12" ] $ do
+                h5_ [ class_ "white-text" ] $ "Contact"
+                ul_ $ do
+                  li_ $ a_ [ class_ "white-text", href_ "https://gitter.im/open-editions/Lobby" ] "Chat with us on Gitter"
+                  li_ $ a_ [ class_ "white-text", href_ "https://liberapay.com/JonathanReeve/donate" ] "Donate using Liberapay"
+                  li_ $ a_ [ class_ "white-text", href_ "https://github.com/open-editions" ] "Browse our code on GitHub"
+
             div_ [ class_ "footer-copyright" ] $ div_ [ class_ "container" ] $ do
-              "Made with "
+              "Hand-crafted with love, using "
               a_ [ class_ "orange-text text-lighten-3", href_ "http://materializecss.com" ] $ "Materialize, "
               a_ [ class_ "orange-text text-lighten-3", href_ "https://github.com/srid/rib" ] $ "Rib, "
               a_ [ class_ "orange-text text-lighten-3", href_ "http://haskell.org" ] $ "and Haskell."
+              br_ []
+              "Licensed under a "
+              a_ [ class_ "white-text", href_ "https://creativecommons.org/licenses/by-nc-sa/4.0/" ] "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license."
 
           -- script_ [ src_ "https://code.jquery.com/jquery-2.1.1.min.js" ] ""
           -- script_ [ src_ "js/materialize.js" ] ""

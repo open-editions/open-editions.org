@@ -1,8 +1,24 @@
 * Open Editions
 
-This is the master repository for the Open Editions organization, and contains meta-todo lists, as well as the code for open-editions.org. 
+The Open Editions project publishes richly annotated open source literary texts. We aim to aggregate the literary knowledge that surrounds a text, codify that knowledge, and integrate it into the text. [[https://github.com/open-editions/article-jjq/blob/master/open-editions-online.pdf][Read the draft article for /James Joyce Quarterly/ where we discuss the project and its preliminary goals.]]
 
+This is the master repository for the Open Editions website, [[http://open-editions.org][Open-Editions.org]]. The issues here represent meta-todo items for all texts.
+
+** Website: technical details. 
+
+This website is built from markdown, using Rib, Shake, and other Haskell tools. To build it, make sure you have Nix installed, and then run: 
+
+#+BEGIN_SRC shell
+nix-shell --run 'ghcid -T main generate' 
+#+END SRC
+
+Or to build it and watch the directory for changes, just remove ~generate~. 
+
+Most of the layout is in Main.hs. 
+ 
 ** Text Feature Status
+
+The texts themselves are submodules in this repository, in /texts
 
 | Text                    | Ulysses    | A Portrait of the Artist as a Young Man | Dubliners | Finnegans Wake | Middlemarch |
 |-------------------------+------------+-----------------------------------------+-----------+----------------+-------------|
@@ -17,15 +33,4 @@ This is the master repository for the Open Editions organization, and contains m
 | Free Indirect Discourse | TODO       | TODO                                    | TODO      | TODO           | DONE        |
 | Criticism Mapping       | TODO       | TODO                                    | TODO      | TODO           | TODO        |
 | Zenodo Archive          | DONE       | DONE                                    | TODO      | TODO           | TODO        |
-
-
-** Website 
-
-open-editions.org
-
-Open Editions website and infrastructure.
-
-*** Building
-
-This website is built with the [[https://elm-lang.org/][Elm]] language, and uses [[https://korban.net/elm/elmstatic/][Elmstatic]] as a static-site generator, to produce static assets that are then served via [[https://www.netlify.com/][Netlify]]. 
 

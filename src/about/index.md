@@ -47,3 +47,6 @@ Distributed version control is crucial to our work, since it allows us to collab
 ## GitHub
 
 GitHub provides a place for us to store our Git repositories, and to communicate with each other via issues. We plot 
+
+
+
