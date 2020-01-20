@@ -1,2 +1,3 @@
-elm-stuff/
-_site/
+dist-newstyle/
+.shake/
+dist/dante/
