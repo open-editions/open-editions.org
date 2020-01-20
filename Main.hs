@@ -59,7 +59,7 @@ iconBlock (icon, blurb, description) =
 data Page
   = Page_Index [Source MMark]
   | Page_Doc (Source MMark)
-  | Page_Texts (Source MMark)
+  | Page_Texts
 
 -- | Type representing the metadata in our Markdown documents
 --
@@ -104,19 +104,6 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
     generateSite :: Action ()
     generateSite = do
       -- Copy over the static files
-      -- Rib.buildStaticFiles [[relfile|static/**|]]
-      -- -- Build individual markup sources, generating .html for each.
-      -- docs <- buildHtmlMulti' MMark.parse [[relfile|**/*.md|]] (renderPage . Page_Doc)
-
-      -- -- Build an index.html linking to the aforementioned files.
-      -- Rib.writeHtml [relfile|index.html|] $ renderPage (Page_Index docs)
-
-      -- -- Build a texts directory using the data in Editions.hs, and the markdown in src/texts.md
-      -- -- Rib.writeHtml [relfile|texts/index.html|] $ renderPage $ Page_Texts doc
-      -- -- textPage <- Rib.buildHtml MMark.parse [relfile|texts/index.html|] [relfile|texts.md|] (renderPage . Page_Texts)
-      -- -- Rib.writeHtml [relfile|texts/index.html|] $ renderPage $ Page_Texts
-
-      -- Copy over the static files
       Rib.buildStaticFiles [[relfile|static/**|]]
       -- Build individual markup sources, generating .html for each.
       docs <- buildHtmlMulti' MMark.parse [[relfile|**/*.md|]] (renderPage . Page_Doc)
@@ -124,9 +111,8 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
       -- Build an index.html linking to the aforementioned files.
       Rib.writeHtml [relfile|index.html|] $ renderPage $ Page_Index docs
 
-      -- Build a texts directory using the data in Editions.hs, and the markdown in src/texts.md
-      textPage <- Rib.buildHtml MMark.parse [relfile|texts/index.html|] [relfile|texts.md|] (renderPage . Page_Texts)
-      Rib.writeHtml [relfile|texts/texts.html|] $ renderPage $ Page_Texts textPage
+      -- Build a texts directory using the data in Editions.hs.
+      Rib.writeHtml [relfile|texts/index.html|] $ renderPage $ Page_Texts
 
     buildHtmlMulti' :: Rib.SourceReader repr -> [Path Rel File] -> (Source repr -> Html ()) -> Action [Source repr]
     buildHtmlMulti' parser pats r = do
@@ -154,11 +140,12 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
         title_ $ case page of
           Page_Index _ -> "Open Editions"
           Page_Doc doc -> toHtml $ title $ getMeta doc
-          Page_Texts _ -> "Open Editions Texts"
+          Page_Texts -> "Open Editions Texts"
         style_ [type_ "text/css"] $ Clay.render pageStyle
         link_ [rel_ "stylesheet", href_ "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]
         link_ [rel_ "stylesheet", href_ "/static/css/materialize.min.css"]
         link_ [ href_ "https://fonts.googleapis.com/icon?family=Material+Icons", rel_ "stylesheet" ]
+
       body_ $ do
         navArea "Open Editions" [ ("/about/", "About")
                                       , ("/contribute/", "Contribute")
@@ -168,7 +155,7 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
           case page of
             Page_Index docs -> do
               indexTemplate
-            Page_Texts doc -> textsTemplate doc
+            Page_Texts -> textsTemplate
             Page_Doc doc -> do
               let meta = getMeta doc
               article_ [class_ "post container"] $ do
@@ -184,19 +171,50 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
       "img" ? do
         maxWidth (pct 100)
 
-textsTemplate :: Source MMark -> Html ()
-textsTemplate doc = do
+textsTemplate :: Html ()
+textsTemplate = do
   -- let meta = getMeta doc
-  h1_ "Heyo!"
   article_ [class_ "post container"] $ do
     -- h1_ $ toHtml $ title meta
-    MMark.render $ Rib.sourceVal doc
+    -- MMark.render $ Rib.sourceVal doc
+    h1_ "Open Editions Texts"
     div_ [ class_ "section" ] $ do
       mapM_ formatEdition E.editions
 
+textButton :: Text -> Html () -> Html () -> Html ()
+textButton uri iconName buttonText =
+  case uri of
+    -- Disable the button if it points to an empty URL
+    "" -> a_ [ class_ "btn-small disabled" ] $ do
+           i_ [ class_ "material-icons left" ] iconName
+           buttonText
+    otherwise -> a_ [ class_ "btn-small", href_ uri ] $ do
+                  i_ [ class_ "material-icons left" ] iconName
+                  buttonText
+
 formatEdition :: E.Edition -> Html ()
 formatEdition ed = do
-  h1_ $ toHtml $ E.title ed
+  h3_ [id_ (E.slug ed)] $ toHtml $ E.title ed
+  h5_ $ toHtml $ E.author ed
+  div_ [ class_ "info" ] $ markdownToHtml (E.provenance ed)
+  div_ [ class_ "buttons" ] $ do
+    let github = "https://github.com/open-editions" :: Text
+        repoUrl = T.concat [github, E.repo ed]
+        issuesUrl = E.issues $ E.repo ed
+        contributorsUrl = E.contributors $ E.repo ed
+        previewUrl = E.preview ed
+    textButton repoUrl "cloud" "GitHub Repo"
+    textButton issuesUrl "done" "Issues"
+    textButton contributorsUrl "people" "Contributors"
+    textButton previewUrl "book" "Preview"
+
+-- Convenience function, for transforming markdown strings to HTML
+markdownToHtml :: E.Markdown -> Html ()
+markdownToHtml md = do
+  let result = MMark.parsePure "markdown" md
+  case result of
+      Left err -> error (T.unpack err)
+      Right res -> MMark.render res
 
 indexTemplate :: Html ()
 indexTemplate =  do
@@ -213,7 +231,7 @@ indexTemplate =  do
     div_ [ class_ "section" ] $ do
       div_ [ class_ "row" ] $ do
         iconBlock ("settings", "Open", "This is a community-run project, made by a large network of literary scholars, librarians, students, and programmers from around the world. Anyone can get involved. All of our code and data is publicly available and remixable.")
-        iconBlock ("group", "Scholarly", "We don't just want to create flashy book interfaces. We want to digitally represent books in a way that does justice to the way we understand theem. This means close attention to the text, and the history of its readings.")
+        iconBlock ("group", "Scholarly", "We don't just want to create flashy book interfaces. We want to digitally represent books commensurately with the way we understand them. This means close attention to the text, and the history of its readings.")
         iconBlock ("flash_on", "Standards-Focused", "Our technology stack is meant to be modular, repeatable, and future-proof. This is not just another Digital Humanities project. We want to make the digital editions framework for the future.")
   -- div_ $ forM_ docs $ \doc -> with li_ [class_ "links"] $ do
   --   let meta = Rib.documentMeta doc
@@ -226,7 +244,7 @@ footerTemplate = footer_ [ class_ "page-footer orange" ] $ do
               div_ [ class_ "col l6 s12" ] $ do
                 h5_ [ class_ "white-text" ] $ "Open Editions"
                 p_ [ class_ "grey-text text-lighten-4" ] $ do
-                  "We are a loose collective of volunteers from around the world, doing this in our spare time, just for the love of it."
+                  "Open-Source Electronic Scholarly Editions of Public Domain Literature"
               div_ [ class_ "col l3 s12" ] $ do
                 h5_ [ class_ "white-text" ] $ "Texts"
                 ul_ $ do
@@ -252,6 +270,6 @@ footerTemplate = footer_ [ class_ "page-footer orange" ] $ do
 
 scriptsTemplate :: Html ()
 scriptsTemplate = mapM_ (\src -> with (script_ "") [ src_ src ]) [ "https://code.jquery.com/jquery-2.1.1.min.js"
-                                                               , "/static/js/materialize.js"
+                                                               , "/static/js/materialize.min.js"
                                                                , "/static/js/init.js"
                                                                ]

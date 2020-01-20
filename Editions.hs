@@ -12,6 +12,7 @@ github = "https://github.com/open-editions/"
 
 data Edition = Edition { title :: Text
                        , author :: Text
+                       , slug :: Text
                        , features :: [Feature]
                        , repo :: Text
                        , preview :: URI
@@ -41,6 +42,7 @@ editions :: [ Edition ]
 editions = [ Edition { title = "A Portrait of the Artist as a Young Man"
                , author = "James Joyce"
                , repo = "corpus-joyce-portrait-TEI"
+               , slug = "portrait"
                , preview = "https://joyce-portrait.netlify.com"
                , provenance = ""
                , features = [ Feature "Line Numbers" Done Nothing
@@ -57,6 +59,7 @@ editions = [ Edition { title = "A Portrait of the Artist as a Young Man"
                }
         , Edition { title = "Ulysses"
                   , author = "James Joyce"
+                  , slug = "ulysses"
                   , repo = "corpus-joyce-ulysses-tei"
                   , preview = "https://ulysses-tei.netlify.com/"
                   , provenance = "Based on _Ulysses: A Critical and Synoptic Edition_ (1984 \\[rev. 1986\\]) prepared by Hans Walter Gabler with Wolfhard Steppe and Claus Melchior."
@@ -74,6 +77,7 @@ editions = [ Edition { title = "A Portrait of the Artist as a Young Man"
                   }
         , Edition { title = "Dubliners"
                   , author = "James Joyce"
+                  , slug = "dubliners"
                   , repo = "corpus-joyce-dubliners-tei"
                   , preview = "https://joyce-dubliners.netlify.com/"
                   , provenance = "Based on the Gabler edition." -- TODO: fill this out.
@@ -91,8 +95,9 @@ editions = [ Edition { title = "A Portrait of the Artist as a Young Man"
                   }
         , Edition { title = "Finnegans Wake"
                   , author = "James Joyce"
+                  , slug = "wake"
                   , repo = "corpus-joyce-finnegans-wake-tei"
-                  , preview = "https://joyce-dubliners.netlify.com/"
+                  , preview = ""
                   , provenance = "Based on [this TEI edition](https://github.com/timds/finnegans-wake-tei/), and cross-checked with corrections from the Faber 1975 edition."
                   , features = [ Feature "Line Numbers" Done Nothing
                                , Feature "Dialog Attribution" Done (Just 7)
@@ -108,8 +113,9 @@ editions = [ Edition { title = "A Portrait of the Artist as a Young Man"
                   }
         , Edition { title = "Middlemarch"
                   , author = "George Eliot"
+                  , slug = "middlemarch"
                   , repo = "corpus-eliot-middlemarch-tei"
-                  , preview = "https://joyce-dubliners.netlify.com/"
+                  , preview = ""
                   , provenance = "Text based on the Project Gutenberg HTML edition. Dialogue attribution, epigraphs, chapters, and [free indirect discourse](https://en.wikipedia.org/wiki/Free_indirect_speech) are marked up. Project part of Michelle Qiu's senior thesis project at Columbia University."
                   , features = [ Feature "Line Numbers" Done Nothing
                                , Feature "Dialog Attribution" Done (Just 7)
