@@ -1,10 +1,5 @@
 ---
 title: Texts
-texts: 
- - title: Ulysses
- - title: A Portrait of the Artist as a Young Man
- - title: Dubliners
- - title: Middlemarch
 ---
 
 # Text / Feature Matrix
@@ -36,8 +31,6 @@ The oldest of our texts, this has seen the most contributions. Based on the crit
 
 # _Ulysses_
 
-![Ulysses Cover from Recovering the Classics](static/rtc_Ulysses_Melissa+Hamel.jpeg)
-
 Based on _Ulysses: A Critical and Synoptic Edition_ (1984 \[rev. 1986\]) prepared by Hans Walter Gabler with Wolfhard Steppe and Claus Melchior. 
 
 - [Homepage](https://github.com/open-editions/corpus-joyce-portrait-TEI)
@@ -48,8 +41,6 @@ Based on _Ulysses: A Critical and Synoptic Edition_ (1984 \[rev. 1986\]) prepare
 # _Dubliners_
 
 Based on the Gabler edition. 
-
-![Dubliners Cover from Recovering the Classics](static/rtc_Dubliners_Devin.jpeg)
 
 - [Homepage](https://github.com/open-editions/corpus-joyce-dubliners-tei)
 - [Contributors](https://github.com/open-editions/corpus-joyce-dubliners-tei/graphs/contributors)
@@ -66,8 +57,6 @@ Based on [this TEI edition](https://github.com/timds/finnegans-wake-tei/), and c
 - [Issues](https://github.com/open-editions/corpus-joyce-portrait-TEI/issues)
 
 # _Middlemarch_ 
-
-![Middlemarch Cover. Source: Recovering the Classics](static/rtc_Middlemarch.jpeg)
 
 Originally part of Michelle Qiu's senior thesis project at Columbia University. Text based on the Project Gutenberg HTML edition. Dialogue attribution, epigraphs, chapters, and [free indirect discourse](https://en.wikipedia.org/wiki/Free_indirect_speech) are marked up.
 

@@ -1,5 +1,5 @@
 let
-  ribRevision = "c03c090d0f7af4869ea6a33d5af79b3496060abc";
+  ribRevision = "ca3e9fbd1befbca868d3254559805eacba78e7eb";
 in {
 # Rib library source to use
   rib ? builtins.fetchTarball "https://github.com/srid/rib/archive/${ribRevision}.tar.gz"

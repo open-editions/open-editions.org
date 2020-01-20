@@ -33,7 +33,7 @@ Get a GitHub account, if you don't already have one. GitHub accounts are free, a
 
 “Forking” is just coding jargon for making a copy of a project, so that you can work on it. To fork a project, go to the project homepage, e.g., [the homepage for the _Portrait_ edition](https://github.com/open-editions/corpus-joyce-portrait-TEI), and click the “Fork” button in the upper right corner: 
 
-![Fork](static/fork.png)
+![Fork](/static/images/fork.png)
 
 This will create a copy of the project in your user account where you will make all of your changes. Now your copy lives at `github.com/your-username-here/corpus-joyce-portrait-TEI`, where `your-username-here` is your GitHub username. Navigate to your fork’s homepage. You can also find it by going to your profile page and clicking the “repositories” tab. 
 
@@ -41,19 +41,19 @@ This will create a copy of the project in your user account where you will make 
 
 Portrait.xml is the name of the main TEI XML file for the novel. To browse through it, you can find it [here on the project site](https://github.com/open-editions/corpus-joyce-portrait-TEI/blob/gh-pages/portrait.xml), but to edit it, you’ll have to find this file on your fork. To do that, go to your fork, click the “Code” tab, and click “portrait.xml” in the file listing. You can also navigate to the URL `https://github.com/your-username-here/corpus-joyce-portrait-TEI/blob/gh-pages/portrait.xml`, replacing `your-username-here` with your GitHub username. Now you should see something like this: 
 
-![XML](static/xml.png)
+![XML](/static/images/xml.png)
 
 but instead of my username, JonathanReeve, you should see your own. To edit the file, click the pencil icon in the upper right: 
 
-![Edit](static/edit.png)
+![Edit](/static/images/edit.png)
 
 Now you should be able to make changes to your fork. Find the area in the novel that you want to change (you can click in the text area and use Control+F to search the novel for your section), and then make the changes. For example, here is what my dialog section looked like before: 
 
-![Dialog Before](static/dialog-before.png)
+![Dialog Before](/static/images/dialog-before.png)
 
 And here is what it looks like after I make my edit: 
 
-![Dialog After](static/dialog-after.png)
+![Dialog After](/static/images/dialog-after.png)
 
 If you’re not already used to XML, there are a couple things to note here. 
 
@@ -66,7 +66,7 @@ If you want a quick introduction to XML, check out [the w3schools introduction](
 
 Now that you’ve made all your changes for this round (you might want to make another, separate set of changes later), you can commit your changes, and describe what it is that you did. **Please reference the issue that you're working on.** For this dialog attribution example, I’ve described my change as `Add dialog attribution to Chapter 2, for issue #7`, and added an additional description that `It was difficult to find Mrs. Dedalus’s first name!`. 
 
-![Commit](static/commit.png)
+![Commit](/static/images/commit.png)
 
 Repeat steps 4-5 as necessary, until you’re done making your changes. You don't need to commit after each line you've edited, but don't wait weeks, either. The more you commit, the more modular your contribution will be, and the easier it will be to handle.
 
@@ -74,11 +74,11 @@ Repeat steps 4-5 as necessary, until you’re done making your changes. You don'
 
 Now that you’ve made your changes, you’ll want to submit them to the main edition for approval. A “pull request” is a request to the main project to integrate the changes you made on your fork. To submit a pull request, go to your fork’s homepage, i.e. `github.com/your-username-here/corpus-joyce-portrait-tei` and click the button labeled “Pull request”: 
 
-![Pull request](static/pr.png)
+![Pull request](/static/images/pr.png)
 
 This should bring up a page where you can describe your pull request: 
 
-![Pull request description](static/pr-message.png) 
+![Pull request description](/static/images/pr-message.png)
 
 Write a description of all the edits you committed. In this example, I wrote roughly the same thing as my commit message, `Add dialog attribution to Chapter 2, for issue #7`, but if you have more than one commit, you’ll want to describe the changes represented by all of your commits.
 

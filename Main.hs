@@ -4,6 +4,7 @@
 {-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE Rank2Types #-}
 {-# LANGUAGE TypeApplications #-}
+{-# LANGUAGE FlexibleContexts #-}
 
 module Main where
 
@@ -22,6 +23,8 @@ import Path
 import Rib (Source, MMark)
 import qualified Rib
 import qualified Rib.Parser.MMark as MMark
+
+import qualified Editions as E -- my own module
 
 -- | Make the nav area.
 navArea ::
@@ -56,6 +59,7 @@ iconBlock (icon, blurb, description) =
 data Page
   = Page_Index [Source MMark]
   | Page_Doc (Source MMark)
+  | Page_Texts (Source MMark)
 
 -- | Type representing the metadata in our Markdown documents
 --
@@ -100,15 +104,29 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
     generateSite :: Action ()
     generateSite = do
       -- Copy over the static files
+      -- Rib.buildStaticFiles [[relfile|static/**|]]
+      -- -- Build individual markup sources, generating .html for each.
+      -- docs <- buildHtmlMulti' MMark.parse [[relfile|**/*.md|]] (renderPage . Page_Doc)
+
+      -- -- Build an index.html linking to the aforementioned files.
+      -- Rib.writeHtml [relfile|index.html|] $ renderPage (Page_Index docs)
+
+      -- -- Build a texts directory using the data in Editions.hs, and the markdown in src/texts.md
+      -- -- Rib.writeHtml [relfile|texts/index.html|] $ renderPage $ Page_Texts doc
+      -- -- textPage <- Rib.buildHtml MMark.parse [relfile|texts/index.html|] [relfile|texts.md|] (renderPage . Page_Texts)
+      -- -- Rib.writeHtml [relfile|texts/index.html|] $ renderPage $ Page_Texts
+
+      -- Copy over the static files
       Rib.buildStaticFiles [[relfile|static/**|]]
       -- Build individual markup sources, generating .html for each.
-      docs <- buildHtmlMulti'
-        MMark.parse
-        [[relfile|**/*.md|]]
-        (renderPage . Page_Doc)
+      docs <- buildHtmlMulti' MMark.parse [[relfile|**/*.md|]] (renderPage . Page_Doc)
 
       -- Build an index.html linking to the aforementioned files.
       Rib.writeHtml [relfile|index.html|] $ renderPage $ Page_Index docs
+
+      -- Build a texts directory using the data in Editions.hs, and the markdown in src/texts.md
+      textPage <- Rib.buildHtml MMark.parse [relfile|texts/index.html|] [relfile|texts.md|] (renderPage . Page_Texts)
+      Rib.writeHtml [relfile|texts/texts.html|] $ renderPage $ Page_Texts textPage
 
     buildHtmlMulti' :: Rib.SourceReader repr -> [Path Rel File] -> (Source repr -> Html ()) -> Action [Source repr]
     buildHtmlMulti' parser pats r = do
@@ -136,9 +154,10 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
         title_ $ case page of
           Page_Index _ -> "Open Editions"
           Page_Doc doc -> toHtml $ title $ getMeta doc
-        -- style_ [type_ "text/css"] $ Clay.render pageStyle
+          Page_Texts _ -> "Open Editions Texts"
+        style_ [type_ "text/css"] $ Clay.render pageStyle
         link_ [rel_ "stylesheet", href_ "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]
-        link_ [rel_ "stylesheet", href_ "static/css/materialize.min.css"]
+        link_ [rel_ "stylesheet", href_ "/static/css/materialize.min.css"]
         link_ [ href_ "https://fonts.googleapis.com/icon?family=Material+Icons", rel_ "stylesheet" ]
       body_ $ do
         navArea "Open Editions" [ ("/about/", "About")
@@ -149,6 +168,7 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
           case page of
             Page_Index docs -> do
               indexTemplate
+            Page_Texts doc -> textsTemplate doc
             Page_Doc doc -> do
               let meta = getMeta doc
               article_ [class_ "post container"] $ do
@@ -156,19 +176,27 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
                 MMark.render $ Rib.sourceVal doc
 
         footerTemplate
-          -- script_ [ src_ "https://code.jquery.com/jquery-2.1.1.min.js" ] ""
-          -- script_ [ src_ "js/materialize.js" ] ""
-          -- script_ [ src_ "js/init.js" ] ""
+        scriptsTemplate
 
     -- Define your site CSS here
     pageStyle :: Css
-    pageStyle = "div#thesite" ? do
-      margin (em 4) (pc 20) (em 1) (pc 20)
-      "li.links" ? do
-        listStyleType none
-        marginTop $ em 1
-        "b" ? fontSize (em 1.2)
-        "p" ? sym margin (px 0)
+    pageStyle = "div.container" ? do
+      "img" ? do
+        maxWidth (pct 100)
+
+textsTemplate :: Source MMark -> Html ()
+textsTemplate doc = do
+  -- let meta = getMeta doc
+  h1_ "Heyo!"
+  article_ [class_ "post container"] $ do
+    -- h1_ $ toHtml $ title meta
+    MMark.render $ Rib.sourceVal doc
+    div_ [ class_ "section" ] $ do
+      mapM_ formatEdition E.editions
+
+formatEdition :: E.Edition -> Html ()
+formatEdition ed = do
+  h1_ $ toHtml $ E.title ed
 
 indexTemplate :: Html ()
 indexTemplate =  do
@@ -202,10 +230,10 @@ footerTemplate = footer_ [ class_ "page-footer orange" ] $ do
               div_ [ class_ "col l3 s12" ] $ do
                 h5_ [ class_ "white-text" ] $ "Texts"
                 ul_ $ do
-                  li_ $ a_ [ class_ "white-text", href_ "texts/Ulysses/" ] $ "Ulysses"
-                  li_ $ a_ [ class_ "white-text", href_ "texts/Portrait/" ] $ "Portrait"
-                  li_ $ a_ [ class_ "white-text", href_ "texts/Dubliners/" ] $ "Dubliners"
-                  li_ $ a_ [ class_ "white-text", href_ "texts/Middlemarch/" ] $ "Middlemarch"
+                  li_ $ a_ [ class_ "white-text", href_ "/texts/#ulysses" ] $ "Ulysses"
+                  li_ $ a_ [ class_ "white-text", href_ "/texts/#portrait" ] $ "Portrait"
+                  li_ $ a_ [ class_ "white-text", href_ "/texts/#dubliners" ] $ "Dubliners"
+                  li_ $ a_ [ class_ "white-text", href_ "/texts/#middlemarch" ] $ "Middlemarch"
               div_ [ class_ "col l3 s12" ] $ do
                 h5_ [ class_ "white-text" ] $ "Etc"
                 ul_ $ do
@@ -221,3 +249,9 @@ footerTemplate = footer_ [ class_ "page-footer orange" ] $ do
               br_ []
               "Licensed under a "
               a_ [ class_ "white-text", href_ "https://creativecommons.org/licenses/by-nc-sa/4.0/" ] "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license."
+
+scriptsTemplate :: Html ()
+scriptsTemplate = mapM_ (\src -> with (script_ "") [ src_ src ]) [ "https://code.jquery.com/jquery-2.1.1.min.js"
+                                                               , "/static/js/materialize.js"
+                                                               , "/static/js/init.js"
+                                                               ]

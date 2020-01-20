@@ -16,6 +16,6 @@ executable open-editions-org
         containers,
         lucid -any,
         path,
-        rib ^>=0.6,
+        rib,
         shake -any,
-        text,
+        text
