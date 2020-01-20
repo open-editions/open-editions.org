@@ -4,18 +4,6 @@ The Open Editions project publishes richly annotated open source literary texts.
 
 This is the master repository for the Open Editions website, [[http://open-editions.org][Open-Editions.org]]. The issues here represent meta-todo items for all texts.
 
-** Website: technical details. 
-
-This website is built from markdown, using Rib, Shake, and other Haskell tools. To build it, make sure you have Nix installed, and then run: 
-
-#+BEGIN_SRC shell
-nix-shell --run 'ghcid -T main generate' 
-#+END SRC
-
-Or to build it and watch the directory for changes, just remove ~generate~. 
-
-Most of the layout is in Main.hs. 
- 
 ** Text Feature Status
 
 The texts themselves are submodules in this repository, in /texts
@@ -34,3 +22,15 @@ The texts themselves are submodules in this repository, in /texts
 | Criticism Mapping       | TODO       | TODO                                    | TODO      | TODO           | TODO        |
 | Zenodo Archive          | DONE       | DONE                                    | TODO      | TODO           | TODO        |
 
+** Website: technical details. 
+
+This website is built from markdown, using Rib, Shake, and other Haskell tools. To build it, make sure you have Nix installed, and then run: 
+
+#+BEGIN_SRC shell
+nix-shell --run 'ghcid -T main generate' 
+#+END_SRC
+
+Or to build it and watch the directory for changes, just remove ~generate~. 
+
+Most of the layout is in Main.hs. Edition metadata is in Editions.hs, for now. 
+ 
