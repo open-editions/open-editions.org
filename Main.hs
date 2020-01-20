@@ -198,7 +198,7 @@ formatEdition ed = do
   h5_ $ toHtml $ E.author ed
   div_ [ class_ "info" ] $ markdownToHtml (E.provenance ed)
   div_ [ class_ "buttons" ] $ do
-    let github = "https://github.com/open-editions" :: Text
+    let github = "https://github.com/open-editions/" :: Text
         repoUrl = T.concat [github, E.repo ed]
         issuesUrl = E.issues $ E.repo ed
         contributorsUrl = E.contributors $ E.repo ed
