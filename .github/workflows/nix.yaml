@@ -1,6 +1,8 @@
 name: Nix CI
 
-on: [push]
+on:
+  push:
+  pull_request:
 
 jobs:
   build:
@@ -12,3 +14,5 @@ jobs:
     - uses: cachix/cachix-action@v3  # This also runs nix-build.
       with:
         name: srid
+    - name: Build
+      run: nix-build
