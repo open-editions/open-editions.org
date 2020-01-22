@@ -20,6 +20,5 @@ jobs:
       run: $(nix-build)/bin/open-editions-org generate --full
     - name: Publish generated site 
       uses: netlify/actions/build@master
-      with:
-        env:
-          BUILD_DIR: dist
+      env:
+        BUILD_DIR: dist
