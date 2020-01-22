@@ -19,6 +19,10 @@ jobs:
     - name: Generate site
       run: $(nix-build)/bin/open-editions-org generate --full
     - name: Publish generated site 
-      uses: netlify/actions/build@master
+      uses: netlify/actions/cli@master
       env:
-        BUILD_DIR: dist
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      with:
+        args: deploy --dir=dist # --prod
+        secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
