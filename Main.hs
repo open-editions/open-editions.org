@@ -106,7 +106,8 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
       -- Copy over the static files
       Rib.buildStaticFiles [[relfile|static/**|]]
       -- Build individual markup sources, generating .html for each.
-      docs <- buildHtmlMulti' MMark.parse [[relfile|**/*.md|]] (renderPage . Page_Doc)
+      docs <- Rib.forEvery [[relfile|**/*.md|]] $ \srcPath -> 
+        Rib.buildHtml' srcPath MMark.parse (const $ htmlPathFor srcPath) (renderPage . Page_Doc)
 
       -- Build an index.html linking to the aforementioned files.
       Rib.writeHtml [relfile|index.html|] $ renderPage $ Page_Index docs
@@ -114,18 +115,11 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
       -- Build a texts directory using the data in Editions.hs.
       Rib.writeHtml [relfile|texts/index.html|] $ renderPage $ Page_Texts
 
-    buildHtmlMulti' :: Rib.SourceReader repr -> [Path Rel File] -> (Source repr -> Html ()) -> Action [Source repr]
-    buildHtmlMulti' parser pats r = do
-      input <- Rib.ribInputDir
-      fs <- Rib.getDirectoryFiles' input pats
-      forP fs $ \k -> do
-        let outfile = htmlSlugFile k
-        Rib.buildHtml parser outfile k r
-
-    -- Pretty URL slugs.
-    -- Convert foo/bar.md -> foo/bar/index.html
-    htmlSlugFile =
-      either (error . show) id
+    -- | Convert foo/bar.md -> foo/bar/index.html
+    --
+    -- So that /foo/bar/ becomes the canonical URL to access this page.
+    htmlPathFor =
+      liftIO
       . parseRelFile
       . T.unpack
       . T.replace ".md" "/index.html"
