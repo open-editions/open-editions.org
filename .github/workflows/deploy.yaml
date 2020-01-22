@@ -19,6 +19,7 @@ jobs:
     - name: Generate site
       run: $(nix-build)/bin/open-editions-org generate --full
     - name: Publish generated site 
-      uses: netlify/actions/diff-includes@master
+      uses: netlify/actions/build@master
       with:
-        args: dist
+        env:
+          BUILD_DIR: dist
