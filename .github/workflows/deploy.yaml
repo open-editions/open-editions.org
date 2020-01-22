@@ -1,4 +1,4 @@
-name: Deploy to Netlify via Nix
+name: Rib -> Netlify
 
 on:
   push:
