@@ -1,0 +1,24 @@
+name: Deploy to Netlify via Nix
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: cachix/install-nix-action@v6
+    - uses: cachix/cachix-action@v3
+      with:
+        name: srid
+    - name: Build
+      run: nix-build
+    - name: Generate site
+      run: $(nix-build)/bin/open-editions-org generate --full
+    - name: Publish generated site 
+      uses: netlify/actions/diff-includes@master
+      with:
+        args: dist
