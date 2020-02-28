@@ -27,7 +27,7 @@ The texts themselves are submodules in this repository, in /texts
 This website is built from markdown, using Rib, Shake, and other Haskell tools. To build it, make sure you have Nix installed, and then run: 
 
 #+BEGIN_SRC shell
-nix-shell --run 'ghcid -T main generate' 
+nix-shell --run 'ghcid -T ":main generate"' 
 #+END_SRC
 
 Or to build it and watch the directory for changes, just remove ~generate~. 

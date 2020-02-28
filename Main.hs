@@ -1,6 +1,9 @@
 {-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE GADTs #-}
+{-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE Rank2Types #-}
 {-# LANGUAGE TypeApplications #-}
@@ -20,7 +23,7 @@ import Development.Shake
 import GHC.Generics
 import Lucid
 import Path
-import Rib (Source, MMark)
+import Rib (MMark, IsRoute)
 import qualified Rib
 import qualified Rib.Parser.MMark as MMark
 
@@ -48,18 +51,22 @@ iconBlock (icon, blurb, description) =
     h5_ [ class_ "center" ] $ blurb
     p_ [ class_ "light" ] $ description
 
--- First we shall define two datatypes to represent our pages. One, the page
--- itself. Second, the metadata associated with each document.
+-- Route for each generated static page. 
+data Route a where
+  Route_Index :: Route [(Route MMark, MMark)]
+  Route_Doc :: Path Rel File -> Route MMark
+  Route_Texts :: Route ()
 
--- | A generated page is either an index of documents, or an individual document.
---
--- The `Document` type takes two type variables:
--- 1. The first type variable specifies the parser to use: MMark or Pandoc
--- 2. The second type variable should be your metadata record
-data Page
-  = Page_Index [Source MMark]
-  | Page_Doc (Source MMark)
-  | Page_Texts
+-- Define the target .html path for each route here.
+instance IsRoute Route where 
+  routeFile = \case
+    Route_Index ->
+      pure [relfile|index.html|]
+    Route_Doc srcPath -> do 
+      dir <- parseRelDir =<< fmap (toFilePath . fst) (splitExtension srcPath)
+      pure $ dir </> [relfile|index.html|]
+    Route_Texts -> do
+      pure $ [relfile|texts/index.html|]
 
 -- | Type representing the metadata in our Markdown documents
 --
@@ -80,8 +87,8 @@ data Site
       }
   deriving (Show, Eq, Generic, FromJSON)
 
-getMeta :: Source MMark -> DocMeta
-getMeta src = case MMark.projectYaml (Rib.sourceVal src) of
+getMeta :: MMark -> DocMeta
+getMeta src = case MMark.projectYaml src of
   Nothing -> error "No YAML metadata"
   Just val -> case fromJSON val of
     Aeson.Error e -> error $ "JSON error: " <> e
@@ -105,36 +112,32 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
     generateSite = do
       -- Copy over the static files
       Rib.buildStaticFiles [[relfile|static/**|]]
-      -- Build individual markup sources, generating .html for each.
-      docs <- Rib.forEvery [[relfile|**/*.md|]] $ \srcPath -> 
-        Rib.buildHtml' srcPath MMark.parse (const $ htmlPathFor srcPath) (renderPage . Page_Doc)
 
+      let writeHtmlRoute :: Route a -> a -> Action ()
+          writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderRoute r
+   
+      -- Build individual markup sources, generating .html for each.
+      docs <- Rib.forEvery [[relfile|**/*.md|]] $ \srcPath -> do
+        let r = Route_Doc srcPath
+        doc <- MMark.parse srcPath
+        writeHtmlRoute r doc
+        pure (r, doc)
+      
       -- Build an index.html linking to the aforementioned files.
-      Rib.writeHtml [relfile|index.html|] $ renderPage $ Page_Index docs
+      writeHtmlRoute Route_Index docs
 
       -- Build a texts directory using the data in Editions.hs.
-      Rib.writeHtml [relfile|texts/index.html|] $ renderPage $ Page_Texts
-
-    -- | Convert foo/bar.md -> foo/bar/index.html
-    --
-    -- So that /foo/bar/ becomes the canonical URL to access this page.
-    htmlPathFor =
-      liftIO
-      . parseRelFile
-      . T.unpack
-      . T.replace ".md" "/index.html"
-      . T.pack
-      . toFilePath
+      writeHtmlRoute Route_Texts ()
 
     -- Define your site HTML here
-    renderPage :: Page -> Html ()
-    renderPage page = with html_ [lang_ "en"] $ do
+    renderRoute :: Route a -> a -> Html ()
+    renderRoute route val = with html_ [lang_ "en"] $ do
       head_ $ do
         meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
-        title_ $ case page of
-          Page_Index _ -> "Open Editions"
-          Page_Doc doc -> toHtml $ title $ getMeta doc
-          Page_Texts -> "Open Editions Texts"
+        title_ $ toHtml @Text $ case route of
+          Route_Index -> "Open Editions"
+          Route_Doc _ -> title $ getMeta val
+          Route_Texts -> "Open Editions Texts"
         style_ [type_ "text/css"] $ Clay.render pageStyle
         link_ [rel_ "stylesheet", href_ "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]
         link_ [rel_ "stylesheet", href_ "/static/css/materialize.min.css"]
@@ -145,19 +148,22 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
                                       , ("/contribute/", "Contribute")
                                       , ("/texts/", "Texts")
                                       ]
-        div_ [class_ "container"] $ do
-          case page of
-            Page_Index docs -> do
-              indexTemplate
-            Page_Texts -> textsTemplate
-            Page_Doc doc -> do
-              let meta = getMeta doc
-              article_ [class_ "post container"] $ do
-                h1_ $ toHtml $ title meta
-                MMark.render $ Rib.sourceVal doc
+        div_ [class_ "container"] $
+          renderRouteBody val route
 
         footerTemplate
         scriptsTemplate
+
+    renderRouteBody :: a -> Route a -> Html ()
+    renderRouteBody val = \case
+      Route_Index ->
+        indexTemplate
+      Route_Texts -> textsTemplate
+      Route_Doc _ -> do
+        let meta = getMeta val
+        article_ [class_ "post container"] $ do
+          h1_ $ toHtml $ title meta
+          MMark.render val
 
     -- Define your site CSS here
     pageStyle :: Css
