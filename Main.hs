@@ -53,7 +53,7 @@ iconBlock (icon, blurb, description) =
 
 -- Route for each generated static page. 
 data Route a where
-  Route_Index :: Route [(Route MMark, MMark)]
+  Route_Index :: Route ()
   Route_Doc :: Path Rel File -> Route MMark
   Route_Texts :: Route ()
 
@@ -117,21 +117,20 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
           writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderRoute r
    
       -- Build individual markup sources, generating .html for each.
-      docs <- Rib.forEvery [[relfile|**/*.md|]] $ \srcPath -> do
+      Rib.forEvery [[relfile|**/*.md|]] $ \srcPath -> do
         let r = Route_Doc srcPath
         doc <- MMark.parse srcPath
         writeHtmlRoute r doc
-        pure (r, doc)
       
       -- Build an index.html linking to the aforementioned files.
-      writeHtmlRoute Route_Index docs
+      writeHtmlRoute Route_Index ()
 
       -- Build a texts directory using the data in Editions.hs.
       writeHtmlRoute Route_Texts ()
 
     -- Define your site HTML here
     renderRoute :: Route a -> a -> Html ()
-    renderRoute route val = with html_ [lang_ "en"] $ do
+    renderRoute route val = html_ [lang_ "en"] $ do
       head_ $ do
         meta_ [httpEquiv_ "Content-Type", content_ "text/html; charset=utf-8"]
         title_ $ toHtml @Text $ case route of
