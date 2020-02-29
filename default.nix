@@ -1,5 +1,5 @@
 let
-  ribRevision = "a57e7ab7ef5b5b5fcbbf7b99b3edb33bfde5851f";
+  ribRevision = "e41eae3";
 
   inherit (import (builtins.fetchTarball "https://github.com/hercules-ci/gitignore/archive/7415c4f.tar.gz") { }) gitignoreSource;
 in {
