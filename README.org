@@ -24,7 +24,7 @@ The texts themselves are submodules in this repository, in /texts
 
 ** Website: technical details. 
 
-This website is built from markdown, using Rib, Shake, and other Haskell tools. To build it, make sure you have Nix installed, and then run: 
+This website, [[http://open-editions.org]], is built from markdown, using Rib, Shake, and other Haskell tools. To build it, make sure you have Nix installed, and then run: 
 
 #+BEGIN_SRC shell
 nix-shell --run 'ghcid -T ":main generate"' 
@@ -34,3 +34,21 @@ Or to build it and watch the directory for changes, just remove ~generate~.
 
 Most of the layout is in Main.hs. Edition metadata is in Editions.hs, for now. 
  
+** Open Edition Specification
+
+Each edition must: 
+ - Be a single git repository, hosted on GitHub.
+ - Be named ~corpus-author-shortTitle-tei~, where ~author~ is the author's name, and ~shortTitle~ is a shortened version of the title.
+ - Be included in this repository as a submodule (for now).
+ - Have a ~header.xml~ in TEI XML, containing all its metadata.
+ - Have a ~README.md~ file describing the edition
+ - Have a ~.github/workflows/edition.yaml~ file which will validate the XML
+ - Have a mirror repo at Zenodo, where it will receive a DOI and have a stable identifier, for posterity.
+   - This requires that the edition have a release, and a tag. Use semantic versioning for the tags, e.g. v0.1.0.
+
+The header.xml must: 
+
+ - Be a valid TEI XML file. 
+ - Contain a list of xincludes to other files in the repository, if the edition is in more than one file.
+ - Contain links to the source repository. 
+
