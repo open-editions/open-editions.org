@@ -104,3 +104,11 @@ Cross-references show intertextualities between two texts in our collection, or 
     <link xml:id="twig-skirt" target="u10_wandering_rocks.xml#lb_100201 u10_wandering_rocks.xml#lb_100440 u14_oxen.xml#lb_141158"/>
     <link xml:id="lemon-soap" target="u05_lotus-eaters.xml#lb_050513 u17_ithaca.xml#lb_170232"/>
 ```
+
+### Line Numbering
+### Dialogue Attribution
+### Place Names and Geotagging
+### Languages
+### Free Indirect Discourse
+### Criticism
+### Zenodo Archiving
