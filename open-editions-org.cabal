@@ -18,4 +18,5 @@ executable open-editions-org
         path,
         rib,
         shake -any,
-        text
+        text,
+        xml-conduit
