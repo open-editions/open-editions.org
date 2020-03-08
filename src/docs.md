@@ -20,7 +20,6 @@ The header.xml must:
  - Contain links to the source repository. 
 
 ## Markup Features 
-
 ### Dialogue Attribution
 
 Dialogue is marked up with `<said>` and using the `@who` attribute, as in `<said who="Stephen Dedalus">`. 
