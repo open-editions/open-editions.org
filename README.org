@@ -1,26 +1,28 @@
 * Open Editions
 
-The Open Editions project publishes richly annotated open source literary texts. We aim to aggregate the literary knowledge that surrounds a text, codify that knowledge, and integrate it into the text. [[https://github.com/open-editions/article-jjq/blob/master/open-editions-online.pdf][Read the draft article for /James Joyce Quarterly/ where we discuss the project and its preliminary goals.]]
+The Open Editions project publishes richly annotated open source literary texts. We aim to aggregate the literary knowledge that surrounds a text, codify that knowledge, and integrate it into the text. [[https://github.com/open-editions/article-jjq/blob/master/open-editions-online.pdf][Read our draft article for /James Joyce Quarterly/ where we discuss the project and its preliminary goals.]]
 
 This is the master repository for the Open Editions website, [[http://open-editions.org][Open-Editions.org]]. The issues here represent meta-todo items for all texts.
 
+For technical documentation, including the specification for an Open Edition, please see http://open-editions.org/docs
+
 ** Text Feature Status
 
-The texts themselves are submodules in this repository, in /texts
+The issues pages of the text repositories (see the list at http://github.com/open-editions) are the best place to see the most recently updated status of each text and text feature. But here's a table, for convenience:
 
-| Text                    | Ulysses    | A Portrait of the Artist as a Young Man | Dubliners | Finnegans Wake | Middlemarch |
-|-------------------------+------------+-----------------------------------------+-----------+----------------+-------------|
-| Author                  | Joyce      | Joyce                                   | Joyce     | Joyce          | Eliot       |
-| Line Nos.               | DONE       | DONE                                    | DONE      | DONE           | TODO        |
-| Dialogue Attribution    | DONE       | INPROGRESS                              | DONE      | TODO           | DONE        |
-| Place Names             | DONE       | DONE                                    | DONE      | TODO           | TODO        |
-| Geotagging              | TODO       | DONE                                    | DONE      | TODO           | TODO        |
-| Distinctive Words       | INPROGRESS | INPROGRESS                              | TODO      | TODO (!)       | TODO        |
-| Cross-References        | INPROGRESS | INPROGRESS                              | TODO      | TODO           | TODO        |
-| Languages               | DONE       | DONE                                    | TODO      | WONTFIX        | TODO        |
-| Free Indirect Discourse | TODO       | TODO                                    | TODO      | TODO           | DONE        |
-| Criticism Mapping       | TODO       | TODO                                    | TODO      | TODO           | TODO        |
-| Zenodo Archive          | DONE       | DONE                                    | TODO      | TODO           | TODO        |
+| Text                    | Ulysses    | Portrait of the Artist | Dubliners | Finnegans Wake | Middlemarch |
+|-------------------------+------------+------------------------+-----------+----------------+-------------|
+| Author                  | Joyce      | Joyce                  | Joyce     | Joyce          | Eliot       |
+| Line Nos.               | DONE       | DONE                   | DONE      | DONE           | TODO        |
+| Dialogue Attribution    | DONE       | INPROGRESS             | DONE      | TODO           | DONE        |
+| Place Names             | DONE       | DONE                   | DONE      | TODO           | TODO        |
+| Geotagging              | TODO       | DONE                   | DONE      | TODO           | TODO        |
+| Distinctive Words       | INPROGRESS | INPROGRESS             | TODO      | WONTFIX?       | TODO        |
+| Cross-References        | INPROGRESS | INPROGRESS             | TODO      | TODO           | TODO        |
+| Languages               | DONE       | DONE                   | TODO      | WONTFIX?       | TODO        |
+| Free Indirect Discourse | TODO       | TODO                   | TODO      | TODO           | DONE        |
+| Criticism Mapping       | TODO       | TODO                   | TODO      | INPROGRESS     | TODO        |
+| Zenodo Archive          | DONE       | DONE                   | TODO      | TODO           | TODO        |
 
 ** Website: technical details. 
 
@@ -33,22 +35,3 @@ nix-shell --run 'ghcid -T ":main generate"'
 Or to build it and watch the directory for changes, just remove ~generate~. 
 
 Most of the layout is in Main.hs. Edition metadata is in Editions.hs, for now. 
- 
-** Open Edition Specification
-
-Each edition must: 
- - Be a single git repository, hosted on GitHub.
- - Be named ~corpus-author-shortTitle-tei~, where ~author~ is the author's name, and ~shortTitle~ is a shortened version of the title.
- - Be included in this repository as a submodule (for now).
- - Have a ~header.xml~ in TEI XML, containing all its metadata.
- - Have a ~README.md~ file describing the edition
- - Have a ~.github/workflows/edition.yaml~ file which will validate the XML
- - Have a mirror repo at Zenodo, where it will receive a DOI and have a stable identifier, for posterity.
-   - This requires that the edition have a release, and a tag. Use semantic versioning for the tags, e.g. v0.1.0.
-
-The header.xml must: 
-
- - Be a valid TEI XML file. 
- - Contain a list of xincludes to other files in the repository, if the edition is in more than one file.
- - Contain links to the source repository. 
-
