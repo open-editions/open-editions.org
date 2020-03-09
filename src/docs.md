@@ -5,21 +5,22 @@
 Each edition must: 
 
  - Be a single git repository, hosted on GitHub.
- - Be named ~corpus-author-shortTitle-tei~, where ~author~ is the author's name, and ~shortTitle~ is a shortened version of the title.
+ - Be named `corpus-author-shortTitle-tei`, where `author` is the author's name, and `shortTitle` is a shortened version of the title.
  - Be included in this repository as a submodule (for now).
- - Have a ~header.xml~ in TEI XML, containing all its metadata.
- - Have a ~README.md~ file describing the edition
- - Have a ~.github/workflows/edition.yaml~ file which will validate the XML
+ - Have a `header.xml` in TEI XML, containing all its metadata.
+ - Have a `README.md` file describing the edition
+ - Have a `.github/workflows/edition.yaml` file which will validate the XML
  - Have a mirror repo at Zenodo, where it will receive a DOI and have a stable identifier, for posterity.
    - This requires that the edition have a release, and a tag. Use semantic versioning for the tags, e.g. v0.1.0.
 
 The header.xml must: 
 
- - Be a valid TEI XML file. 
- - Contain a list of xincludes to other files in the repository, if the edition is in more than one file.
- - Contain links to the source repository. 
+ - Be a valid TEI XML file, as validated by [the official TEI RNG files](https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng). 
+ - Contain a list of `xinclude`s to other files in the repository, if the edition is in more than one file.
+ - Contain links to the source repository, since the source repository is the authoritative source of information such as version history. 
 
-## Markup Features 
+## Features 
+
 ### Dialogue Attribution
 
 Dialogue is marked up with `<said>` and using the `@who` attribute, as in `<said who="Stephen Dedalus">`. 
@@ -57,7 +58,7 @@ Distinctive words can be marked up using `<distinct>`, or `<foreign>`, depending
 
 For lengthy notes on a single word, it might be better to put these in a separate file. See [the word notes in the Ulysses text](https://github.com/open-editions/corpus-joyce-ulysses-tei/blob/master/ulysses-word-notes.xml) for an example. 
 
-Here's one I've generated from the database of [joycewords.com](https://joycewords.com/):
+Here's one generated from the database of [joycewords.com](https://joycewords.com/):
 
 ```xml
 <note resp="Ronan Crowley" type="analysis" xml:id="151777-bedlock">
@@ -105,9 +106,39 @@ Cross-references show intertextualities between two texts in our collection, or 
 ```
 
 ### Line Numbering
-### Dialogue Attribution
+
+Whenever possible, we should maintain line numbers that keep the text even with its canonical edition. This is already done for _Portrait_, _Ulysses_, and _Dubliners_. 
+
 ### Place Names and Geotagging
+
+Place names should be geotagged, using `<location><geo>` and latitude/longitude:
+
+```xml
+They were caught near the <place><location><geo>53.290670 -6.535060</geo></location><placeName>Hill of Lyons</placeName></place>.
+```
+
 ### Languages
+
+Use of a secondary language should be noted, using the xml id. 
+
+```xml
+<lb n="010005"/><said who="bm">―<quote xml:lang="la">Introibo ad altare Dei.</quote></said></p>
+```
+
 ### Free Indirect Discourse
+
+We're still not quite sure how to mark this up. `<seg type="fid">` will have to do, for now. Michelle Qiu has `who` attributes, as well.
+
+```xml
+<seg type="fid" who="#Celia"> Celia was conscious of some mental strength when she really applied herself to argument.</seg>
+```
+
 ### Criticism
+
+We link literary texts to criticism that discusses it. Some of this is done manually, and some automatically, using [Text-matcher](https://github.com/JonathanReeve/text-matcher).
+
+Markup details to follow.
+
 ### Zenodo Archiving
+
+We link our GitHub repositories to Zenodo for archiving. Zenodo pulls in our latest releases, and stores them at the CERN Data Centre. They also give them DOIs (document object identifiers), making them easier to cite.
