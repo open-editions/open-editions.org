@@ -26,7 +26,7 @@ The issues pages of the text repositories (see the list at http://github.com/ope
 
 ** Website: technical details. 
 
-This website, [[http://open-editions.org]], is built from markdown, using Rib, Shake, and other Haskell tools. To build it, make sure you have Nix installed, and then run: 
+This website, [[http://open-editions.org]], is built from markdown, using [[https://github.com/srid/rib][Rib]], Shake, and other Haskell tools. To build it, make sure you have Nix installed, and then run: 
 
 #+BEGIN_SRC shell
 nix-shell --run 'ghcid -T ":main generate"' 
