@@ -36,7 +36,7 @@ navArea ::
   -> Html () -- The Lucid Html for the nav area.
 navArea brand navItems =
   nav_ [ class_ "light-blue lighten-1", role_ "navigation" ] $ div_ [ class_ "nav-wrapper container" ] $ do
-    a_ [ id_ "logo-container", href_ "#", class_ "brand-logo" ] $ brand
+    a_ [ id_ "logo-container", href_ "/", class_ "brand-logo" ] $ brand
     ul_ [ class_ "right hide-on-med-and-down" ] $ forM_ navItems $ \navItem ->
       li_ $ a_ [ href_ (fst navItem) ] (snd navItem)
     ul_ [ id_ "nav-mobile", class_ "sidenav" ] $ forM_ navItems $ \navItem ->
@@ -115,13 +115,13 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
 
       let writeHtmlRoute :: Route a -> a -> Action ()
           writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderRoute r
-   
+
       -- Build individual markup sources, generating .html for each.
       Rib.forEvery [[relfile|**/*.md|]] $ \srcPath -> do
         let r = Route_Doc srcPath
         doc <- MMark.parse srcPath
         writeHtmlRoute r doc
-      
+
       -- Build an index.html linking to the aforementioned files.
       writeHtmlRoute Route_Index ()
 
@@ -144,7 +144,7 @@ main = Rib.run [reldir|src|] [reldir|dist|] generateSite
 
       body_ $ do
         navArea "Open Editions" [ ("/about/", "About")
-                                      , ("/contribute/", "Contribute")
+                                      , ("/contributing/", "Contributing")
                                       , ("/texts/", "Texts")
                                       ]
         div_ [class_ "container"] $
