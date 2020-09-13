@@ -1,6 +1,0 @@
-dist-newstyle/
-.shake/
-dist/dante/
-
-# Nix
-result

@@ -26,6 +26,7 @@ import Path
 import Rib (MMark, IsRoute)
 import qualified Rib
 import qualified Rib.Parser.MMark as MMark
+import PyF
 
 import qualified Editions as E -- my own module
 
@@ -61,12 +62,12 @@ data Route a where
 instance IsRoute Route where 
   routeFile = \case
     Route_Index ->
-      pure [relfile|index.html|]
+      pure "index.html"
     Route_Doc srcPath -> do 
       dir <- parseRelDir =<< fmap (toFilePath . fst) (splitExtension srcPath)
-      pure $ dir </> [relfile|index.html|]
+      pure $ dir </> "index.html"
     Route_Texts -> do
-      pure $ [relfile|texts/index.html|]
+      pure "texts/index.html"
 
 -- | Type representing the metadata in our Markdown documents
 --
@@ -105,19 +106,19 @@ getMeta src = case MMark.projectYaml src of
 -- In the shake build action you would expect to use the utility functions
 -- provided by Rib to do the actual generation of your static site.
 main :: IO ()
-main = Rib.run [reldir|src|] [reldir|dist|] generateSite
+main = Rib.run "content" "dist" generateSite
   where
     -- Shake Action for generating the static site
     generateSite :: Action ()
     generateSite = do
       -- Copy over the static files
-      Rib.buildStaticFiles [[relfile|static/**|]]
+      Rib.buildStaticFiles "static/**"
 
       let writeHtmlRoute :: Route a -> a -> Action ()
           writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderRoute r
 
       -- Build individual markup sources, generating .html for each.
-      Rib.forEvery [[relfile|**/*.md|]] $ \srcPath -> do
+      Rib.forEvery ["**/*.md"] $ \srcPath -> do
         let r = Route_Doc srcPath
         doc <- MMark.parse srcPath
         writeHtmlRoute r doc
@@ -206,6 +207,25 @@ formatEdition ed = do
     textButton issuesUrl "done" "Issues"
     textButton contributorsUrl "people" "Contributors"
     textButton previewUrl "book" "Preview"
+  div_ [ class_ "features" ] $ do
+    mapM_ formatFeature (E.features ed) where
+      formatFeature :: E.Feature -> Html ()
+      formatFeature name status issue =
+        table_ [] $ do
+          th_ [] $ toHtml "feature"
+          th_ [] $ toHtml "status"
+          th_ [] $ toHtml "issue #"
+          tr_ [] $ do
+            td_ [] $ toHtml name
+            td_ [] $ toHtml status
+            td_ [] $ a_ [ href_ $ T.concat ["http://github.com/open-editions/"
+                                           , E.repo
+                                           , "/issues"
+                                           , toHtml "#" ++ (show issue)
+                                           ]
+                        ]
+      issueURI = [fmt|https://github.com/open-editions/{E.repo}/issues/{issue}|]
+
 
 -- Convenience function, for transforming markdown strings to HTML
 markdownToHtml :: E.Markdown -> Html ()
