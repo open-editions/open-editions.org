@@ -22,10 +22,11 @@ import qualified Data.Text as T
 import Development.Shake
 import GHC.Generics
 import Lucid
+import Main.Utf8
 import Path
-import Rib (MMark, IsRoute)
+import Rib (IsRoute, Pandoc)
+import qualified Rib.Parser.Pandoc as Pandoc
 import qualified Rib
-import qualified Rib.Parser.MMark as MMark
 import PyF
 
 import qualified Editions as E -- my own module
@@ -54,20 +55,16 @@ iconBlock (icon, blurb, description) =
 
 -- Route for each generated static page. 
 data Route a where
-  Route_Index :: Route ()
-  Route_Doc :: Path Rel File -> Route MMark
-  Route_Texts :: Route ()
+  Route_Index :: Route [(Route Pandoc, Pandoc)]
+  Route_Doc :: FilePath -> Route Pandoc
+  Route_Texts :: Route [(Route Pandoc, Pandoc)]
 
 -- Define the target .html path for each route here.
-instance IsRoute Route where 
+instance IsRoute Route where
   routeFile = \case
-    Route_Index ->
-      pure "index.html"
-    Route_Doc srcPath -> do 
-      dir <- parseRelDir =<< fmap (toFilePath . fst) (splitExtension srcPath)
-      pure $ dir </> "index.html"
-    Route_Texts -> do
-      pure "texts/index.html"
+    Route_Index -> pure "index.html"
+    Route_Doc srcPath -> pure $ srcPath -<.> ".html"
+    Route_Texts -> pure "texts/index.html"
 
 -- | Type representing the metadata in our Markdown documents
 --
@@ -88,10 +85,12 @@ data Site
       }
   deriving (Show, Eq, Generic, FromJSON)
 
-getMeta :: MMark -> DocMeta
-getMeta src = case MMark.projectYaml src of
+-- | Get metadata from Markdown's YAML block
+getMeta :: Rib.Pandoc -> DocMeta
+getMeta src = case Pandoc.extractMeta src of
   Nothing -> error "No YAML metadata"
-  Just val -> case fromJSON val of
+  Just (Left e) -> error $ T.unpack e
+  Just (Right val) -> case fromJSON val of
     Aeson.Error e -> error $ "JSON error: " <> e
     Aeson.Success v -> v
 
@@ -106,28 +105,29 @@ getMeta src = case MMark.projectYaml src of
 -- In the shake build action you would expect to use the utility functions
 -- provided by Rib to do the actual generation of your static site.
 main :: IO ()
-main = Rib.run "content" "dist" generateSite
+main = withUtf8 $ Rib.run "content" "dist" generateSite
   where
     -- Shake Action for generating the static site
     generateSite :: Action ()
     generateSite = do
       -- Copy over the static files
-      Rib.buildStaticFiles "static/**"
+      Rib.buildStaticFiles [ "static/**" ]
 
       let writeHtmlRoute :: Route a -> a -> Action ()
           writeHtmlRoute r = Rib.writeRoute r . Lucid.renderText . renderRoute r
 
       -- Build individual markup sources, generating .html for each.
-      Rib.forEvery ["**/*.md"] $ \srcPath -> do
+      articles <- Rib.forEvery ["**/*.md"] $ \srcPath -> do
         let r = Route_Doc srcPath
-        doc <- MMark.parse srcPath
+        doc <- Pandoc.parse Pandoc.readMarkdown srcPath
         writeHtmlRoute r doc
+        pure (r, doc)
 
       -- Build an index.html linking to the aforementioned files.
-      writeHtmlRoute Route_Index ()
+      writeHtmlRoute Route_Index articles
 
       -- Build a texts directory using the data in Editions.hs.
-      writeHtmlRoute Route_Texts ()
+      writeHtmlRoute Route_Texts articles
 
     -- Define your site HTML here
     renderRoute :: Route a -> a -> Html ()
@@ -163,7 +163,7 @@ main = Rib.run "content" "dist" generateSite
         let meta = getMeta val
         article_ [class_ "post container"] $ do
           h1_ $ toHtml $ title meta
-          MMark.render val
+          Pandoc.render val
 
     -- Define your site CSS here
     pageStyle :: Css
@@ -173,10 +173,7 @@ main = Rib.run "content" "dist" generateSite
 
 textsTemplate :: Html ()
 textsTemplate = do
-  -- let meta = getMeta doc
   article_ [class_ "post container"] $ do
-    -- h1_ $ toHtml $ title meta
-    -- MMark.render $ Rib.sourceVal doc
     h1_ "Open Editions Texts"
     div_ [ class_ "section" ] $ do
       mapM_ formatEdition E.editions
@@ -210,30 +207,23 @@ formatEdition ed = do
   div_ [ class_ "features" ] $ do
     mapM_ formatFeature (E.features ed) where
       formatFeature :: E.Feature -> Html ()
-      formatFeature name status issue =
+      formatFeature feat =
         table_ [] $ do
           th_ [] $ toHtml "feature"
           th_ [] $ toHtml "status"
           th_ [] $ toHtml "issue #"
           tr_ [] $ do
-            td_ [] $ toHtml name
-            td_ [] $ toHtml status
-            td_ [] $ a_ [ href_ $ T.concat ["http://github.com/open-editions/"
-                                           , E.repo
-                                           , "/issues"
-                                           , toHtml "#" ++ (show issue)
-                                           ]
-                        ]
-      issueURI = [fmt|https://github.com/open-editions/{E.repo}/issues/{issue}|]
+            td_ [] $ toHtml $ E.desc feat
+            td_ [] $ toHtml $ E.status feat
+            td_ [] $ a_ [ href_ $ [fmt|https://github.com/open-editions/{E.repo}/issues/{issue}|] ] $ issue where
+                            issue = case E.issueNo feat of
+                              Nothing -> "NA"
+                              Just no -> toHtml $ show no
 
 
 -- Convenience function, for transforming markdown strings to HTML
 markdownToHtml :: E.Markdown -> Html ()
-markdownToHtml md = do
-  let result = MMark.parsePure "markdown" md
-  case result of
-      Left err -> error (T.unpack err)
-      Right res -> MMark.render res
+markdownToHtml md = Pandoc.render $ Pandoc.parsePure Pandoc.readMarkdown md
 
 indexTemplate :: Html ()
 indexTemplate =  do
