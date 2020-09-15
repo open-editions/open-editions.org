@@ -105,7 +105,7 @@ getMeta src = case Pandoc.extractMeta src of
 -- In the shake build action you would expect to use the utility functions
 -- provided by Rib to do the actual generation of your static site.
 main :: IO ()
-main = withUtf8 $ Rib.run "content" "dist" generateSite
+main = withUtf8 $ Rib.run "content" "dest" generateSite
   where
     -- Shake Action for generating the static site
     generateSite :: Action ()
