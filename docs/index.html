@@ -1,0 +1,115 @@
+<html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Documentation
+</title><style type="text/css">
+body article ul li
+{
+  list-style-type : initial !important;
+  margin-left     : 1em;
+}
+
+
+div.container img
+{
+  max-width : 100%;
+}
+
+
+/* Generated with Clay, http://fvisser.nl/clay */</style><link href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" rel="stylesheet"><link href="/static/css/normalize.css" rel="stylesheet"><link href="/static/css/materialize.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></head><body><nav role="navigation" class="light-blue lighten-1"><div class="nav-wrapper container"><a href="/" id="logo-container" class="brand-logo">Open Editions</a><ul class="right hide-on-med-and-down"><li><a href="/about/">About</a></li><li><a href="/contributing/">Contributing</a></li><li><a href="/texts/">Texts</a></li><li><a href="/docs/">Docs</a></li></ul><ul id="nav-mobile" class="sidenav"><li><a href="/about/">About</a></li><li><a href="/contributing/">Contributing</a></li><li><a href="/texts/">Texts</a></li><li><a href="/docs/">Docs</a></li></ul><a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a></div></nav><div class="container"><article class="post container"><h1>Documentation
+</h1><h2 id="open-editions-specification-10">Open Editions Specification 1.0</h2>
+<p>Each edition must:</p>
+<ul>
+<li>Be a single git repository, hosted on GitHub.</li>
+<li>Be named <code>corpus-author-shortTitle-tei</code>, where <code>author</code> is the author’s name, and <code>shortTitle</code> is a shortened version of the title.</li>
+<li>Be included in this repository as a submodule (for now).</li>
+<li>Have a <code>header.xml</code> in TEI XML, containing all its metadata.</li>
+<li>Have a <code>README.md</code> file describing the edition</li>
+<li>Have a <code>.github/workflows/edition.yaml</code> file which will validate the XML</li>
+<li>Have a mirror repo at Zenodo, where it will receive a DOI and have a stable identifier, for posterity.
+<ul>
+<li>This requires that the edition have a release, and a tag. Use semantic versioning for the tags, e.g. v0.1.0.</li>
+</ul></li>
+</ul>
+<p>The header.xml must:</p>
+<ul>
+<li>Be a valid TEI XML file, as validated by <a href="https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng">the official TEI RNG files</a>.</li>
+<li>Contain a list of <code>xinclude</code>s to other files in the repository, if the edition is in more than one file.</li>
+<li>Contain links to the source repository, since the source repository is the authoritative source of information such as version history.</li>
+</ul>
+<h2 id="features">Features</h2>
+<h3 id="dialogue-attribution">Dialogue Attribution</h3>
+<p>Dialogue is marked up with <code>&lt;said&gt;</code> and using the <code>@who</code> attribute, as in <code>&lt;said who="Stephen Dedalus"&gt;</code>.</p>
+<ul>
+<li>For the moment, full names should be used, where known. (Although in the future we hope to shift to XML IDs; see <a href="https://github.com/JonathanReeve/corpus-joyce-ulysses-tei/issues/19">#19</a>.</li>
+<li>You can check the list of characters currently used with <code>make chars</code>, a command in the <a href="https://github.com/JonathanReeve/corpus-joyce-ulysses-tei/blob/master/Makefile">Makefile</a>. (This requires that you have <code>ag</code> (The Silver Searcher) installed, and of course GNU <code>make</code>. See <a href="https://github.com/JonathanReeve/corpus-joyce-ulysses-tei/issues/19#issuecomment-278453253">Chris Foster’s comment in issue 19</a>.</li>
+</ul>
+<p>If a character quotes direct speech within her speech, we’re encoding it like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;said</span><span class="ot"> who=</span><span class="st">&quot;Stephen Dedalus&quot;</span><span class="kw">&gt;</span>―You said,<span class="kw">&lt;/said&gt;</span> Stephen answered, </span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">&lt;said</span><span class="ot"> who=</span><span class="st">&quot;Stephen Dedalus&quot;</span><span class="kw">&gt;&lt;said</span><span class="ot"> who=</span><span class="st">&quot;Buck Mulligan&quot;</span><span class="ot"> rend=</span><span class="st">&quot;italics&quot;</span><span class="kw">&gt;</span>O, </span>
+<span id="cb1-3"><a href="#cb1-3"></a>it&#39;s only Dedalus whose mother is beastly dead<span class="kw">&lt;/said&gt;</span>.<span class="kw">&lt;/said&gt;</span></span></code></pre></div>
+<p>If direct speech is recalled in interior monologue or (occasionally) represented in the third-person narrative using italics, we’re encoding it like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1"></a>she was one of those good souls who had always to be told twice </span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">&lt;said</span><span class="ot"> who=</span><span class="st">&quot;Father Conmee&quot;</span><span class="ot"> direct=</span><span class="st">&quot;false&quot;</span><span class="ot"> rend=</span><span class="st">&quot;italics&quot;</span><span class="kw">&gt;</span>bless you, my child,<span class="kw">&lt;/said&gt;</span> </span>
+<span id="cb2-3"><a href="#cb2-3"></a>that they have been absolved, <span class="kw">&lt;said</span><span class="ot"> who=</span><span class="st">&quot;Father Conmee&quot;</span><span class="ot"> direct=</span><span class="st">&quot;false&quot;</span><span class="ot"> rend=</span><span class="st">&quot;italics&quot;</span><span class="kw">&gt;</span>pray for me<span class="kw">&lt;/said&gt;</span>.</span></code></pre></div>
+<p>For more on this, see <a href="https://github.com/JonathanReeve/corpus-joyce-ulysses-tei/issues/20#issuecomment-280171254">the discussion in issue #20</a>.</p>
+<p>When it is not clear who is speaking, you can mark up your guesses using the <code>certainty</code> tag, like this:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">&lt;lb</span><span class="ot"> n=</span><span class="st">&quot;060004&quot;</span><span class="kw">/&gt;&lt;said</span><span class="ot"> xml:id=</span><span class="st">&quot;060004-a&quot;</span><span class="ot"> who=</span><span class="st">&quot;Cunningham&quot;</span><span class="kw">&gt;</span>―Come on, Simon.</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">&lt;certainty</span><span class="ot"> target=</span><span class="st">&quot;#060004-a&quot;</span><span class="ot"> match=</span><span class="st">&quot;@who&quot;</span><span class="ot"> locus=</span><span class="st">&quot;value&quot;</span><span class="ot"> assertedValue=</span><span class="st">&quot;Power&quot;</span><span class="ot"> degree=</span><span class="st">&quot;0.5&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>    <span class="kw">&lt;desc&gt;</span>It&#39;s unclear here whether it&#39;s Cunningham or Power speaking.<span class="kw">&lt;/desc&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="kw">&lt;/certainty&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="kw">&lt;/said&gt;</span></span></code></pre></div>
+<h3 id="distinctive-words">Distinctive Words</h3>
+<p>Distinctive words can be marked up using <code>&lt;distinct&gt;</code>, or <code>&lt;foreign&gt;</code>, depending on the language. If <code>&lt;foreign&gt;</code>, be sure to specify the language using <code>xml:lang="en"</code>, where “en” is the two-letter language code.</p>
+<p>For lengthy notes on a single word, it might be better to put these in a separate file. See <a href="https://github.com/open-editions/corpus-joyce-ulysses-tei/blob/master/ulysses-word-notes.xml">the word notes in the Ulysses text</a> for an example.</p>
+<p>Here’s one generated from the database of <a href="https://joycewords.com/">joycewords.com</a>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">&lt;note</span><span class="ot"> resp=</span><span class="st">&quot;Ronan Crowley&quot;</span><span class="ot"> type=</span><span class="st">&quot;analysis&quot;</span><span class="ot"> xml:id=</span><span class="st">&quot;151777-bedlock&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">&lt;term&gt;</span>bedlock<span class="kw">&lt;term&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">&lt;analysis&gt;</span>The OED recognises “bedlock” n. as a nonce-word modelled, </span>
+<span id="cb4-4"><a href="#cb4-4"></a>reasonably enough, after “wedlock.” As it happens, the coinage is </span>
+<span id="cb4-5"><a href="#cb4-5"></a>not Joyce’s own. He found it in James Huneker’s Painted Veils (1920), </span>
+<span id="cb4-6"><a href="#cb4-6"></a>which has “whether in wedlock or concubinage—bedlock is the ultimate outcome.”<span class="kw">&lt;/analysis&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="kw">&lt;time&gt;</span>2017-12-06 19:57:28<span class="kw">&lt;/time&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="kw">&lt;bibl&gt;</span>“Born out of bedlock hereditary epilepsy is present, the </span>
+<span id="cb4-9"><a href="#cb4-9"></a>consequence of unbridled lust.” (U 15.1777–78)<span class="kw">&lt;/bibl&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="kw">&lt;/note&gt;</span></span></code></pre></div>
+<p>Note the format of the xml id, which points to line 151777, and the word “bedlock” appearing in that line.</p>
+<h3 id="titles-of-works">Titles of Works</h3>
+<p>Although the <code>&lt;title&gt;</code> tag seems to be used for titles of works in the real world, they might also be applied to fictional works. <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-title.html">The TEI documentation for <code>&lt;title&gt;</code></a> gives information about its attribute <code>level</code>, which can be used to distinguish between “levels” of publications such as journals, series, or monographs, but this would not cover all the types present in <em>Ulysses</em>, so maybe we could use the attribute <code>type</code> along with a few types:</p>
+<ul>
+<li>artwork: <code>&lt;title type="artwork"&gt;The Bath of the Nymph&lt;/title&gt; over the bed.</code></li>
+<li>book: <code>smudged pages. &lt;title type="book"&gt;Ruby: the Pride of the Ring.&lt;/title&gt; Hello.</code></li>
+<li>magazine: <code>number of &lt;title type="magazine"&gt;Photo Bits&lt;/title&gt;</code></li>
+<li>newspaper: <code>The &lt;title type="newspaper"&gt;Evening Telegraph&lt;/title&gt;</code></li>
+<li>oratorio: <code>Dead March from &lt;title type="oratorio"&gt;Saul&lt;/title&gt;.</code></li>
+<li>pantomime: <code>in the pantomime of &lt;title type="pantomime"&gt;Turko the Terrible&lt;/title&gt;</code></li>
+<li>play: <code>Could I go to see &lt;title type="play"&gt;Leah&lt;/title&gt; tonight, I wonder.</code></li>
+<li>poem: <code>&lt;title type="poem"&gt;Art thou real, my ideal?&lt;/title&gt; it was called by Louis J Walsh, Magherafelt</code></li>
+<li>short story: <code>Our prize titbit: &lt;title type="short story"&gt;Matcham’s Masterstroke&lt;/title&gt;</code></li>
+<li>song: <code>&lt;title type="song"&gt;Là ci darem&lt;/title&gt; with J. C. Doyle, she said, and &lt;title type="song"&gt;Love's Old Sweet Song&lt;/title&gt;</code></li>
+</ul>
+<p>Subtitles can be handled, following the TEI suggestions for <code>@type</code>, with <code>&lt;title type=”sub”&gt;</code>.</p>
+<p>Titles are be rendered as italicized by default, so if a given title isn’t italicized in the text, mark it up with <code>&lt;title rend=”none”&gt;</code>.</p>
+<h3 id="cross-references">Cross-references</h3>
+<p>Cross-references show intertextualities between two texts in our collection, or in the same text. For instance, here are a few repeating instances within <em>Ulysses</em>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1"></a>    <span class="kw">&lt;link</span><span class="ot"> xml:id=</span><span class="st">&quot;agenbite&quot;</span><span class="ot"> target=</span><span class="st">&quot;u01_telemachus.xml#lb_010481_agenbite u09_scylla.xml#lb_090196_agenbite u09_scylla.xml#lb_090809 u10_wandering_rocks.xml#lb_100875 u10_wandering_rocks.xml#lb_100879&quot;</span><span class="kw">/&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>    <span class="kw">&lt;note</span><span class="ot"> target=</span><span class="st">&quot;agenbite&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>        Agenbite of inwit: Middle English for, &quot;again bites the inner wit&quot; (referring to the guilt of conscience). </span>
+<span id="cb5-4"><a href="#cb5-4"></a>        Also the title of a confessional prose work written in a Kentish dialect of Middle English.</span>
+<span id="cb5-5"><a href="#cb5-5"></a>        <span class="kw">&lt;ref</span><span class="ot"> target=</span><span class="st">&quot;https://en.wikipedia.org/wiki/Ayenbite_of_Inwyt&quot;</span><span class="kw">&gt;&lt;/ref&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="kw">&lt;/note&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="kw">&lt;link</span><span class="ot"> xml:id=</span><span class="st">&quot;twig-skirt&quot;</span><span class="ot"> target=</span><span class="st">&quot;u10_wandering_rocks.xml#lb_100201 u10_wandering_rocks.xml#lb_100440 u14_oxen.xml#lb_141158&quot;</span><span class="kw">/&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>    <span class="kw">&lt;link</span><span class="ot"> xml:id=</span><span class="st">&quot;lemon-soap&quot;</span><span class="ot"> target=</span><span class="st">&quot;u05_lotus-eaters.xml#lb_050513 u17_ithaca.xml#lb_170232&quot;</span><span class="kw">/&gt;</span></span></code></pre></div>
+<h3 id="line-numbering">Line Numbering</h3>
+<p>Whenever possible, we should maintain line numbers that keep the text even with its canonical edition. This is already done for <em>Portrait</em>, <em>Ulysses</em>, and <em>Dubliners</em>.</p>
+<h3 id="place-names-and-geotagging">Place Names and Geotagging</h3>
+<p>Place names should be geotagged, using <code>&lt;location&gt;&lt;geo&gt;</code> and latitude/longitude:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1"></a>They were caught near the <span class="kw">&lt;place&gt;&lt;location&gt;&lt;geo&gt;</span>53.290670 -6.535060<span class="kw">&lt;/geo&gt;&lt;/location&gt;&lt;placeName&gt;</span>Hill of Lyons<span class="kw">&lt;/placeName&gt;&lt;/place&gt;</span>.</span></code></pre></div>
+<h3 id="languages">Languages</h3>
+<p>Use of a secondary language should be noted, using the xml id.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">&lt;lb</span><span class="ot"> n=</span><span class="st">&quot;010005&quot;</span><span class="kw">/&gt;&lt;said</span><span class="ot"> who=</span><span class="st">&quot;bm&quot;</span><span class="kw">&gt;</span>―<span class="kw">&lt;quote</span><span class="ot"> xml:lang=</span><span class="st">&quot;la&quot;</span><span class="kw">&gt;</span>Introibo ad altare Dei.<span class="kw">&lt;/quote&gt;&lt;/said&gt;</span><span class="er">&lt;</span>/p&gt;</span></code></pre></div>
+<h3 id="free-indirect-discourse">Free Indirect Discourse</h3>
+<p>We’re still not quite sure how to mark this up. <code>&lt;seg type="fid"&gt;</code> will have to do, for now. Michelle Qiu has <code>who</code> attributes, as well.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">&lt;seg</span><span class="ot"> type=</span><span class="st">&quot;fid&quot;</span><span class="ot"> who=</span><span class="st">&quot;#Celia&quot;</span><span class="kw">&gt;</span> Celia was conscious of some mental strength when she really applied herself to argument.<span class="kw">&lt;/seg&gt;</span></span></code></pre></div>
+<h3 id="criticism">Criticism</h3>
+<p>We link literary texts to criticism that discusses it. Some of this is done manually, and some automatically, using <a href="https://github.com/JonathanReeve/text-matcher">Text-matcher</a>.</p>
+<p>Markup details to follow.</p>
+<h3 id="zenodo-archiving">Zenodo Archiving</h3>
+<p>We link our GitHub repositories to Zenodo for archiving. Zenodo pulls in our latest releases, and stores them at the CERN Data Centre. They also give them DOIs (document object identifiers), making them easier to cite.</p></article></div><footer class="page-footer orange"><div class="container"><div class="row"><div class="col l6 s12"><h5 class="white-text">Open Editions</h5><p class="grey-text text-lighten-4">Open-Source Electronic Scholarly Editions of Public Domain Literature</p></div><div class="col l3 s12"><h5 class="white-text">Texts</h5><ul><li><a href="/texts/#ulysses" class="white-text">Ulysses</a></li><li><a href="/texts/#portrait" class="white-text">Portrait</a></li><li><a href="/texts/#dubliners" class="white-text">Dubliners</a></li><li><a href="/texts/#middlemarch" class="white-text">Middlemarch</a></li></ul></div><div class="col l3 s12"><h5 class="white-text">Etc</h5><ul><li><a href="https://gitter.im/open-editions/Lobby" class="white-text">Chat with us on Gitter</a></li><li><a href="https://liberapay.com/JonathanReeve/donate" class="white-text">Donate using Liberapay</a></li><li><a href="https://github.com/open-editions" class="white-text">Browse our code on GitHub</a></li></ul></div></div></div><div class="footer-copyright"><div class="container">Hand-crafted with love, using <a href="http://materializecss.com" class="orange-text text-lighten-3">Materialize, </a><a href="https://github.com/srid/rib" class="orange-text text-lighten-3">Rib, </a><a href="http://haskell.org" class="orange-text text-lighten-3">and Haskell.</a><br>Licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="white-text">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.</a></div></div></footer><script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="/static/js/materialize.min.js"></script><script src="/static/js/init.js"></script></body></html>
