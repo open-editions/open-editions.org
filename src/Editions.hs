@@ -45,15 +45,15 @@ editions = [ Edition { title = "A Portrait of the Artist as a Young Man"
                , slug = "portrait"
                , preview = "https://joyce-portrait.netlify.com"
                , provenance = ""
-               , features = [ Feature "Line Numbers" Done Nothing
+               , features = [ Feature "Line Numbers" Done (Just 68)
                             , Feature "Dialog Attribution" Inprogress (Just 7)
-                            , Feature "Place Names" Done Nothing
-                            , Feature "Geotagging" Done Nothing
+                            , Feature "Place Names" Done (Just 43)
+                            , Feature "Geotagging" Done (Just 43)
                             , Feature "Distinctive Words" Inprogress Nothing
-                            , Feature "Cross-References" Inprogress Nothing
+                            , Feature "Cross-References" Inprogress (Just 42)
                             , Feature "Languages" Done Nothing
                             , Feature "Free Indirect Discourse" Todo Nothing
-                            , Feature "Criticism" Todo Nothing
+                            , Feature "Criticism" Inprogress (Just 34)
                             , Feature "Zenodo Archive" Done Nothing
                             ]
                }
@@ -65,13 +65,13 @@ editions = [ Edition { title = "A Portrait of the Artist as a Young Man"
                   , provenance = "Based on _Ulysses: A Critical and Synoptic Edition_ (1984 \\[rev. 1986\\]) prepared by Hans Walter Gabler with Wolfhard Steppe and Claus Melchior."
                   , features = [ Feature "Line Numbers" Done Nothing
                                , Feature "Dialog Attribution" Done (Just 7)
-                               , Feature "Place Names" Done Nothing
-                               , Feature "Geotagging" Todo Nothing
-                               , Feature "Distinctive Words" Inprogress Nothing
-                               , Feature "Cross-References" Inprogress Nothing
-                               , Feature "Languages" Done Nothing
+                               , Feature "Place Names" Done (Just 49)
+                               , Feature "Geotagging" Todo (Just 27)
+                               , Feature "Distinctive Words" Inprogress (Just 16)
+                               , Feature "Cross-References" Inprogress (Just 42)
+                               , Feature "Languages" Done (Just 2)
                                , Feature "Free Indirect Discourse" Todo Nothing
-                               , Feature "Criticism" Todo Nothing
+                               , Feature "Criticism" Inprogress Nothing
                                , Feature "Zenodo Archive" Done Nothing
                                ]
                   }

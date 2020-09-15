@@ -18,7 +18,7 @@ executable open-editions-org
         clay,
         containers,
         lucid -any,
-        path,
+        filepath,
         PyF,
         rib,
         shake -any,

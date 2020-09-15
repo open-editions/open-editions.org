@@ -23,7 +23,7 @@ import Development.Shake
 import GHC.Generics
 import Lucid
 import Main.Utf8
-import Path
+import System.FilePath
 import Rib (IsRoute, Pandoc)
 import qualified Rib.Parser.Pandoc as Pandoc
 import qualified Rib
@@ -63,7 +63,7 @@ data Route a where
 instance IsRoute Route where
   routeFile = \case
     Route_Index -> pure "index.html"
-    Route_Doc srcPath -> pure $ srcPath -<.> ".html"
+    Route_Doc srcPath -> pure $ (dropExtension srcPath) </> "index.html"
     Route_Texts -> pure "texts/index.html"
 
 -- | Type representing the metadata in our Markdown documents
@@ -139,15 +139,19 @@ main = withUtf8 $ Rib.run "content" "dist" generateSite
           Route_Doc _ -> title $ getMeta val
           Route_Texts -> "Open Editions Texts"
         style_ [type_ "text/css"] $ Clay.render pageStyle
-        link_ [rel_ "stylesheet", href_ "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]
+        link_ [rel_ "stylesheet", href_ "https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"]
+        link_ [rel_ "stylesheet", href_ "/static/css/normalize.css"]
+        -- link_ [rel_ "stylesheet", href_ "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"]
         link_ [rel_ "stylesheet", href_ "/static/css/materialize.min.css"]
+        -- link_ [rel_ "stylesheet", href_ "/static/css/milligram.css"]
         link_ [ href_ "https://fonts.googleapis.com/icon?family=Material+Icons", rel_ "stylesheet" ]
 
       body_ $ do
         navArea "Open Editions" [ ("/about/", "About")
-                                      , ("/contributing/", "Contributing")
-                                      , ("/texts/", "Texts")
-                                      ]
+                                , ("/contributing/", "Contributing")
+                                , ("/texts/", "Texts")
+                                , ("/docs/", "Docs")
+                                ]
         div_ [class_ "container"] $
           renderRouteBody val route
 
@@ -167,9 +171,13 @@ main = withUtf8 $ Rib.run "content" "dist" generateSite
 
     -- Define your site CSS here
     pageStyle :: Css
-    pageStyle = "div.container" ? do
-      "img" ? do
-        maxWidth (pct 100)
+    pageStyle = do
+      "body article ul li" ? do
+        important $ listStyleType initial
+        marginLeft (em 1)
+      "div.container" ? do
+        "img" ? do
+          maxWidth (pct 100)
 
 textsTemplate :: Html ()
 textsTemplate = do
@@ -205,21 +213,26 @@ formatEdition ed = do
     textButton contributorsUrl "people" "Contributors"
     textButton previewUrl "book" "Preview"
   div_ [ class_ "features" ] $ do
-    mapM_ formatFeature (E.features ed) where
-      formatFeature :: E.Feature -> Html ()
-      formatFeature feat =
-        table_ [] $ do
-          th_ [] $ toHtml "feature"
-          th_ [] $ toHtml "status"
-          th_ [] $ toHtml "issue #"
+    table_ [] $ do
+      th_ [] $ "feature"
+      th_ [] $ "status"
+      th_ [] $ "issue #"
+      mapM_ formatFeature (E.features ed) where
+        formatFeature :: E.Feature -> Html ()
+        formatFeature feat =
           tr_ [] $ do
             td_ [] $ toHtml $ E.desc feat
-            td_ [] $ toHtml $ E.status feat
-            td_ [] $ a_ [ href_ $ [fmt|https://github.com/open-editions/{E.repo}/issues/{issue}|] ] $ issue where
-                            issue = case E.issueNo feat of
+            td_ [] $ toHtml $ T.toLower $ T.pack $ show $ E.status feat
+            td_ [] $ a_ [ href_ $ repoUrl ] $ toHtml issue where
+                            -- repoUrl = [fmt|https://github.com/open-editions/{E.repo}/issues/{issue}|]
+                            repoUrl = T.concat ["https://github.com/open-editions/"
+                                              , E.repo ed
+                                              , "/issues/"
+                                              , issue
+                                              ]
+                            issue = case (E.issueNo feat) of
+                              Just x -> T.pack $ show x
                               Nothing -> "NA"
-                              Just no -> toHtml $ show no
-
 
 -- Convenience function, for transforming markdown strings to HTML
 markdownToHtml :: E.Markdown -> Html ()
@@ -229,12 +242,12 @@ indexTemplate :: Html ()
 indexTemplate =  do
   div_ [ class_ "section no-pad-bot", id_ "index-banner" ] $ div_ [ class_ "container" ] $ do
     br_ []
-    h1_ [ class_ "header center orange-text" ] $ "Open Editions"
+    h1_ [ class_ "header center orange-text" ] "Open Editions"
     div_ [ class_ "row center" ] $ h5_ [ class_ "header col s12 light" ] $ do
       "Open-Source Electronic Scholarly Editions "
       br_ []
       "of Public Domain Literature"
-    div_ [ class_ "row center" ] $ a_ [ href_ "/about/", id_ "download-button", class_ "btn-large waves-effect waves-light orange" ] $ "Learn More"
+    div_ [ class_ "row center" ] $ a_ [ href_ "/about/", id_ "download-button", class_ "btn-large waves-effect waves-light orange" ] "Learn More"
     br_ []
   div_ [ class_ "container" ] $ do
     div_ [ class_ "section" ] $ do
@@ -251,18 +264,18 @@ footerTemplate :: Html ()
 footerTemplate = footer_ [ class_ "page-footer orange" ] $ do
             div_ [ class_ "container" ] $ div_ [ class_ "row" ] $ do
               div_ [ class_ "col l6 s12" ] $ do
-                h5_ [ class_ "white-text" ] $ "Open Editions"
+                h5_ [ class_ "white-text" ] "Open Editions"
                 p_ [ class_ "grey-text text-lighten-4" ] $ do
                   "Open-Source Electronic Scholarly Editions of Public Domain Literature"
               div_ [ class_ "col l3 s12" ] $ do
-                h5_ [ class_ "white-text" ] $ "Texts"
+                h5_ [ class_ "white-text" ] "Texts"
                 ul_ $ do
-                  li_ $ a_ [ class_ "white-text", href_ "/texts/#ulysses" ] $ "Ulysses"
-                  li_ $ a_ [ class_ "white-text", href_ "/texts/#portrait" ] $ "Portrait"
-                  li_ $ a_ [ class_ "white-text", href_ "/texts/#dubliners" ] $ "Dubliners"
-                  li_ $ a_ [ class_ "white-text", href_ "/texts/#middlemarch" ] $ "Middlemarch"
+                  li_ $ a_ [ class_ "white-text", href_ "/texts/#ulysses" ] "Ulysses"
+                  li_ $ a_ [ class_ "white-text", href_ "/texts/#portrait" ] "Portrait"
+                  li_ $ a_ [ class_ "white-text", href_ "/texts/#dubliners" ] "Dubliners"
+                  li_ $ a_ [ class_ "white-text", href_ "/texts/#middlemarch" ] "Middlemarch"
               div_ [ class_ "col l3 s12" ] $ do
-                h5_ [ class_ "white-text" ] $ "Etc"
+                h5_ [ class_ "white-text" ] "Etc"
                 ul_ $ do
                   li_ $ a_ [ class_ "white-text", href_ "https://gitter.im/open-editions/Lobby" ] "Chat with us on Gitter"
                   li_ $ a_ [ class_ "white-text", href_ "https://liberapay.com/JonathanReeve/donate" ] "Donate using Liberapay"
@@ -270,9 +283,9 @@ footerTemplate = footer_ [ class_ "page-footer orange" ] $ do
 
             div_ [ class_ "footer-copyright" ] $ div_ [ class_ "container" ] $ do
               "Hand-crafted with love, using "
-              a_ [ class_ "orange-text text-lighten-3", href_ "http://materializecss.com" ] $ "Materialize, "
-              a_ [ class_ "orange-text text-lighten-3", href_ "https://github.com/srid/rib" ] $ "Rib, "
-              a_ [ class_ "orange-text text-lighten-3", href_ "http://haskell.org" ] $ "and Haskell."
+              a_ [ class_ "orange-text text-lighten-3", href_ "http://materializecss.com" ] "Materialize, "
+              a_ [ class_ "orange-text text-lighten-3", href_ "https://github.com/srid/rib" ] "Rib, "
+              a_ [ class_ "orange-text text-lighten-3", href_ "http://haskell.org" ] "and Haskell."
               br_ []
               "Licensed under a "
               a_ [ class_ "white-text", href_ "https://creativecommons.org/licenses/by-nc-sa/4.0/" ] "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license."

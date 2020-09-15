@@ -1,6 +1,9 @@
-# Documentation
+---
+title: "Documentation"
+description: "The Open Editions specification."
+--- 
 
-## Open Editions Specification 
+## Open Editions Specification 1.0
 
 Each edition must: 
 
@@ -31,13 +34,17 @@ Dialogue is marked up with `<said>` and using the `@who` attribute, as in `<said
 If a character quotes direct speech within her speech, we’re encoding it like this:
 
 ```xml
-<said who="Stephen Dedalus">―You said,</said> Stephen answered, <said who="Stephen Dedalus"><said who="Buck Mulligan" rend="italics">O, it's only Dedalus whose mother is beastly dead</said>.</said>
+<said who="Stephen Dedalus">―You said,</said> Stephen answered, 
+<said who="Stephen Dedalus"><said who="Buck Mulligan" rend="italics">O, 
+it's only Dedalus whose mother is beastly dead</said>.</said>
 ```
 
 If direct speech is recalled in interior monologue or (occasionally) represented in the third-person narrative using italics, we’re encoding it like this:
 
 ```xml
-she was one of those good souls who had always to be told twice <said who="Father Conmee" direct="false" rend="italics">bless you, my child,</said> that they have been absolved, <said who="Father Conmee" direct="false" rend="italics">pray for me</said>.
+she was one of those good souls who had always to be told twice 
+<said who="Father Conmee" direct="false" rend="italics">bless you, my child,</said> 
+that they have been absolved, <said who="Father Conmee" direct="false" rend="italics">pray for me</said>.
 ```
 
 For more on this, see [the discussion in issue #20](https://github.com/JonathanReeve/corpus-joyce-ulysses-tei/issues/20#issuecomment-280171254). 
@@ -63,9 +70,13 @@ Here's one generated from the database of [joycewords.com](https://joycewords.co
 ```xml
 <note resp="Ronan Crowley" type="analysis" xml:id="151777-bedlock">
 <term>bedlock<term>
-<analysis>The OED recognises “bedlock” n. as a nonce-word modelled, reasonably enough, after “wedlock.” As it happens, the coinage is not Joyce’s own. He found it in James Huneker’s Painted Veils (1920), which has “whether in wedlock or concubinage—bedlock is the ultimate outcome.”</analysis>
+<analysis>The OED recognises “bedlock” n. as a nonce-word modelled, 
+reasonably enough, after “wedlock.” As it happens, the coinage is 
+not Joyce’s own. He found it in James Huneker’s Painted Veils (1920), 
+which has “whether in wedlock or concubinage—bedlock is the ultimate outcome.”</analysis>
 <time>2017-12-06 19:57:28</time>
-<bibl>“Born out of bedlock hereditary epilepsy is present, the consequence of unbridled lust.” (U 15.1777–78)</bibl>
+<bibl>“Born out of bedlock hereditary epilepsy is present, the 
+consequence of unbridled lust.” (U 15.1777–78)</bibl>
 </note>
 ```
 
