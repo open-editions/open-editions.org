@@ -33,6 +33,3 @@ jobs:
                 https://open-editions.org/contributing
                 https://open-editions.org/texts
                 https://open-editions.org/docs
-                # budgetPath: ./budget.json # test performance budgets
-                # uploadArtifacts: true # save results as an action artifacts
-                # temporaryPublicStorage: true # upload lighthouse report to the temporary storage
