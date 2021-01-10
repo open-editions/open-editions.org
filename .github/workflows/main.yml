@@ -33,3 +33,5 @@ jobs:
                 https://open-editions.org/contributing
                 https://open-editions.org/texts
                 https://open-editions.org/docs
+              temporaryPublicStorage: true
+
