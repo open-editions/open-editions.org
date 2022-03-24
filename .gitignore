@@ -1,0 +1,8 @@
+dist-newstyle/
+.shake/
+dist/dante/
+.direnv/
+# Nix
+result
+dest/
+dist/
