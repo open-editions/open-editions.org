@@ -1,0 +1,11 @@
+cradle:
+  multi:
+    - path: "./src"
+      config:
+        cradle:
+          cabal:
+            component: "open-editions-org"
+    - path: "./texts"
+      config:
+        cradle:
+          none:
