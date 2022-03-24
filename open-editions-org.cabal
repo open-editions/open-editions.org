@@ -12,6 +12,7 @@ executable open-editions-org
     default-language: Haskell2010
     other-modules:
         Editions
+        XML2HTML
     build-depends:
         base,
         aeson,
@@ -19,6 +20,7 @@ executable open-editions-org
         containers,
         lucid -any,
         filepath,
+        optparse-generic,
         PyF,
         rib,
         shake -any,

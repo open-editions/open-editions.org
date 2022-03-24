@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 
-module Main where
+module XML2HTML where
 
 import           Clay                          hiding (transform, type_)
 import           Control.Monad                        (join)
@@ -12,6 +12,7 @@ import           Data.Text                            (Text, concat)
 import qualified Data.Text.IO as TIO
 import qualified Data.Text.Lazy as TL
 import           Lucid
+import           Options.Generic
 import           Prelude
 import           System.Environment                   (lookupEnv)
 import           Text.Read                            (readMaybe)
@@ -28,7 +29,9 @@ main = do
 
   -- TODO: load and parse all child files
 
-  Document prologue root epilogue <- Text.XML.readFile def "test-data/01_sis.xml"
+  inFile <- getRecord "XML to HTML converter, for Open Editions TEI files."
+  print (inFile :: FilePath)
+  Document prologue root epilogue <- Text.XML.readFile def (inFile :: FilePath)
   let root' = transform root
       -- Make an empty prologue
       prologue' = Prologue [] Nothing []
