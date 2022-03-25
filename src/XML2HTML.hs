@@ -15,6 +15,7 @@ import           Lucid
 import           Options.Generic
 import           Prelude
 import           System.Environment                   (lookupEnv)
+import           System.FilePath.Posix                ((-<.>))
 import           Text.Read                            (readMaybe)
 import           Text.XML
 import           Text.XML.Cursor
@@ -30,7 +31,7 @@ main = do
   -- TODO: load and parse all child files
 
   inFile <- getRecord "XML to HTML converter, for Open Editions TEI files."
-  print (inFile :: FilePath)
+  putStrLn $ "Processing: " <> (inFile :: FilePath)
   Document prologue root epilogue <- Text.XML.readFile def (inFile :: FilePath)
   let root' = transform root
       -- Make an empty prologue
@@ -39,7 +40,9 @@ main = do
       epilogue' = []
       rendered = Text.XML.renderText def (Document prologue' root' epilogue')
       html = makeHtml (TL.toStrict rendered)
-  Lucid.renderToFile "out.html" html
+  let htmlFilename = inFile -<.> "html"
+  putStrLn $ "Writing to " <> htmlFilename
+  Lucid.renderToFile htmlFilename html
 
 transform :: Element -> Element
 transform (Element _name attrs children) =
@@ -56,13 +59,14 @@ goElem :: Element -> Element
 goElem (Element name attrs children) =
   case (nameLocalName name) of
     -- Comment out metadata in header
-    "teiHeader" -> Element "div" (hidden attrs) transformedChildren
+    "teiHeader" -> Element "div" (hidden attrs) [] -- TODO handle metadata later
     "lg" -> Element "div" lgAttrs transformedChildren
     "l" -> Element "span" (M.fromList [("class"::Name, "line")]) transformedChildren
     "head" -> Element "h1" M.empty transformedChildren
     "lb" -> Element "span" (lbAttrs attrs) (lbChildren attrs)
     "said" -> Element "span" (saidAttrs attrs) (saidChildren attrs children)
     "name" -> spanIt (nameLocalName name) attrs children
+    "anchor" -> Element "a" attrs [] -- no children on anchor nodes
     otherwise -> Element name attrs transformedChildren
   where
     transformedChildren = concatMap goNode children
