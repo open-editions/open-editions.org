@@ -1,26 +1,14 @@
-with import <nixpkgs> {};
+with import 
+  (builtins.fetchGit {
+    # Descriptive name to make the store path easier to identify
+    name = "nixos-unstable-2022-04-16";
+    url = "https://github.com/nixos/nixpkgs/";
+    # `git ls-remote https://github.com/nixos/nixpkgs nixos-unstable`
+    ref = "refs/heads/nixos-unstable";
+    rev = "75ad56bdc927f3a9f9e05e3c3614c4c1fcd99fcb";
+}) {};
 
 ( let
-    newAltair = pkgs.python3Packages.buildPythonPackage rec {
-      pname = "altair";
-      version = "4.1.0";
-
-      src = pkgs.python3Packages.fetchPypi{
-        inherit version; inherit pname;
-        sha256 = "0c99q5dy6f275yg1f137ird08wmwc1z8wmvjickkf2mvyka31p9y";
-      };
-
-      buildInputs = with pkgs.python3Packages; [
-        entrypoints
-        jinja2
-        jsonschema
-        numpy
-        toolz
-        pandas
-      ];
-      doCheck = false;
-
-    };
     textMatcher = pkgs.python3Packages.buildPythonPackage rec {
       pname = "text_matcher";
       version = "0.1.6";
@@ -39,13 +27,16 @@ with import <nixpkgs> {};
     };
 in pkgs.python3.buildEnv.override rec {
     extraLibs = with pkgs.python3Packages; [
+      click
+      nltk
       matplotlib
       pandas
       jupyter
       scikitlearn
-      newAltair
+      # newAltair
       dominate
       textMatcher
+      termcolor
       jupyterlab # Dev
       # flake8  # Dev
       # python-language-server

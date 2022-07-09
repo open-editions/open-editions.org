@@ -8,9 +8,9 @@
 import pandas as pd
 import re
 
-df = pd.read_csv('fw-matches-1.csv')
+df = pd.read_csv('fw-matches.csv')
 
-with open("/home/jon/Code/corpus-joyce-finnegans-wake-tei/finnegans-wake-tei/finnegans-wake.xml") as f:
+with open("../texts/corpus-joyce-finnegans-wake-tei/finnegans-wake-corrected.xml") as f:
     fw = f.read()
 
 # Melt the data frame such that each match is its own row
@@ -47,6 +47,7 @@ def avoidTags(loc, tagLocations=tagLocations):
 dfMelted['locCorrected'] = dfMelted['loc'].apply(avoidTags)
 
 def buildAnchor(df): 
+    # Make filenames a little less noisy
     fileNames = " ".join([re.sub('/home/jon/Code/corpus-joyce-finnegans-wake-tei/criticism-analysis/\d/ocr/', '', fn) 
                  for fn in df['Text B'].values])
     indices = " ".join(list(df.index))
