@@ -86,6 +86,8 @@ Before clicking “Create pull request,” scroll down and review your changes o
 * Mark up poetry (and verse more generally) by surrounding stanzas with `<lg>` (for “line group”) and lines with `<l>` (for “line”). End each stanza with `</lg>` and each line with `</l>` 
 * Mark up personal names with `<persName>` and place names with `<placeName>`. 
 * Mark up songs with `<seg type="song">` and prayers with `<seg type="prayer">`
-* Mark up foreign languages with, e.g. `<seg xml:lang="fra">`, using the standard 3-letter language codes (ISO-639)
+* Mark up foreign languages with, e.g. `<seg xml:lang="fr">`, using standard language codes
 
-If the feature you’d like to mark up is not in the above list, first see if there’s an issue in [the issue tracker](https://github.com/open-editions/corpus-joyce-portrait-TEI/issues) for it. If there’s no issue, or if there’s no tag convention in the issue’s comments, consult [the TEI P5 Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/). When in doubt, feel free to ask a question [in our Gitter chatroom](https://gitter.im/open-editions/Lobby#). 
+[See the Open Editions docs for a more complete list of tags used.](https://open-editions.org/docs/) For text-specific tag conventions, read the text's CONTRIBUTING.md. For example, [here is the CONTRIBUTING.md file for *Ulysses*](https://github.com/open-editions/corpus-joyce-ulysses-tei/blob/master/CONTRIBUTING.md). 
+
+If the feature you'd like to mark up is not listed in any of the above locations, first see if there's an issue in the issue tracker for it. For example, [here is the issue tracker for *Portrait*](https://github.com/open-editions/corpus-joyce-portrait-TEI/issues). If there's no issue, or if there's no tag convention in the issue’s comments, consult [the TEI P5 Guidelines](http://www.tei-c.org/release/doc/tei-p5-doc/en/html/). When in doubt, feel free to ask a question [in our Gitter chatroom](https://gitter.im/open-editions/Lobby#), or to open a new issue. 
