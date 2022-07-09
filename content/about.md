@@ -36,7 +36,7 @@ It is more important to create a system that is robust and interoperable than to
 
 We use the P5 textual markup specification from the [Text Encoding Initiative](https://en.wikipedia.org/wiki/Text_Encoding_Initiative), which has been thinking about ways to encode text since the 80s. There is a vast toolchain that surrounds TEI markup, and there are many standards. 
 
-While it is true that there are some limitations to XML, we try to mitigate those where possible. For example, a common critique of TEI is that there are too many ways to encode the same textual features. A number of projects have tried to correct this. [TEI Lite](https://tei-c.org/guidelines/customization/lite/) and [TEI Simple](https://github.com/TEIC/TEI-Simple) are subsets of TEI intended to disambiguate markup choices. We don't use either of these, but prefer to maintain a list of conventions, documenting how we use certain types of markup.
+While it is true that there are some limitations to XML, we try to mitigate those where possible. For example, a common critique of TEI is that there are too many ways to encode the same textual features. A number of projects have tried to correct this. [TEI Lite](https://tei-c.org/guidelines/customization/lite/) and [TEI Simple](https://github.com/TEIC/TEI-Simple) are subsets of TEI intended to disambiguate markup choices. We don't use either of these, but prefer to maintain [a list of conventions, documenting how we use certain types of markup](/docs). Text-specific conventions, [such as this one for *Ulysses*](https://github.com/open-editions/corpus-joyce-ulysses-tei/blob/master/CONTRIBUTING.md), may also be found in a text repository's CONTRIBUTING.md file.
 
 ### Git and GitHub
 
