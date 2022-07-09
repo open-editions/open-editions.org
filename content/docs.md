@@ -130,7 +130,7 @@ They were caught near the <place><location><geo>53.290670 -6.535060</geo></locat
 
 ### Languages
 
-Use of a secondary language should be noted, using the xml id. 
+Use of a secondary language should be noted, using the xml id. Follow [W3C conventions for the use of language tags](https://www.w3.org/International/articles/language-tags/) when choosing a language code. [Some language codes are listed here.](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
 
 ```xml
 <lb n="010005"/><said who="bm">―<quote xml:lang="la">Introibo ad altare Dei.</quote></said></p>
@@ -138,7 +138,7 @@ Use of a secondary language should be noted, using the xml id.
 
 ### Free Indirect Discourse
 
-We're still not quite sure how to mark this up. `<seg type="fid">` will have to do, for now. Michelle Qiu has `who` attributes, as well.
+We're still working out how to mark this up. `<seg type="fid">` will have to do, for now. Michelle Qiu has `who` attributes, as well.
 
 ```xml
 <seg type="fid" who="#Celia"> Celia was conscious of some mental strength when she really applied herself to argument.</seg>
