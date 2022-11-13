@@ -1,0 +1,151 @@
+#+title: Matches To Annotations
+
+The goal is to make [[https://github.com/recogito/recogito-js/blob/main/public/annotations.w3c.json][annotations like this]], in w3c annotations format.
+
+#+begin_src jupyter-python :session py6
+import pandas as pd
+import json
+import uuid
+#+end_src
+
+#+RESULTS:
+
+#+begin_src jupyter-python :session py6
+csv = pd.read_csv('matches-html.csv')
+csv
+#+end_src
+
+#+RESULTS:
+#+begin_example
+                                                 Text A  \
+0     ../texts/corpus-joyce-finnegans-wake-tei/finne...
+1     ../texts/corpus-joyce-finnegans-wake-tei/finne...
+2     ../texts/corpus-joyce-finnegans-wake-tei/finne...
+3     ../texts/corpus-joyce-finnegans-wake-tei/finne...
+4     ../texts/corpus-joyce-finnegans-wake-tei/finne...
+...                                                 ...
+1135  ../texts/corpus-joyce-finnegans-wake-tei/finne...
+1136  ../texts/corpus-joyce-finnegans-wake-tei/finne...
+1137  ../texts/corpus-joyce-finnegans-wake-tei/finne...
+1138  ../texts/corpus-joyce-finnegans-wake-tei/finne...
+1139  ../texts/corpus-joyce-finnegans-wake-tei/finne...
+
+                                                 Text B  Threshold  Cutoff  \
+0     /home/jon/Code/corpus-joyce-finnegans-wake-tei...          3       5
+1     /home/jon/Code/corpus-joyce-finnegans-wake-tei...          3       5
+2     /home/jon/Code/corpus-joyce-finnegans-wake-tei...          3       5
+3     /home/jon/Code/corpus-joyce-finnegans-wake-tei...          3       5
+4     /home/jon/Code/corpus-joyce-finnegans-wake-tei...          3       5
+...                                                 ...        ...     ...
+1135  /home/jon/Code/corpus-joyce-finnegans-wake-tei...          3       5
+1136  /home/jon/Code/corpus-joyce-finnegans-wake-tei...          3       5
+1137  /home/jon/Code/corpus-joyce-finnegans-wake-tei...          3       5
+1138  /home/jon/Code/corpus-joyce-finnegans-wake-tei...          3       5
+1139  /home/jon/Code/corpus-joyce-finnegans-wake-tei...          3       5
+
+      N-Grams  Num Matches  Text A Length  Text B Length  \
+0           3            1        1460562          48541
+1           3            1        1460562          61396
+2           3            1        1460562          42828
+3           3            5        1460562          41060
+4           3            1        1460562          33177
+...       ...          ...            ...            ...
+1135        3            4        1460562          46119
+1136        3            1        1460562          65761
+1137        3            1        1460562          93153
+1138        3            3        1460562          56651
+1139        3            1        1460562           5082
+
+                                         Locations in A  \
+0                                    [(335153, 335242)]
+1                                    [(478279, 478363)]
+2                                        [(5707, 6179)]
+3     [(296907, 296990), (1123063, 1123764), (120356...
+4                                    [(177444, 177590)]
+...                                                 ...
+1135  [(465338, 465427), (496663, 496835), (497105, ...
+1136                                 [(437696, 437922)]
+1137                                 [(147267, 147427)]
+1138  [(244793, 245279), (409119, 409224), (788552, ...
+1139                                 [(366410, 366513)]
+
+                                         Locations in B
+0                                        [(2215, 2297)]
+1                                      [(47617, 47697)]
+2                                      [(28220, 28665)]
+3     [(3437, 3516), (9826, 10466), (26374, 26582), ...
+4                                      [(18374, 18512)]
+...                                                 ...
+1135  [(174, 255), (24470, 24623), (30962, 31085), (...
+1136                                   [(49934, 50148)]
+1137                                   [(27156, 27309)]
+1138     [(2307, 2765), (27890, 27992), (28206, 28297)]
+1139                                     [(3206, 3305)]
+
+[1140 rows x 10 columns]
+#+end_example
+
+#+begin_src jupyter-python :session py6
+csv = pd.read_csv('matches-html.csv')
+csv
+#+end_src
+
+#+begin_src jupyter-python :session py6
+csv.columns
+#+end_src
+
+#+RESULTS:
+: Index(['Text A', 'Text B', 'Threshold', 'Cutoff', 'N-Grams', 'Num Matches',
+:        'Text A Length', 'Text B Length', 'Locations in A', 'Locations in B'],
+:       dtype='object')
+
+#+begin_src jupyter-python :session py6
+
+wakeFilename = '../texts/corpus-joyce-finnegans-wake-tei/finnegans-wake-corrected.html'
+with open(wakeFilename) as f:
+    wake = f.read()
+
+def getQuotedText(start, end, filename):
+    """
+    Get the quoted text from the original critical literature
+    """
+    return wake[start:end]
+
+def makeAnnotation(start, end, filename):
+    quotedText = getQuotedText(start, end, filename)
+    randomId = '#' + str(uuid.uuid1())
+    data = {"@context": "http://www.w3.org/ns/anno.jsonld",
+            "id": randomId,
+            "type": "Annotation",
+            "body": [{ "type": "TextualBody",
+                       "value": "Here is the annotation content"
+                     }],
+            "target": {
+              "selector": [{
+                "type": "TextQuoteSelector",
+                "exact": quotedText
+              }, {
+                "type": "TextPositionSelector",
+                "start": start,
+                "end": end,
+             }]}}
+    return data
+#+end_src
+
+#+RESULTS:
+
+#+begin_src jupyter-python :session py6
+annotations = []
+for i, row in csv.iterrows():
+   filename = row['Text B']
+   locList = eval(row['Locations in A'])
+   for loc in locList: # Iterate through every match location
+       start, end = loc
+       data = makeAnnotation(start, end, filename)
+       annotations.append(data)
+
+with open('annotations.w3c.json', 'w') as f:
+    json.dump(annotations, f, ensure_ascii=False, indent=2)
+#+end_src
+
+#+RESULTS:
