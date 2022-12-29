@@ -1,0 +1,3402 @@
+[
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaf802f-6393-11ed-a6c3-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "om old grog Georges Quartos as that goodship the\n    Jonnyjoys takes the wind from waterloogged Erin\u2019s king, you will\n    shi\ufb00 across the Moylendsea and round up in your own escapology some\n    canonisa"
+        },
+        { "start": 985783, "end": 985985, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafd5c4-6393-11ed-8378-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ngs of a monopolized bottle.</p>\n    <p>Now, there were as many as twentynine hedge daughters out of\n    Benent Saint Berched\u2019s national nightschool (for they seemed to\n    remember how it was still a once-upon-a-four year) learning their\n    antemeridian lesson of life, under its tree, against its warn- ing,\n    beseated, as they were, upon the brinkspondy, attracted to the\n    rarerust sight of the \ufb01rst human yellowstone landmar"
+        },
+        { "start": 987910, "end": 988344, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada850a9-6393-11ed-bec1-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ughters out of\n    Benent Saint Berched\u2019s national nightschool (for they seemed to\n    remember how it was still a once-"
+        },
+        { "start": 987996, "end": 988116, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb25a74-6393-11ed-bb90-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "eeds of your teachings in which we were raised, you,\n      sis, that used to write to us the exceedin"
+        },
+        { "start": 992315, "end": 992416, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada914ea-6393-11ed-b5cc-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " do we wont to\n      recall to mind) thy oldworld tales of homespinning and derringdo\n      and dieobscure and daddyho, these tales which reliter- ately\n      whisked o\ufb00 our heart so narrated by thou, gesweest, to perfection,\n      our pet pupil of the whole rhythmetic class and the mainsay of our\n      erigenal house, the time we "
+        },
+        { "start": 992493, "end": 992826, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada91527-6393-11ed-876a-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "tossing\n      ourselves (O Phoebus! O Pollux!) in bed, having</p>\n    </item>\n  </list>\n  <quote>\n    <p>been laid up with Castor\u2019s oil on the Parrish\u2019s syrup (the night\n    we will remember) for to sh"
+        },
+        { "start": 992853, "end": 993054, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabef3f-6393-11ed-9eeb-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "uote>\n    <p>been laid up with Castor\u2019s oil on the Parrish\u2019s syrup (the night\n    we will remember) for to sh"
+        },
+        { "start": 992945, "end": 993054, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada9155d-6393-11ed-9794-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ional dominican and confessor doctor,</p>\n    <p>C.C.D.D. (buy the birds, he was saying as he yerked me under the\n    ribs sermon in an o\ufb00rand way and con\ufb01dence petween peas like\n    ourselves in soandso many nuncupiscent words about how he had been\n    confarreating teat-a-"
+        },
+        { "start": 993376, "end": 993651, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada91593-6393-11ed-87bb-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "r the\n    ribs sermon in an o\ufb00rand way and con\ufb01dence petween peas like\n    ourselves in soandso many nuncupiscent words about how he had been\n    confarreating teat-a-teat with two viragos intactas about what an\n    awful life he led, poorish priced, uttering mass for a coppall of\n    gel"
+        },
+        { "start": 993484, "end": 993773, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabef70-6393-11ed-9dbb-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " sermon in an o\ufb00rand way and con\ufb01dence petween peas like\n    ourselves in soandso many nuncupiscent words about how he had been\n    confarreating teat-a-teat w"
+        },
+        { "start": 993498, "end": 993657, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada915c9-6393-11ed-b51e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " lawful day it was, there and then, for a\n    consommation with an e\ufb00usion and how, by all the manny larries ate\n    pignatties, how, hell in tunnels, he\u2019d marry me any old buckling\n    time as \ufb02ying quick as he\u2019d look at me) and I am giving youth now\n    again in words of style byaway of o\ufb00ertory hisand mikeadvice, an it\n    place the person, as ere he retook him to his cure, those verbs he\n    said to me. From above. The most"
+        },
+        { "start": 993789, "end": 994220, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada915fb-6393-11ed-a26c-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "style byaway of o\ufb00ertory hisand mikeadvice, an it\n    place the person, as ere he retook him to his cure, those verbs he\n    said to me. From above. The most eminent bishop"
+        },
+        { "start": 994063, "end": 994235, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabefac-6393-11ed-aab3-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "his purtybusses in Dellabelliney. Comeallyedimseldamsels,\n    siddle "
+        },
+        { "start": 994268, "end": 994337, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb3183e-6393-11ed-a244-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": ">mon for ignitious Purpalume to the proper of Francisco Ultramare,\n    last of scorchers, third of snows, in terrorgammons howdydos. Here\n    she\u2019s, is a bell, that\u2019s wares in heaven, virginwhite, Undetri-\n    gesima, vikissy manonna. Doremon\u2019s! The same or similar to be kin"
+        },
+        { "start": 995382, "end": 995657, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adab42ea-6393-11ed-84c6-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "apropos</hi> songs at commercial\n    travellers\u2019 smokers for their Columbian nights entertainments the\n    like of <hi rendition="
+        },
+        { "start": 996497, "end": 996626, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb10588-6393-11ed-8f9c-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "umbian nights entertainments the\n    like of <hi rendition="
+        },
+        { "start": 996567, "end": 996626, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb2bcb1-6393-11ed-9863-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "empty. First thou shalt not smile. Twice thou\n    shalt not love. Lust, thou shalt not commix idolatry. Hip con\ufb01ners\n    help com"
+        },
+        { "start": 996899, "end": 997028, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada8199d-6393-11ed-b69f-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ising hand usemake free of your\n    oncemaid sacral. The soft side of the axe! A coil of cord"
+        },
+        { "start": 997256, "end": 997349, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabefdf-6393-11ed-9fcf-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "who would wipe her weeper\n    dry and lead her to the halter? Sold in "
+        },
+        { "start": 998938, "end": 999008, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafd5ff-6393-11ed-a386-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "appears Autist\n    Algy, the pulcherman and would-do per- former, oleas Mr Smuth,\n    stated by the vice crusaders to be well</p>\n    <p>known to all the dallytaunties in and near the ciudad of Buellas\n    Arias, taking you to the playguehouse to see the\n    <hi rendition=\"simple:italic\">Smirching of Venus"
+        },
+        { "start": 1000206, "end": 1000513, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa915d-6393-11ed-bdf1-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " throws over\n    jupan. Go to doss with the poulterer, you understand, and shake up\n    with "
+        },
+        { "start": 1002125, "end": 1002218, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa9517-6393-11ed-829e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ies and tapegarters,\n    \ufb01ngerpats on fondlepets, under the couvrefeu act."
+        },
+        { "start": 1002796, "end": 1002870, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb2a9f4-6393-11ed-a473-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "en parties get\n    tight for each other they lose all respect together. By the stench\n    of her \ufb01zzle"
+        },
+        { "start": 1004337, "end": 1004439, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa5ff5-6393-11ed-a501-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " with company and piano tunes. Only stuprifying\n    yourself! The too friendly friend sort, Mazourikawitch or some other"
+        },
+        { "start": 1006971, "end": 1007091, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafd637-6393-11ed-9f8f-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "es (O horri\ufb01er!) and prying down furthermore to chance his\n    lucky arm with his pregnant questions up to our past lives. What has\n    that caught to sing with him? The next \ufb02ing you\u2019ll be squitting on\n    the Tubber Nakel, pouring pitchers to the well for old Gloatsdane\u2019s\n    glori\ufb01cation and "
+        },
+        { "start": 1008209, "end": 1008505, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabdc44-6393-11ed-911b-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "han part with that vesta- lite emerald of the\n    \ufb01rst importance, descended to me by far from our family, which you\n    treasure up so closely where ext"
+        },
+        { "start": 1014968, "end": 1015121, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada7f20e-6393-11ed-8a92-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "of the inevitable! There\u2019s\n    nothing to touch it, we are taucht, unless she\u2019d care for a\n    mouthpull of white pud- ding for the w"
+        },
+        { "start": 1016140, "end": 1016273, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada8561d-6393-11ed-8f31-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "are an ignoratis!\n    Because then probably we\u2019ll dumb well soon show him what the Shaun\n    way is like how we\u2019ll "
+        },
+        { "start": 1018941, "end": 1019056, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada96107-6393-11ed-b129-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ll\n    smack your fruit\ufb02avoured jujube lips well for you, so I will well\n    for you, if you don\u2019t keep a civil tongue in your pigeonhouse. The\n    pleasures of love lasts but a \ufb02eeting but the pledges of life\n    outlusts a lieftime. I\u2019ll have it in for you. I\u2019ll teach you bed\n    minners, tip for tap, to be playing your oddaugghter tango"
+        },
+        { "start": 1023953, "end": 1024294, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adab52ba-6393-11ed-9549-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "y lupitally covered with chi\ufb00cha\ufb00 and\n    shavings. Up Rosemiry Lean and Potanasty Rod you wos, wos you? I\n    overstand you, you understand. Ask- ing Anny"
+        },
+        { "start": 1024403, "end": 1024558, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adae5a3c-6393-11ed-9b9d-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "y lupitally covered with chi\ufb00cha\ufb00 and\n    shavings. Up Rosemiry Lean and Potanasty Rod you wos, wos you? I\n    overstand you, you understand. Ask- ing Annybettyelsas to carry your\n"
+        },
+        { "start": 1024403, "end": 1024583, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb01146-6393-11ed-8b05-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "erstand, for the man\n    who lifts his pud to a woman is saving the way for kindness. You\u2019ll\n    rebmemer your mo"
+        },
+        { "start": 1025697, "end": 1025810, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adacd2b5-6393-11ed-8eb0-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " <p>Unbeknownst to you would ire turn o\u2019er see, a nuncio would I\n    return here. How (from the sublime to the ridiculous) times out of\n    oft, "
+        },
+        { "start": 1026657, "end": 1026802, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada9613e-6393-11ed-ac81-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "i\ufb00alidebankum, (Toobli- queme!) but a big corner \ufb01ll you do in this\n    unadulterated"
+        },
+        { "start": 1027222, "end": 1027307, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb195d4-6393-11ed-84ac-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "Burn only what\u2019s Irish, accepting\n    their coals. You will soothe the co"
+        },
+        { "start": 1030017, "end": 1030090, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adad9044-6393-11ed-8f0d-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "Write me your essayes, my vocational\n    scholars, but corsorily, d"
+        },
+        { "start": 1030157, "end": 1030224, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaccfeb-6393-11ed-8907-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "re\u2019s Cowtends Kateclean, the woman\n    with the muckrake? When will the W.D. "
+        },
+        { "start": 1032737, "end": 1032814, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adacd049-6393-11ed-9107-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "   l\u2019pool and m\u2019chester? When\u2019s that grandnational goldcapped\n    dupsydurby houspill coming with its vomitives for our\n    mothers-in-load and stretchers for their devitalised males? I am all\n    of me for freedom of speed but who\u2019ll disasperaguss Pope\u2019s Avegnue\n    or who\u2019ll uproose the Opian Way? Who\u2019ll brighton Brayhowth and bait\n    the Bull Bailey and never despair of Lorcansby? The rampant royal\n    commissioners! \u2019Tis an ill weed blows no poppy"
+        },
+        { "start": 1032980, "end": 1033436, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb1559e-6393-11ed-b25d-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " never despair of Lorcansby? The rampant royal\n    commissioners! \u2019Tis an ill weed blows no poppy good. And this\n    labour\u2019s worthy of my higher. Oil for meed and toil for feed and a\n    walk w"
+        },
+        { "start": 1033339, "end": 1033533, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adacd084-6393-11ed-8a5d-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "\u2019s worthy of my higher. Oil for meed and toil for feed and a\n    walk w"
+        },
+        { "start": 1033462, "end": 1033533, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaeca94-6393-11ed-8326-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "lic this time\n    whiles, as on the fulmament he gaped in wulderment, his on-\n    saturncast eyes in stellar attraction followed swift to an imagin-\n    ary swellaw, O, the vanity of Vanissy! All ends vanishing! Pur-\n    sonally, Grog help me, I am in no violent hurry. If time enough lost\n    the ducks walking easy found them"
+        },
+        { "start": 1034585, "end": 1034912, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada96175-6393-11ed-b2bf-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "  back as lief as not if I could only spoon\ufb01nd the nippy girl of my\n    heart\u2019s appointment, M"
+        },
+        { "start": 1035091, "end": 1035185, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb18599-6393-11ed-8257-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "across the nightrives\n    (peepet! peepet!) and whippoor w"
+        },
+        { "start": 1036538, "end": 1036596, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb212e7-6393-11ed-a74d-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "across the nightrives\n    (peepet! peepet!) and whippoor willy in the woody (moor park! moor\n    park!) as peacefed as a philopotamus, and cre"
+        },
+        { "start": 1036538, "end": 1036680, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada961ac-6393-11ed-8844-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "t! \u2014 ay, and melt my belt for a dace\n    feast of grannom with the \ufb01nny ones, those happy greppies in their\n    minnowahaw, \ufb02ashing down the swansway, leaps ahead of t"
+        },
+        { "start": 1037143, "end": 1037310, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada961e4-6393-11ed-a5bb-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "  my shellyholders and lov\u2019d latakia, the benuvolent, for my\n    nosethrills, with the jealosomines wilting away to their heart\u2019s\n    deelight and the king of saptimber letting down his humely odours\n    for my consternation, dapping my gri\ufb00een, burning water in the\n    s"
+        },
+        { "start": 1037603, "end": 1037875, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adab7c44-6393-11ed-99b8-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "rse is a goad for the garden.\n    Lethals lurk heimlocked in logans. Loathe laburnums. Dash the gaudy\n    death- cup! Bryony O\u2019Bryony, thy name is Belladama! But enough of\n    greenwood\u2019s gossip. Birdsnests is b"
+        },
+        { "start": 1038950, "end": 1039161, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada7da3c-6393-11ed-8b6a-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "rse is a goad for the garden.\n    Lethals lurk heimlocked in logans. Loathe laburnums. Dash the gaudy\n    death- cup! Bryony O\u2019Bryony, thy name is Belladama! But enough of\n    greenwood\u2019s gossip. Birdsnests is birdsnests. Thine to wait but mine\n    to wage. And now play sharp to me. Double\ufb01rst I\u2019ll head foremost\n    through all my ex"
+        },
+        { "start": 1038950, "end": 1039285, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaf232c-6393-11ed-9946-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ms. Dash the gaudy\n    death- cup! Bryony O\u2019Bryony, thy name is Belladama! But enough of\n    greenwood\u2019s gossip. Birdsnests is b"
+        },
+        { "start": 1039033, "end": 1039161, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada73e9b-6393-11ed-ba2b-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "wing my wild plums to reap\n    ripe plentihorns mead, lashings"
+        },
+        { "start": 1039786, "end": 1039848, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada8cf31-6393-11ed-a0d2-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "wing my wild plums to reap\n    ripe plentihorns mead, lashings"
+        },
+        { "start": 1039786, "end": 1039848, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaaaeb0-6393-11ed-b250-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "wing my wild plums to reap\n    ripe plentihorns mead, lashings"
+        },
+        { "start": 1039786, "end": 1039848, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaf511a-6393-11ed-8628-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "wing my wild plums to reap\n    ripe plentihorns mead, lashings"
+        },
+        { "start": 1039786, "end": 1039848, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb0ce2c-6393-11ed-ad12-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "wing my wild plums to reap\n    ripe plentihorns mead, lashings"
+        },
+        { "start": 1039786, "end": 1039848, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb30902-6393-11ed-a228-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "wing my wild plums to reap\n    ripe plentihorns mead, lashings"
+        },
+        { "start": 1039786, "end": 1039848, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adab679a-6393-11ed-8ebc-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " this night sublime, as you may see by my size and my brow\n    that\u2019s all forehead, to go forth, frank and hoppy, to the tune the\n    old plow tie"
+        },
+        { "start": 1042763, "end": 1042909, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabf010-6393-11ed-920e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "-on- Thither\n      Erin himself, pardee, I\u2019m saying. Before there was patch at all on\n      Ireland there lived a lord at"
+        },
+        { "start": 1043746, "end": 1043867, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabf04e-6393-11ed-9a9e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " we are of everything in\n      the newlywet fellow that\u2019s bound to follow. I\u2019ll"
+        },
+        { "start": 1043950, "end": 1044029, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabf081-6393-11ed-88b7-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "\n    </item>\n  </list>\n  <quote>\n    <p>Well, to the \ufb01gends of Annanmeses with the wholeabuelish\n    business! For I declare to Jeshuam I\u2019m beginning to get sunsick! I\u2019m\n    not half Norawain for nothing. The \ufb01ne ice so temperate</p>\n    <p>o"
+        },
+        { "start": 1044148, "end": 1044390, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaeb0f7-6393-11ed-aba7-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "rmer shinner in his\n    latterday paint. It\u2019s the fulldress Toussaint\u2019s wakeswalks\n    experdition after a bail motion from the chamber of horrus. Sa"
+        },
+        { "start": 1049568, "end": 1049717, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adadd2a3-6393-11ed-a036-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "rmer shinner in his\n    latterday paint. It\u2019s the fulldress Toussaint\u2019s wakeswalks\n    experdition after a bail motion from the chamber of horrus. Sa\ufb00ron\n    buns or sovran bonhams whichever you\u2019r"
+        },
+        { "start": 1049568, "end": 1049764, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada81753-6393-11ed-a420-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "from the chamber of horrus. Sa\ufb00ron\n    buns or sovran bonhams whichever you\u2019r avider to like it and lump\n    it,"
+        },
+        { "start": 1049687, "end": 1049799, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adab8938-6393-11ed-99d6-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "htfoot Clod Dewvale was to hold me up, dicksturping me and\n    marauding me of my rights to my onus, yan, tyan, tethera, methera,\n    pimp, I\u2019d let him "
+        },
+        { "start": 1054891, "end": 1055043, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb34e1a-6393-11ed-b4a9-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "till whensday. Look for me always at my west and"
+        },
+        { "start": 1055458, "end": 1055506, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada53043-6393-11ed-a4bb-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "enjamin brother, but\n      listen, I want, girls palmassing, to whisper my whish. (She like\n      them like us, me and you, had thoud he n\u2019er it would haltin so\n      lithe when leased is tacitempust tongue). Of course, engine dear,\n      I\u2019m ashamed for my life"
+        },
+        { "start": 1056161, "end": 1056423, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada5d4f8-6393-11ed-b0d2-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "enjamin brother, but\n      listen, I want, girls palmassing, to whisper my whish. (She like\n      them like us, me and you, had thoud he n\u2019er it would haltin so\n      lithe when leased is tacitempust tongue). Of course, engine dear,\n      I\u2019m ashamed for my life (I must clear my throttle) over this lost\n      moment\u2019s gift of memento nosepaper which I\u2019m sorry, my precious,\n      is allathome I with grief can call my own but all the same,\n      listen, Jaunick, accept this witwee\u2019s mite, though a jenny-</p>\n   "
+        },
+        { "start": 1056161, "end": 1056676, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafd66b-6393-11ed-857d-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ace of a linenhall valentino with my fondest and much left to\n    tutor. X.X.X.X. It was h"
+        },
+        { "start": 1056780, "end": 1056870, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafd6b2-6393-11ed-9965-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "hat\u2019s the beauty of it, look,\n    scene it, ratty. Too perfectly priceless for words. And, listen, now\n    do enhance me, oblige my \ufb01ancy and bear it with you morn till life\u2019s\n    e\u2019en and, of course, when never you make usage of it, listen, plea"
+        },
+        { "start": 1057024, "end": 1057270, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafd6f1-6393-11ed-a338-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " kindly think galways again or again, never forget, of one absendee\n    not sester Maggy. Ahim. That\u2019s the stupidest little cough. Only be\n    sure you don\u2019t catch your cold and pass it on to us. And, since\n    levret bounds and larks is soaring, don\u2019t be all the night. And\n    this, Joke, a sprig of blue speedwell just a spell of \ufb02oralora so\n    you\u2019ll mind your veronique. Of course, Jer, I know you know who\n    sends it, presents that please, mercy, on the face of the waters\n    like that \ufb01lm obote, aw\ufb02y ch"
+        },
+        { "start": 1057276, "end": 1057790, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb0f7d4-6393-11ed-81d3-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " forget, of one absendee\n    not sester Maggy. Ahim. That\u2019s the stupidest little cough. Only be\n    sure you don\u2019"
+        },
+        { "start": 1057319, "end": 1057432, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa9197-6393-11ed-b425-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "sends it, presents that please, mercy, "
+        },
+        { "start": 1057693, "end": 1057732, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb2fa22-6393-11ed-a2b1-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "    curiose to see in the Homesworth breakfast tablotts as I\u2019ll know\n    etherways by pity bleu if it\u2019s good for my system, w"
+        },
+        { "start": 1058175, "end": 1058300, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaec297-6393-11ed-8348-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "here I\u2019ll wait on\n    thee till Thingavalla with beautiful do be careful teacakes, more\n    stues- ser \ufb02avoured than Vanilla and blackcurrant there\u2019s a cure in,\n    like a born gentleman till you\u2019ll resemble me, all the time you\u2019re\n    awhile way, I swear"
+        },
+        { "start": 1063520, "end": 1063775, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb2caa5-6393-11ed-b157-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "\n  <list type=\"unordered\">\n    <item>\n      <p>MEN! Juan responded fullchantedly to her sororal sono- rity,\n      imitating himself capitally with his bubbleblown in his patapet\n      and his chalished drink now well in hand. (A spilt, see, for a\n      split, see see!) Ever gloriously kind! And I truly am</p>\n    </item>\n  </list>\n  <quote>\n    <p>eucherised to yous. Also <hi rendition=\"simple:italic\">sacr\u00e9\n "
+        },
+        { "start": 1066016, "end": 1066428, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb2cae5-6393-11ed-b72d-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "oo. He will arrive inces- santly in the\n    fraction of a crust, who, could he quit doubling and stop tippling,\n    he would be the unicorn of his kind. He\u2019s the mightiest penumbrella\n    I ever \ufb02ourished on behond the shadow of a post! Be sure and link\n    him, me O treasauro, as often as you learn pr"
+        },
+        { "start": 1067620, "end": 1067923, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada8564f-6393-11ed-8600-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " place after all? I knew I smelt the garlic\n    leek! Why, bless me swits, here he its, darling Dave, like the\n    catoninelives just in time as if he fell out of space, all draped in\n    mufti, coming home to mourn mountains from his old continence and\n    not on one foot eith"
+        },
+        { "start": 1068314, "end": 1068592, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada9194e-6393-11ed-b2ee-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " on our\n    sealevel. Bearer may leave the church, signed, Figura Porca, Lictor\n    Magna\ufb03ca. He\u2019s the sneaking likeness of us"
+        },
+        { "start": 1069090, "end": 1069216, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adae1e90-6393-11ed-9cab-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "he poisoner of his word, but lice and all and semicoloured\n    stainedglasses, I\u2019m enormously full of that foreigner, I\u2019ll say I\n    am! Got by th"
+        },
+        { "start": 1069673, "end": 1069819, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa91d2-6393-11ed-9ab2-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "se. There\u2019s\n    the nasturtium for ye now that saved manny a poor sin"
+        },
+        { "start": 1070074, "end": 1070143, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafa140-6393-11ed-a489-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " blackguarded eye and the goatsbeard in his\n    buttinghole of Shemuel Tulliver, me grandsourd, the old cruxader,\n    when he o\ufb00 with his paudeen! That was to let the crowd of the Flu\n    Flux Fans behind him see me proper. Ah, he\u2019s very thou"
+        },
+        { "start": 1071988, "end": 1072230, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada7a0aa-6393-11ed-b215-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "n! That was to let the crowd of the Flu\n    Flux Fans behind him see me proper. Ah, he\u2019s very thou"
+        },
+        { "start": 1072132, "end": 1072230, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adab72ca-6393-11ed-9d9e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "He\u2019s Jackot the\n    Horner who boxed in his corner, jilting no fewer than "
+        },
+        { "start": 1073797, "end": 1073871, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada70ae3-6393-11ed-991b-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " To\n    tinpinnypan. All folly me yap to Curlew! Give us a pin for her and\n    we\u2019ll call it a tossup. Can you reverse positions? Lets have a fuchu\n    al"
+        },
+        { "start": 1076136, "end": 1076290, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada70b4a-6393-11ed-b7d0-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " drake of a man, her little live apples for Leas and love\n    potients for Leos, the next beast king. Put me down for all ringside\n    seats. I can feel you being corrupted. Recoil. I can see you\n    sprouting scruples. Get back. And as he\u2019s boiling with water I\u2019ll\n    light your pyre. Turn about, skeezy Sammy, out of metaphor, till we\n    feel are you still tropeful of popetry. Told you so. If you doubt of\n    his love of darearing his feelings you\u2019ll very much hurt for\n    mishmash mastufractured on europe you can read o\ufb00 the tail of his.\n    Rip ripper rippest and jac jac jac. Dwell on that, my hero and\n    lander! That\u2019s the side that appeals to em, the wring wrong w"
+        },
+        { "start": 1076362, "end": 1077041, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada6fb0b-6393-11ed-8f91-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ou wheedle a staveling\n    encore out of your imitationer\u2019s jubalharp, hey, Mr Jinglejoys?\n    Congrega- tional singing. Rota rota ran the pagoda\n    <hi rendition=\"simple:italic\">con dio in capo ed il dia</hi>-\n    <hi rendition=\"simple:italic\">volo in coda.</hi> Many a diva\n    devoucha saw her Dauber Dan at the priesty pagoda Rota ran. Uck!\n    He\u2019s so sedulous to singe always if prumpted, the mirthprovoker!\n    Grunt unto us, I pray, your "
+        },
+        { "start": 1077162, "end": 1077609, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada9a753-6393-11ed-8340-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "re out of your imitationer\u2019s jubalharp, hey, Mr Jinglejoys?\n    Congrega- tional singing. Rota rota ran the pagoda\n    <hi rendition=\"simple:italic\">con dio in capo ed il dia</hi>-\n    <hi rendition=\"simple:italic\">volo in coda.</hi> Many a diva\n    devoucha saw her Dauber"
+        },
+        { "start": 1077193, "end": 1077466, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada878c9-6393-11ed-9db8-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ndition=\"simple:italic\">Coraio, fra!</hi> And I\u2019ll string\n    second to harmanize. M"
+        },
+        { "start": 1077723, "end": 1077807, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa1479-6393-11ed-9f85-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ndition=\"simple:italic\">Coraio, fra!</hi> And I\u2019ll string\n    second to harmanize. My loaf and pottage neaheaheahear Ro- chelle.\n    With your dumpsey diddely dumpsey die, \ufb01ddeley fa.\n    "
+        },
+        { "start": 1077723, "end": 1077911, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa954d-6393-11ed-8394-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "e neaheaheahear Ro- chelle.\n    With your dumpsey diddely dumpsey die, \ufb01ddeley fa.\n    "
+        },
+        { "start": 1077824, "end": 1077911, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaf7441-6393-11ed-b919-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "stune. But he could be near a colonel with a voice\n    like "
+        },
+        { "start": 1078583, "end": 1078643, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada9a78e-6393-11ed-9808-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "stune. But he could be near a colonel with a voice\n    like that. T"
+        },
+        { "start": 1078583, "end": 1078650, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb331bd-6393-11ed-8a26-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "stune. But he could be near a colonel with a voice\n    like that. T"
+        },
+        { "start": 1078583, "end": 1078650, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafa19b-6393-11ed-b99e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " And I see\n    by his diarrhio he\u2019s dropping the stammer out of his silenced\n    bladder since I "
+        },
+        { "start": 1079821, "end": 1079918, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafa1d2-6393-11ed-9362-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "grow a mu\ufb00 and canonise his dead feet down on the river airy\n    by thinking himself into the fourth dimension and place the ocean\n  "
+        },
+        { "start": 1079981, "end": 1080114, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafa206-6393-11ed-b9f6-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ours, the churchyard in the cloister of the depths,\n    after he was capped out of beurlads scoel for the sin against the\n    past participle and earned the factitation of codding chaplan and\n    being as homely gauche as swift B.A.A. Who gets twickly fullgets\n    twice as alle-"
+        },
+        { "start": 1080132, "end": 1080411, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada8d3aa-6393-11ed-9d6c-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "at any stage! I hate to look at alarms\n    but, however they put on my watchcraft, must now close as I hereby\n    hear by ear from by seeless socks \u2019tis time to be up and ambling.\n    Mymiddle toe\u2019s mitching, "
+        },
+        { "start": 1082493, "end": 1082702, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb1307e-6393-11ed-8cd8-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "- shore, wherever I am. No saddle, no\n    sta\ufb00et, but spur on the moment! So I think I\u2019ll take freeboots\u2019\n    advise. Psk! I\u2019ll borrow a path to lend me wings"
+        },
+        { "start": 1083773, "end": 1083931, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa36eb-6393-11ed-a1c6-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " beyond\n    Ladycastle (and what herm but he narrowly missed fouling her\n    buttress for her but for he acqueducked) and then, cocking a snook\n    at the stock of his sermons, so mear and yet so fahr from that\n    region\u2019s general, away with him at the double, the hul"
+        },
+        { "start": 1089028, "end": 1089297, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa371e-6393-11ed-ad83-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ight through\n    the statuemen though without a doubt he was all the more on that\n    same head to memory dear while Sickerson, that borne of bjoerne,\n    <hi rendition=\"simple:italic\">la garde auxiliaire</hi> she mur"
+        },
+        { "start": 1089791, "end": 1090008, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabf2f5-6393-11ed-b08d-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "\n    stout fellow that you are, the crooner born with sweet</p>\n    <p>wail of evoker, healing music, ay, and heart in hand of Sham-\n    rogueshire! The googoos of the suckabo"
+        },
+        { "start": 1090345, "end": 1090520, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabb960-6393-11ed-8a33-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " of</p>\n    <p>longsu\ufb00ering and decennia of brief glory, to mind us of"
+        },
+        { "start": 1092841, "end": 1092911, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaf717a-6393-11ed-bf60-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ank\n    without you because avicuum\u2019s not there at all, to nomore cares from\n    nomad knows, ere Molochy wars bring the devil era, a slip of the\n    time between a date and a ghostmark, rived by darby\u2019s chilldays\n    embers, spatched fun Juhn that dandyfo"
+        },
+        { "start": 1093199, "end": 1093455, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada8ccf8-6393-11ed-afb0-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " turnupon.</p>\n    <p>But, boy, you did your strong nine furlong mile in slick and"
+        },
+        { "start": 1093540, "end": 1093622, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb33e2b-6393-11ed-b7bb-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "to\n    come. The phaynix rose a sun before Erebia sank his smother! Shoot\n    up on that, bright Bennu bird! <hi rendition=\"simple:italic\">Va\n    faotre!</hi> Eftsoon so too will our own sphoenix spark spirt his\n    spyre and sunward stride the rampante \ufb02ambe. Ay, already the sombrer\n    opacities of the gloom are sphanished! Brave footsore Haun! Work\n    your progress! Hold to! Now! Win out, ye divil ye! The silent cock\n    shall crow at last. The west shall shake the east awa"
+        },
+        { "start": 1093836, "end": 1094318, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb33e74-6393-11ed-b68e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "to\n    come. The phaynix rose a sun before Erebia sank his smother! Shoot\n    up on that, bright Bennu bird! <hi rendition=\"simple:italic\">Va\n    faotre!</hi> Eftsoon so too will our own sphoenix spark spirt his\n    spyre and sunward stride the rampante \ufb02ambe. Ay, already the sombrer\n    opacities of the gloom are sphanished! Brave footsore Haun! Work\n    your progress! Hold to! Now! Win out, ye divil ye! The silent cock\n    shall crow at last. The west shall shake the east awake. Walk "
+        },
+        { "start": 1093836, "end": 1094327, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adac5f33-6393-11ed-b17f-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "etch, amongst the da\ufb00ydowndillies, the \ufb02owers of narcosis\n    fourfettering his footlights, a halohedge of wild spuds hovering\n    over him, epicures waltzing with garden\ufb01llers, puritan shoots\n "
+        },
+        { "start": 1096582, "end": 1096776, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada8458d-6393-11ed-a9c5-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " unaided ears the harp in the air, the\n    bugle</p>\n    <p>dianablowing, wild as wild, the moc"
+        },
+        { "start": 1098362, "end": 1098457, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada845bf-6393-11ed-ad85-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ation\n    was a few perch to the weatherside of the knoll Asnoch and it was\n    from no other place unless there, how and ever, that he proxtended\n    aloof upon the ether Mesmer\u2019s Manuum, the hand making silence. The\n    buckos beyond on the lea, then"
+        },
+        { "start": 1098675, "end": 1098927, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adac5f7e-6393-11ed-a035-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "onny na\n    Hossaleen.</p>\n    <p>More than their good share of their \ufb01ve senses ensorcelled you\n    would say themselves were, fuming censor, the way they could not\n    rightly tell their heels from their stools as they cooched down a\n    mamalujo by his cubical crib, as question time drew nighing and the\n    map of the souls\u2019 groupography rose in relief within their\n    quarterings, to play tops or kites or ho"
+        },
+        { "start": 1100204, "end": 1100619, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb2cf6f-6393-11ed-86fe-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "orcelled you\n    would say themselves were, fuming censor, the way they could not\n    rightly tell their heels from their stools as"
+        },
+        { "start": 1100288, "end": 1100419, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada5bf51-6393-11ed-8e13-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "e spreading in quadriliberal their azurespotted \ufb01ne\n    att"
+        },
+        { "start": 1102102, "end": 1102161, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb2c6f0-6393-11ed-9adb-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "    ship that ne\u2019re returned. The Frenchman, I say, was an orangeboat.\n      He is a boat. You see him. The both how you see is they! Draken af\n      Danemork! Sacked it or ate it? What! Hennu! Spake ab laut!</p>\n    </item>\n    <item>\n      <p>Couch, cortege, ringbarrow, dungcairn. Beseek the runes and see\n      the longurn! Allmaun away when you hear the gang- horn. And meet\n      Nautsen. Ess Ess"
+        },
+        { "start": 1108238, "end": 1108640, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb2c72e-6393-11ed-86dc-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " <p>ning two lay payees. Norsker. Her raven \ufb02ag was out, the slaver.\n    I trow pon good, jordan\u2019s scaper, good\u2019s barnet and trustyman.\n    Crouch low, you pigeons three! Say, call that girl with the tan\n    tress awn! Call Wolfhound! Wo"
+        },
+        { "start": 1108706, "end": 1108943, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada6bf4c-6393-11ed-931e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "/quote>\n  <list type=\"unordered\">\n    <item>\n      <p>Very good now. That folklore\u2019s straight from the ass his mouth.\n      I will crusade on with the parent ship, weather prophet- ting, far\n      away from those green hills, a station, Ireton tells me, bono\ufb01de\n      for keeltappers, now to come to the midnight middy on this\n      levantine ponenter. From Daneland sailed the oxeyed man, now mark\n      we"
+        },
+        { "start": 1108981, "end": 1109388, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adae149c-6393-11ed-ae03-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " ass his mouth.\n      I will crusade on with the parent ship, weat"
+        },
+        { "start": 1109083, "end": 1109149, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb2c761-6393-11ed-8370-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "r prophet- ting, far\n      away from those green hills, a station, Ireton tells me, bono\ufb01de\n      for keeltappers, now to co"
+        },
+        { "start": 1109151, "end": 1109275, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada7444e-6393-11ed-b215-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "Changechild\n    ?</hi></p>\n    <p><hi rendition=\"simple:italic\">Eld as endall, earth ?</hi></p>\n  </quote>\n "
+        },
+        { "start": 1111250, "end": 1111358, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada744b6-6393-11ed-9e73-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "th or <hi rendition=\"simple:italic\">Anno Mundi</hi>\n      ere bawds plied in Ski\ufb00strait? Be fair, Chris!</p>\n    </item>\n    <item>\n      <p>Dream. Ona nonday I sleep. I dreamt of a somday. Of a wonday I\n      shall wake. Ah! May he have now of here fear\ufb01l"
+        },
+        { "start": 1111597, "end": 1111853, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada85685-6393-11ed-b9f7-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "imple:italic\">Anno Mundi</hi>\n      ere bawds plied in Ski\ufb00strait? Be fair, Chris!</p>\n    </item>\n    <item>\n      <p>Dream. Ona nonday I sleep. I dreamt of a somday. Of a wonday I\n      shall wake. Ah! May he have now of here fear\ufb01l"
+        },
+        { "start": 1111619, "end": 1111853, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada5966d-6393-11ed-833e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "      historic brute, Finnsen Faynean, occeanyclived, to this same\n      vulganized hillsir from yours, Mr Tupling Toun of Morning de\n      Heights, with his lavast \ufb02ow and his rambling undergroands, would\n      he reoccur <hi rendition=\"simple:italic\">Ad Horam</hi>, as old\n      Romeo Rogers"
+        },
+        { "start": 1112151, "end": 1112444, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa268d-6393-11ed-9bb5-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "      historic brute, Finnsen Faynean, occeanyclived, to this same\n      vulganized hillsir from yours, Mr Tupling Toun of Morning de\n      Heights, with his lavast \ufb02ow and his rambling undergroands, would\n      he reoccur <hi rendition=\"simple:italic\">Ad Horam</hi>, as old\n      Romeo Rogers"
+        },
+        { "start": 1112151, "end": 1112444, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb098cb-6393-11ed-b38f-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "clived, to this same\n      vulganized hillsir from yours, Mr Tupling Toun of Morning de\n      Heights, with his lavast \ufb02ow and his rambling"
+        },
+        { "start": 1112197, "end": 1112336, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adad3181-6393-11ed-a723-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "clived, to this same\n      vulganized hillsir from yours, Mr Tupling Toun of Morning de\n      Heights, with his lavast \ufb02ow and his rambling undergroands, would\n      he reoccur <hi rendition=\"simple:italic\">Ad Horam</hi>, as old\n      Romeo Rogers"
+        },
+        { "start": 1112197, "end": 1112444, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada99c2c-6393-11ed-9dc5-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": ", would\n      he reoccur <hi rendition=\"simple:italic\">Ad Horam</hi>, as old\n      Romeo Rogers, in city or county, and your sure ob, or by, with or\n      from an urb, of you know the di\ufb00erenciabus, as brauchbarred in\n      apabhramsa, sierrah! W"
+        },
+        { "start": 1112349, "end": 1112595, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb0bc10-6393-11ed-b4cc-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "nd your sure ob, or by, with or\n      from an urb, of you know th"
+        },
+        { "start": 1112466, "end": 1112531, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adac5fb4-6393-11ed-85be-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ers, Argos and Duthless. Well, I am advised he might\n      in a sense be both nevertheless, every at man l"
+        },
+        { "start": 1112842, "end": 1112948, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adac9344-6393-11ed-839e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "f the father of the \ufb01nder of the\n      pfander of the pfunder of the furst man in Ranelagh, fu\u00e9! fu\u00e9!\n      Petries and violet ice (I am yam, as Me and Tam Tower used to\n      jagger pemmer it, over at the house of</p>\n    </item>\n  </list>\n  <quote>\n    <p>Eddy\u2019s Christy"
+        },
+        { "start": 1113629, "end": 1113901, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adac5fea-6393-11ed-89e0-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "re ultimately is the\n      poeta, still more learned, who discovered the raiding there\n      origin- ally. Th"
+        },
+        { "start": 1115957, "end": 1116066, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adad4aa2-6393-11ed-9927-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " I, a self the sign, came remaining being\n      dwelling ayr, plage and"
+        },
+        { "start": 1118260, "end": 1118331, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb09921-6393-11ed-8c46-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " received the habit following Mezienius\n      connecting Mezosius incl"
+        },
+        { "start": 1118470, "end": 1118540, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada81481-6393-11ed-bade-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " and\n    Ciardeclan, I learn, episcop- ing me altogether, circumdeditioned\n    me. I brought you from the loups of Lazary and you hav"
+        },
+        { "start": 1120315, "end": 1120448, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adabf575-6393-11ed-8ab0-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "hat time thing think! Honori\ufb01c\n    remembrance to spit humble makes. My ruridecanal caste is a cut\n   "
+        },
+        { "start": 1120575, "end": 1120677, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada8213f-6393-11ed-9ee8-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ines. Aye vouchu to rumanescu. See the leabhour of\n    my generations! Has not my master, Theophrastius Spheropneu-\n "
+        },
+        { "start": 1120694, "end": 1120811, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaf8f9c-6393-11ed-9cf9-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ritten that the spirit is from the upper circle? I\u2019m of\n    the ochlocracy with Prestopher Palumbus and Porvus Parrio. Soa koa\n    Kell"
+        },
+        { "start": 1120824, "end": 1120959, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada814b5-6393-11ed-b214-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "aud nilobstant to Lowman Catlick\u2019s patrician\n    morning coat of arms with my High tripenniferry cresta and caudal\n    mottams: Itch dean: which Gaspey, Otto "
+        },
+        { "start": 1121264, "end": 1121422, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb1f3dc-6393-11ed-a3ab-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "aud nilobstant to Lowman Catlick\u2019s patrician\n    morning coat of arms with my High tripenniferry cresta and caudal\n    mottams: Itch dean: which Gaspey, Otto "
+        },
+        { "start": 1121264, "end": 1121422, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada814e6-6393-11ed-a903-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "rs am. And, Mind,\n    praisegad, is the \ufb01rst praisonal Egoname Yod heard boissboissy in\n    Moy Bog\u2019s domesday. Hastan t"
+        },
+        { "start": 1121497, "end": 1121617, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb232a6-6393-11ed-a4f4-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "rs am. And, Mind,\n    praisegad, is the \ufb01rst praisonal Egoname Yod heard boissboissy in\n    Moy Bog\u2019s domesday. Hastan t"
+        },
+        { "start": 1121497, "end": 1121617, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafbd17-6393-11ed-bfa3-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "  </quote>\n  <list type=\"unordered\">\n    <item>\n      <p>Suck it yourself, sugarstick! Misha, Yid think whose was asking\n      to luckat your sore toe or to taste your gaspy, hot and sour!\n      Ichthyan! Hegvat tosser! Gags be plebsed! Between hi"
+        },
+        { "start": 1121655, "end": 1121902, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb1f417-6393-11ed-9b7a-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "     <hi rendition=\"simple:italic\">Spira in Me Domino</hi>, spear me\n      Doyne! Fat prize the bona\ufb01de peachumpidgeonlover, eh, eh, eh,\n      esquire earwugs, escusado, of Jenkins\u2019 Area, with his "
+        },
+        { "start": 1122468, "end": 1122665, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada5034a-6393-11ed-a1cf-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "at prize the bona\ufb01de peachumpidgeonlover, eh, eh, eh,\n      esquire earwugs, escusado, of Jenkins\u2019 Area, with his "
+        },
+        { "start": 1122551, "end": 1122665, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb33ea8-6393-11ed-bae1-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "at prize the bona\ufb01de peachumpidgeonlover, eh, eh, eh,\n      esquire earwugs, escusado, of Jenkins\u2019 Area, with his "
+        },
+        { "start": 1122551, "end": 1122665, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada4a0cc-6393-11ed-8dbe-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "nereer\u2019d heerdly heer he. Ho ha hi\n      he hung! Tsing tsing!</p>\n    </item>\n    <item>\n      <p>Me no angly mo, me speakee Yellman\u2019s lingas. Nicey Doc Mistel\n      Lu, please! Me no pigey ludiments all same numpa one Topside\n      Tellmastoly fella. Me pigey savvy a singasong anothel time.\n      Pleasie, Mista Lukie Walkie! Josadam cowbelly maam belongame\n      shepullamealahmalong, begolla, Jackinaboss belonga- she;\n      plentymuch boohoomeo.</p>\n    </item>\n    <item>\n      <p>Hell\u2019s Confucium and the Elements! Tootoo moohootch! Thot\u2019s\n      never the postal cleric, checking chinchin chat with nip-</p>\n    </item>\n  </list>\n  <quote>\n    <p>ponnippers! Halt there sob story to your lambd"
+        },
+        { "start": 1123063, "end": 1123764, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb33ee5-6393-11ed-ac7e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "</p>\n    </item>\n  </list>\n  <quote>\n    <p>ponnippers! Halt there sob story to your lambd"
+        },
+        { "start": 1123674, "end": 1123764, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adac9383-6393-11ed-b620-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "talic\">Quadrigue my yoke. Triple my\n      tryst. Tandem my sire</hi>."
+        },
+        { "start": 1123892, "end": 1123961, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb06cdf-6393-11ed-b3dd-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "talic\">Quadrigue my yoke. Triple my\n      tryst. Tandem my sire</hi>.</p>\n    </item>\n    <it"
+        },
+        { "start": 1123892, "end": 1123985, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb33f18-6393-11ed-b064-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": ". . with gold hair to the bed . . . and white arms to the\n      twinklers . . . O la la!</p>\n    </item>\n    <item>\n      <p>Purely, in a pure man"
+        },
+        { "start": 1125284, "end": 1125430, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada7af74-6393-11ed-8e3c-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": ". . with gold hair to the bed . . . and white arms to the\n      twinklers . . . O la la!</p>\n    </item>\n    <item>\n      <p>Purely, in a pure manner. O, sey but swift and still a vain\n      essaying! Trothed today, trenned tomorrow. I invert the initial of\n      your tripartite and sign it sternly, and adze to girdle, on your\n      breast. What do you hear, breastplate?</"
+        },
+        { "start": 1125284, "end": 1125659, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb33f49-6393-11ed-81af-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ift and still a vain\n      essaying! Trothed today, trenned tomorrow. I invert the initial of\n      your tripartite and sign it sternly, and adze to girdle, on your\n  "
+        },
+        { "start": 1125448, "end": 1125615, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada701b3-6393-11ed-93c0-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " initial of\n      your tripartite and sign it sternly, and adze to girdle, on your\n      breast. What do you hear, brea"
+        },
+        { "start": 1125530, "end": 1125649, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada7afa9-6393-11ed-8936-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "per behidin the door slappin his feet in a pool\n      of bran.</p>\n    </item>\n    <item>\n      <p>Bell"
+        },
+        { "start": 1125710, "end": 1125813, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb33f86-6393-11ed-a6aa-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "per behidin the door slappin his feet in a pool\n      of bran.</p>\n    </item>\n    <item>\n      <p>Bell"
+        },
+        { "start": 1125710, "end": 1125813, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada701f0-6393-11ed-a0e8-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "per behidin the door slappin his feet in a pool\n      of bran.</p>\n    </item>\n    <item>\n      <p>Bellax, acting like a bellax. And so the triptyc"
+        },
+        { "start": 1125710, "end": 1125857, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaac5a3-6393-11ed-95f2-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "dle ageing like Bewley in the baste\n      so that I indicate out to myself and I swear my gots "
+        },
+        { "start": 1127302, "end": 1127397, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adab9e1a-6393-11ed-ab5e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "he peer for Noel\u2019s\n      Arch, in blessed foster\u2019s place is doing the dirty o"
+        },
+        { "start": 1135271, "end": 1135348, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada68018-6393-11ed-ba63-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "Not large goodman is\n          he, Sandy nice. Ask him this one minute upthrow inner lotus of\n          his burly ear womit "
+        },
+        { "start": 1139085, "end": 1139209, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adae0ef0-6393-11ed-82fa-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ked\n          rusish through the bars? My Wolossay\u2019s wild as the Crasnian\n          Sea! Grabashag, groogy, scoop and I\u2019ll cure ye! Mother of\n          emeralds, ara poog neighbours!</p>\n        </item>\n        <item>\n          <p>Capilla, Rubrilla and Melcamomilla! Dauby, dauby, with- out\n          dulay! Well, I beg to traverse same above s"
+        },
+        { "start": 1139704, "end": 1140048, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adace904-6393-11ed-a202-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "m I can\u2019t whumember.</p>\n    </item>\n    <item>\n      <p>Fantasy! funtasy on fantasy, amnaes"
+        },
+        { "start": 1142709, "end": 1142801, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada7521e-6393-11ed-82ec-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "sark she mode\n      our heuteyleutey girlery of peerlesses to set up in all"
+        },
+        { "start": 1142953, "end": 1143028, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adace94a-6393-11ed-914f-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " my coming forth of darkness!\n      They know not my heart, O coolun dearast! Mon gloomerie! Mon\n      glamourie! What a surpraise, dear Mr Preacher,</p>\n    </item>\n  </list>\n  <quote>\n    <p>I to hear "
+        },
+        { "start": 1143906, "end": 1144109, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaf4eb6-6393-11ed-af2b-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " my coming forth of darkness!\n      They know not my heart, O coolun dearast! Mon gloomerie! Mon\n      glamourie! What a surpraise, dear Mr Preacher,</p>\n    </item>\n  </list>\n  <quote>\n    <p>I to hear "
+        },
+        { "start": 1143906, "end": 1144109, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adace97d-6393-11ed-b85e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "re the camel got the needle. Talk about\n    iridecencies! Ruby and beryl and ch"
+        },
+        { "start": 1144259, "end": 1144338, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adace9bb-6393-11ed-9e2f-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "em>\n      <p>Orca Bellona! Heavencry at earthcall, etnat athos? Extinct your\n      vulcan"
+        },
+        { "start": 1144434, "end": 1144523, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaee190-6393-11ed-8aac-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "em>\n  </list>\n  <quote>\n    <p>plais. The said Sully, a barracker associated with tinkers, the\n    blackhand, Shovellyvans, wreuter of annoyimgmost "
+        },
+        { "start": 1146625, "end": 1146773, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada690ca-6393-11ed-b9c7-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "t>\n  <quote>\n    <p>plais. The said Sully, a barracker associated with tin"
+        },
+        { "start": 1146636, "end": 1146710, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb11694-6393-11ed-96af-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " the legintimate lady performers of display unquestionable, Elsebett\n    and Marryetta Gunning, H2O, by that nob"
+        },
+        { "start": 1148229, "end": 1148341, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb04ee9-6393-11ed-ba67-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " the legintimate lady performers of display unquestionable, Elsebett\n    and Marryetta Gunning, H2O, by that noblesse of"
+        },
+        { "start": 1148229, "end": 1148349, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb3113d-6393-11ed-a92a-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ince\n          then our too many of her, Abha na Lif\u00e9, and getting on to\n          dadaddy again, as them we\u2019re ne\u2019er free of, was he in tea e\u2019"
+        },
+        { "start": 1151073, "end": 1151216, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adae32ff-6393-11ed-af1c-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "=\"simple:italic\">Quinnigan\u2019s Quake!</hi> Stump! His\n    producers are they not his con- sumers? Your exagmination round"
+        },
+        { "start": 1151979, "end": 1152098, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adae3334-6393-11ed-bc95-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "g in clansdes-\n      tinies for the Imbandiment of <hi rendition=\"simple:italic\">Ad\n      Regias Agni Dapes,</hi> fogabawlers and panhibernskers, after the\n      crack and the lean years, scalpjaggers and houthhunters, like the\n      messicals of the great god, a s"
+        },
+        { "start": 1152276, "end": 1152541, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adae3367-6393-11ed-b00e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "l, the Twoedged\n      Petrard, totalling, leggats and prelaps, in their aggregate ages\n      two and thirty plus undecimmed centries of them"
+        },
+        { "start": 1152555, "end": 1152695, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada9ff02-6393-11ed-9f3e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ng, leggats and prelaps, in their aggregate ages\n      two and thirty plus undecimmed centries of them"
+        },
+        { "start": 1152593, "end": 1152695, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada9ff3f-6393-11ed-8d4e-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "tdumb- drummers, Luccanicans, Ashtoumers,\n      Batterysby Parkes and Krumlin Boyards, Phillipsburgs, Cabraists\n      and Finglossies, Ballymunites, Raheniacs and the bettlers of\n      Clontarf, for to con- template in manifest and pay their \ufb01r"
+        },
+        { "start": 1153223, "end": 1153467, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adae33a4-6393-11ed-8962-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "unites, Raheniacs and the bettlers of\n      Clontarf, for to con- template in manifest and pay their \ufb01r"
+        },
+        { "start": 1153364, "end": 1153467, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada64e79-6393-11ed-b870-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ition=\"simple:italic\">Thieve le Rou\u00e9!</hi> and their\n      <hi rendition=\"simple:italic\">Shvr yr Thrst!</hi> and their\n      <hi rendition=\"simple:italic\">Uisgye ad Inferos!</hi> and their\n      <hi rendition=\"simple:italic\">Usque ad Ebbraios!</hi> at "
+        },
+        { "start": 1153557, "end": 1153809, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada791b8-6393-11ed-b465-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "d Ulster Kong and Munster\u2019s Herald with Athclee Ensigning and\n    Athlone Pou"
+        },
+        { "start": 1155429, "end": 1155506, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada9e7da-6393-11ed-8de6-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " Fire? Is the strays world moving\n      mound or what static babel is this, tell us?</p>\n    </item>\n    <item>\n      <p>Whoishe whoishe whoishe whoishe linking in? Whois"
+        },
+        { "start": 1159484, "end": 1159654, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb30c29-6393-11ed-aba7-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " Fire? Is the strays world moving\n      mound or what static babel is this, tell us?</p>\n    </item>\n    <item>\n      <p>Whoishe whoishe whoishe whoishe linking in? Whois"
+        },
+        { "start": 1159484, "end": 1159654, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada9057f-6393-11ed-a6aa-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": ". Now, after that justaji\ufb00 siesta, just permit me a\n      moment. Challenger\u2019s Deep is childsplay to this but, by our\n      soundings in the swish channels, land is due. A truce to demobbed\n      swarwords. Clear the line, priority call! Sybil! Better that or"
+        },
+        { "start": 1162912, "end": 1163171, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb27ef9-6393-11ed-9608-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "igeth Woodin Warneung thereof?</p>\n    </item>\n    <item>\n      <p>Trickspissers vill be pairsecluded.</p>\n    </item>\n    <item>\n      <p>There used to be a tree stuck up? An overlisting eshtree?</p>\n    </item>\n    <item>\n      <p>The"
+        },
+        { "start": 1169153, "end": 1169389, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adae9560-6393-11ed-98fc-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "simple:italic\">Udi, Udite!</hi>\n      Your Ominence, Your Immi- nence and delicted fraternitrees!\n      There\u2019s tuodore queensmaids and Idahore shopgirls"
+        },
+        { "start": 1171280, "end": 1171433, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafea20-6393-11ed-baf4-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "smus Smith\u2019s\n      burstall boys with their underhand leadpencils climbing to her\n  "
+        },
+        { "start": 1171713, "end": 1171797, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adacafd6-6393-11ed-bc0f-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " boy \u201cThom\u201d or\n    \u201cThim\u201d of the \ufb01shy stare who belongs to Kimmage, a crofting dis-\n    trict, and is not all there, and is all the more himself since he is\n   "
+        },
+        { "start": 1177405, "end": 1177565, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adacb02c-6393-11ed-b994-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "s, belches and is a curse, drinking gaily two hours\n    after closing time, with the coat on him skinside out against\n    rappari- tions, with his socks outsewed his springsides, clapping\n    his hands in a feeble sort of way and systematically mixing with the\n    public going for groceries, slap"
+        },
+        { "start": 1177644, "end": 1177941, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adacb066-6393-11ed-960d-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "    <item>\n      <p>Get out, you dirt! A strangely striking part of speech for the\n      hottest worked word of ur sprogue. You\u2019re not! Unhindered and o"
+        },
+        { "start": 1178746, "end": 1178898, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa8a69-6393-11ed-8bdb-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ddle, gape and bore.</p>\n    </item>\n    <item>\n      <p>I hear these two goddesses are liable to sue him?</p>\n    </item>\n    <item>\n      <p>Well, I hope the two Collinses don\u2019t leg a bail to shoot\n      him.</p>\n    </item>\n    <item>\n      <p>Both were white in black arpists at cloever spilling,\n      knickt?</p>\n    </item>\n    <item>\n      <p>Gels bach, I, languised, liszted. Etoudies for the right\n      hand.</p>\n    </item>\n    <item>\n      <p>Were they now? And were they watching you as watcher as\n      well?</p>\n    </item>\n  </list>\n  <list type=\"unordered\">\n    <it"
+        },
+        { "start": 1181919, "end": 1182502, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa8ac4-6393-11ed-a2bb-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "  him.</p>\n    </item>\n    <item>\n      <p>Both were white in black arpists at cloever spilling,\n      knickt?</p>\n    </item>\n    <item>\n      <p>Gels bach, I, languised, liszted. Etoudies for the right\n      hand.</p>\n    </item>\n    <item>\n      <p>Were they now? And were they watching you as watcher as\n      well?</p>\n    </item>\n  </list>\n  <list type=\"unordered\">\n    <item>\n   "
+        },
+        { "start": 1182123, "end": 1182509, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaee1df-6393-11ed-bc5f-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "man cacchinic wheepingcaugh! While she laylylaw\n      was all their rage. But you did establish personal conta"
+        },
+        { "start": 1188469, "end": 1188579, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adac9679-6393-11ed-8d94-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": " to decide whereagainwhen to meet themselves,\n      \ufb02opsome and jerksome, lubber and deliric, drinking unsteadily\n      through the Kerry quadrilles and Listo"
+        },
+        { "start": 1195025, "end": 1195183, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb25f2e-6393-11ed-9080-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ly some well\ufb01red clay was cast out through the\n          schappsteckers of hoy\u2019s house?</p>\n        </item>\n        <item>\n          <p>Schottenly the"
+        },
+        { "start": 1195906, "end": 1196056, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaef315-6393-11ed-ae83-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "mns and hurts and heels and\n      shields. The eirest race, the ourest nation, the airest place</p>\n    </item>\n  </list>\n  <quote>\n    <p>that erestationed"
+        },
+        { "start": 1198036, "end": 1198192, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada4a18e-6393-11ed-b9a8-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "  angerus, how for his deal he was a pigheaded Swede and to wend\n      himself to a medicis?</p>\n    </item>\n    <item>\n      <p>To be sore he did, the huggornut! Only it was turnip- hudded\n      dunce, I beg your pardon, and he would jok"
+        },
+        { "start": 1203562, "end": 1203800, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adafb3e2-6393-11ed-bb30-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "wasso I never.</p>\n    </item>\n    <item>\n      <p>That forte carlysle touch breaking th"
+        },
+        { "start": 1204717, "end": 1204805, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaa8b00-6393-11ed-bc03-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "our querqcut\n      quadrant?</p>\n    </item>\n    <item>\n      <p>You will be asking me and I wish to higgins you wouldn\u2019t. Would\n      it?</p>\n    </item>\n    <item>\n      <p>Let it be twelve thirty after a somersautch of the tardest!</p>\n"
+        },
+        { "start": 1205023, "end": 1205262, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adaf3cc0-6393-11ed-8733-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "s wonder.</p>\n    </item>\n    <item>\n      <p>Amties, marcy buckup! The uneven da"
+        },
+        { "start": 1205492, "end": 1205573, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada6137b-6393-11ed-b692-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ll you swear all the same you saw their shadows a\n          hundred foot later, struggling diabolically over"
+        },
+        { "start": 1206051, "end": 1206159, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada4a2e2-6393-11ed-9317-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "p>And this pattern pootsch punnermine of concoon and proprey went\n      on, hog and minne, a whole whake, your night after larry\u2019s night,\n      spittinspite"
+        },
+        { "start": 1208919, "end": 1209075, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#ada81516-6393-11ed-8950-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "ll\u2019s \ufb02utes, my prodder again! And I never brought my cads\n    in togs blanket"
+        },
+        { "start": 1212512, "end": 1212589, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb22d3c-6393-11ed-b09c-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": "landman\u2019s trousertree or the three crowns round\n      your draphole (isn\u2019t"
+        },
+        { "start": 1214150, "end": 1214224, "type": "TextPositionSelector" }
+      ]
+    }
+  },
+  {
+    "body": [
+      { "type": "TextualBody", "value": "Here is the annotation content" }
+    ],
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "#adb22d93-6393-11ed-9565-747827aebbd0",
+    "target": {
+      "selector": [
+        {
+          "type": "TextQuoteSelector",
+          "exact": ".\n      <hi rendition=\"simple:italic\">Pro tanto quid retribuamus?</hi> I\n      ask you to say on your scotty pictail you were promised \ufb01nes times\n      with some staggerjuice or deadhorse, on strip or in larges, at the\n      Raven and Sugarloaf, either Jones\u2019s lame or Jamesy\u2019s gait,\n      anyhow?</p>\n    </item>\n    <ite"
+        },
+        { "start": 1214366, "end": 1214688, "type": "TextPositionSelector" }
+      ]
+    }
+  }
+]

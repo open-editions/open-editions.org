@@ -2,6 +2,7 @@ import json
 f = open("annotations.w3c.json")
 data = json.load(f)
 
+print(len(data))
 minStart = 99999999
 maxStart = 0
 
